@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Entities\DirectorTecnico.cs" />
+    <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
+    <Compile Include="BusinessLayer\Services\DirectorTecnicoService.cs" />
+    <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
+    <Compile Include="DataLayer\DBHelper.cs" />
     <Compile Include="GUILayer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,9 +94,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessLayer\" />
-    <Folder Include="DataAccessLayer\" />
-    <Folder Include="Entities\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
