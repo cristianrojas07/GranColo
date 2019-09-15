@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GranColo.BusinessLayer;
+using GranColo.BusinessLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,10 @@ namespace GranColo.GUILayer
 {
     public partial class frmLogin : Form
     {
+        DirectorTecnicoService service;
         public frmLogin()
         {
+            service = new DirectorTecnicoService();
             InitializeComponent();
         }
 
@@ -43,7 +47,17 @@ namespace GranColo.GUILayer
                 return;
             }
 
-            this.Close();
+            DirectorTecnico oDT = new DirectorTecnico();
+            oDT.nombreUsuario = txtUsuario.Text;
+            oDT.password = txtContraseña.Text;
+            if (service.validarDirectorTecnico(oDT))
+            {
+                MessageBox.Show("Bienvenido a gran colo !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Usuario y/o contraseña incorrecta !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
