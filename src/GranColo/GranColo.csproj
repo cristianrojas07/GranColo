@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Entities\DirectorTecnico.cs" />
+    <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
     <Compile Include="BusinessLayer\Services\DirectorTecnicoService.cs" />
     <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
     <Compile Include="DataLayer\DBHelper.cs" />
