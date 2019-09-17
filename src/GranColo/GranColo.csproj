@@ -47,10 +47,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Entities\DirectorTecnico.cs" />
+    <Compile Include="BusinessLayer\Entities\Fecha.cs" />
     <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
+    <Compile Include="BusinessLayer\Entities\Torneo.cs" />
     <Compile Include="BusinessLayer\Services\DirectorTecnicoService.cs" />
+    <Compile Include="BusinessLayer\Services\FechaService.cs" />
+    <Compile Include="BusinessLayer\Services\TorneoService.cs" />
     <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
+    <Compile Include="DataLayer\Dao\FechaDao.cs" />
+    <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DBHelper.cs" />
+    <Compile Include="GUILayer\Fixture\FrmABMFixture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmABMFixture.Designer.cs">
+      <DependentUpon>FrmABMFixture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmFixture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmFixture.Designer.cs">
+      <DependentUpon>FrmFixture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Jugadores\FrmConsultarJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Jugadores\FrmConsultarJugador.Designer.cs">
+      <DependentUpon>FrmConsultarJugador.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,8 +89,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\Fixture\FrmABMFixture.resx">
+      <DependentUpon>FrmABMFixture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmFixture.resx">
+      <DependentUpon>FrmFixture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Jugadores\FrmConsultarJugador.resx">
+      <DependentUpon>FrmConsultarJugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
