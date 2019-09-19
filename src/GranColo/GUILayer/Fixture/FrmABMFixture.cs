@@ -86,6 +86,10 @@ namespace GranColo.GUILayer.Fixture
 
         private void Btn_aceptar_Click(object sender, EventArgs e)
         {
+            if (!validarCampos())
+            {
+                return;
+            }
             switch (determinarModo(modo))
             {
                 case "fecha":
@@ -157,6 +161,16 @@ namespace GranColo.GUILayer.Fixture
         private void Btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool validarCampos()
+        {
+            if (String.IsNullOrEmpty(txt_nombre.Text))
+            {
+                MessageBox.Show("Se tiene que ingresar un nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
         }
     }
 }

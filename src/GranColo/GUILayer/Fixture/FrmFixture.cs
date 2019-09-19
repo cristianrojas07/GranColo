@@ -56,6 +56,7 @@ namespace GranColo.GUILayer.Fixture
 
         private void Btn_consultar_Click(object sender, EventArgs e)
         {
+            
             if (String.Equals("fecha", determinarModo(modo)))
             {
                 if (cb_todos.Checked)
@@ -73,6 +74,10 @@ namespace GranColo.GUILayer.Fixture
                 }
                 else
                 {
+                    if (!validarCampos())
+                    {
+                        return;
+                    }
                     Fecha oFecha = new Fecha();
                     oFecha.nombre = txt_nombre.Text;
                     IList<Fecha> list = fechaService.obtenerFechasPorNombre(oFecha);
@@ -104,6 +109,10 @@ namespace GranColo.GUILayer.Fixture
                 }
                 else
                 {
+                    if (!validarCampos())
+                    {
+                        return;
+                    }
                     Torneo oTorneo = new Torneo();
                     oTorneo.nombre = txt_nombre.Text;
                     IList<Torneo> list = torneoService.obtenerTorneosPorNombre(oTorneo);
@@ -145,6 +154,10 @@ namespace GranColo.GUILayer.Fixture
                         break;
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             dgw_fecha_torneo.Rows.Clear();
         }
@@ -190,7 +203,21 @@ namespace GranColo.GUILayer.Fixture
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             dgw_fecha_torneo.Rows.Clear();
+        }
+
+        public bool validarCampos()
+        {
+            if (String.IsNullOrEmpty(txt_nombre.Text))
+            {
+                MessageBox.Show("Se tiene que ingresar un nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
         }
     }
 }
