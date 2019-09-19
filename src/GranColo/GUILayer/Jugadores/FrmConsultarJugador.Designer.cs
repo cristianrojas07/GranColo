@@ -330,7 +330,7 @@
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(75, 23);
             this.btn_salir.TabIndex = 23;
-            this.btn_salir.Text = "Salir";
+            this.btn_salir.Text = "Cerrar";
             this.btn_salir.UseVisualStyleBackColor = true;
             // 
             // FrmConsultarJugador
@@ -363,6 +363,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.lbl_nombre);
             this.Name = "FrmConsultarJugador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultarJugador";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

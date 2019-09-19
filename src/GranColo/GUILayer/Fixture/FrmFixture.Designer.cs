@@ -68,7 +68,7 @@
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(75, 23);
             this.btn_salir.TabIndex = 35;
-            this.btn_salir.Text = "Salir";
+            this.btn_salir.Text = "Cerrar";
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
             // 
@@ -178,6 +178,7 @@
             this.ClientSize = new System.Drawing.Size(406, 472);
             this.Controls.Add(this.gb_titulo);
             this.Name = "FrmFixture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFixture";
             this.gb_titulo.ResumeLayout(false);
             this.gb_titulo.PerformLayout();

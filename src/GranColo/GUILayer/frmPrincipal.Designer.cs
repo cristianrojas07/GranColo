@@ -59,7 +59,7 @@
             // consultarJugadorToolStripMenuItem
             // 
             this.consultarJugadorToolStripMenuItem.Name = "consultarJugadorToolStripMenuItem";
-            this.consultarJugadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarJugadorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.consultarJugadorToolStripMenuItem.Text = "Consultar jugador";
             this.consultarJugadorToolStripMenuItem.Click += new System.EventHandler(this.ConsultarJugadorToolStripMenuItem_Click);
             // 
@@ -69,20 +69,20 @@
             this.fechaToolStripMenuItem,
             this.torneoToolStripMenuItem});
             this.fixtureToolStripMenuItem.Name = "fixtureToolStripMenuItem";
-            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.fixtureToolStripMenuItem.Text = "Fixture";
             // 
             // fechaToolStripMenuItem
             // 
             this.fechaToolStripMenuItem.Name = "fechaToolStripMenuItem";
-            this.fechaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fechaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.fechaToolStripMenuItem.Text = "Fecha";
             this.fechaToolStripMenuItem.Click += new System.EventHandler(this.FechaToolStripMenuItem_Click);
             // 
             // torneoToolStripMenuItem
             // 
             this.torneoToolStripMenuItem.Name = "torneoToolStripMenuItem";
-            this.torneoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.torneoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.torneoToolStripMenuItem.Text = "Torneo";
             this.torneoToolStripMenuItem.Click += new System.EventHandler(this.TorneoToolStripMenuItem_Click);
             // 
