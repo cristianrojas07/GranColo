@@ -103,7 +103,8 @@ namespace GranColo.GUILayer.Fixture
                             if (fechaService.insertarFecha(oFecha))
                             {
                                 MessageBox.Show("Fecha agregada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }else
+                            }
+                            else
                             {
                                 MessageBox.Show("Error, fecha no agregada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             }
@@ -155,7 +156,7 @@ namespace GranColo.GUILayer.Fixture
                     }
                     break;
             }
-            
+
         }
 
         private void Btn_salir_Click(object sender, EventArgs e)

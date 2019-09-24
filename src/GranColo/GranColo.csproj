@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A0DFBA3-EA32-471F-8E48-DBA38BBF3C76}</ProjectGuid>
+    <ProjectGuid>{F0839489-7D27-4DDE-B1C5-EFFDE9A84539}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GranColo</RootNamespace>
     <AssemblyName>GranColo</AssemblyName>
@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Entities\DirectorTecnico.cs" />
-<<<<<<< HEAD
-    <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
-    <Compile Include="BusinessLayer\Services\DirectorTecnicoService.cs" />
-    <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
-    <Compile Include="DataLayer\DBHelper.cs" />
-=======
     <Compile Include="BusinessLayer\Entities\Fecha.cs" />
     <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
     <Compile Include="BusinessLayer\Entities\Torneo.cs" />
@@ -75,33 +69,20 @@
     <Compile Include="GUILayer\Fixture\FrmFixture.Designer.cs">
       <DependentUpon>FrmFixture.cs</DependentUpon>
     </Compile>
->>>>>>> pruebas
-    <Compile Include="GUILayer\Login\frmLogin.cs">
+    <Compile Include="GUILayer\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Login\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="GUILayer\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\frmPrincipal.cs">
+    <Compile Include="GUILayer\Login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <Compile Include="GUILayer\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUILayer\Fixture\FrmABMFixture.resx">
-      <DependentUpon>FrmABMFixture.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Fixture\FrmFixture.resx">
-      <DependentUpon>FrmFixture.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -124,8 +105,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

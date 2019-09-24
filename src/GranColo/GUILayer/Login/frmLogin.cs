@@ -28,7 +28,7 @@ namespace GranColo.GUILayer
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Environment.Exit(0);
             }
@@ -57,7 +57,8 @@ namespace GranColo.GUILayer
             {
                 MessageBox.Show("Bienvenido a gran colo !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrecta !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

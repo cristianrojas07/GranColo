@@ -33,7 +33,7 @@ namespace GranColo.GUILayer
                 e.Cancel = true;
         }
 
-        
+
 
         private void FechaToolStripMenuItem_Click(object sender, EventArgs e)
         {

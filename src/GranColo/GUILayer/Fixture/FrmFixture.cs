@@ -32,7 +32,7 @@ namespace GranColo.GUILayer.Fixture
 
         public void setGroupBox(int modo)
         {
-            if (modo==1)
+            if (modo == 1)
             {
                 gb_titulo.Text = "Fecha";
             }
@@ -56,13 +56,13 @@ namespace GranColo.GUILayer.Fixture
 
         private void Btn_consultar_Click(object sender, EventArgs e)
         {
-            
+
             if (String.Equals("fecha", determinarModo(modo)))
             {
                 if (cb_todos.Checked)
                 {
                     IList<Fecha> listTodasFechas = fechaService.obtenerTodasFechas();
-                    if (listTodasFechas.Count==0)
+                    if (listTodasFechas.Count == 0)
                     {
                         MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -180,7 +180,8 @@ namespace GranColo.GUILayer.Fixture
                             if (fechaService.eliminarFecha())
                             {
                                 MessageBox.Show("Fecha elminada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }else
+                            }
+                            else
                             {
                                 MessageBox.Show("Error, fecha no eliminada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             }
