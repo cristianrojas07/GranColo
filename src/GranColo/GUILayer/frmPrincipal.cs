@@ -1,5 +1,4 @@
 ﻿using GranColo.GUILayer.Fixture;
-using GranColo.GUILayer.Jugadores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,8 +35,7 @@ namespace GranColo.GUILayer
 
         private void ConsultarJugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultarJugador frmConsultarJugador = new FrmConsultarJugador();
-            frmConsultarJugador.ShowDialog();
+            
         }
 
         private void FechaToolStripMenuItem_Click(object sender, EventArgs e)
