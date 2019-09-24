@@ -33,10 +33,7 @@ namespace GranColo.GUILayer
                 e.Cancel = true;
         }
 
-        private void ConsultarJugadorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void FechaToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fixtureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,18 +49,10 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarJugadorToolStripMenuItem,
             this.fixtureToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
-            // 
-            // consultarJugadorToolStripMenuItem
-            // 
-            this.consultarJugadorToolStripMenuItem.Name = "consultarJugadorToolStripMenuItem";
-            this.consultarJugadorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.consultarJugadorToolStripMenuItem.Text = "Consultar jugador";
-            this.consultarJugadorToolStripMenuItem.Click += new System.EventHandler(this.ConsultarJugadorToolStripMenuItem_Click);
             // 
             // fixtureToolStripMenuItem
             // 
@@ -69,20 +60,20 @@
             this.fechaToolStripMenuItem,
             this.torneoToolStripMenuItem});
             this.fixtureToolStripMenuItem.Name = "fixtureToolStripMenuItem";
-            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fixtureToolStripMenuItem.Text = "Fixture";
             // 
             // fechaToolStripMenuItem
             // 
             this.fechaToolStripMenuItem.Name = "fechaToolStripMenuItem";
-            this.fechaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.fechaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fechaToolStripMenuItem.Text = "Fecha";
             this.fechaToolStripMenuItem.Click += new System.EventHandler(this.FechaToolStripMenuItem_Click);
             // 
             // torneoToolStripMenuItem
             // 
             this.torneoToolStripMenuItem.Name = "torneoToolStripMenuItem";
-            this.torneoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.torneoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.torneoToolStripMenuItem.Text = "Torneo";
             this.torneoToolStripMenuItem.Click += new System.EventHandler(this.TorneoToolStripMenuItem_Click);
             // 
@@ -108,7 +99,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarJugadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fixtureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem torneoToolStripMenuItem;

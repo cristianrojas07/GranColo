@@ -28,7 +28,10 @@ namespace GranColo.GUILayer
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
