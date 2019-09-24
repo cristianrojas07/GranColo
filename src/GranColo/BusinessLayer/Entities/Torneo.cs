@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer.Entities
 {
-<<<<<<< HEAD
-    class TipoDocumento
-=======
-    public class TipoDocumento
->>>>>>> pruebas
+    public class Torneo
     {
-        public string idTipoDocumento { get; set; }
+        public int idFecha { get; set; }
         public string nombre { get; set; }
+        public string estado { get; set; }
     }
 }

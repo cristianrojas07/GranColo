@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GranColo.GUILayer.Fixture;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,5 +32,21 @@ namespace GranColo.GUILayer
             if (rpta == DialogResult.No)
                 e.Cancel = true;
         }
+
+        
+
+        private void FechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFixture frmFixture = new FrmFixture(1);
+            frmFixture.ShowDialog();
+        }
+
+        private void TorneoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFixture frmFixture = new FrmFixture(2);
+            frmFixture.ShowDialog();
+        }
+
+
     }
 }
