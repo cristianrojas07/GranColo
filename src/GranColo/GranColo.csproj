@@ -57,18 +57,31 @@
     <Compile Include="DataLayer\Dao\FechaDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DBHelper.cs" />
-    <Compile Include="GUILayer\Fixture\FrmABMFixture.cs">
+    <Compile Include="GUILayer\Fixture\FrmABMFecha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Fixture\FrmABMFixture.Designer.cs">
-      <DependentUpon>FrmABMFixture.cs</DependentUpon>
+    <Compile Include="GUILayer\Fixture\FrmABMFecha.Designer.cs">
+      <DependentUpon>FrmABMFecha.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Fixture\FrmFixture.cs">
+    <Compile Include="GUILayer\Fixture\FrmABMTorneo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Fixture\FrmFixture.Designer.cs">
-      <DependentUpon>FrmFixture.cs</DependentUpon>
+    <Compile Include="GUILayer\Fixture\FrmABMTorneo.Designer.cs">
+      <DependentUpon>FrmABMTorneo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Fixture\FrmFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmFecha.Designer.cs">
+      <DependentUpon>FrmFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmTorneo.Designer.cs">
+      <DependentUpon>FrmTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\InterfazFixture.cs" />
     <Compile Include="GUILayer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +96,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUILayer\Fixture\FrmABMFixture.resx">
-      <DependentUpon>FrmABMFixture.cs</DependentUpon>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmABMFecha.resx">
+      <DependentUpon>FrmABMFecha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Fixture\FrmFixture.resx">
-      <DependentUpon>FrmFixture.cs</DependentUpon>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmABMTorneo.resx">
+      <DependentUpon>FrmABMTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmFecha.resx">
+      <DependentUpon>FrmFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmTorneo.resx">
+      <DependentUpon>FrmTorneo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

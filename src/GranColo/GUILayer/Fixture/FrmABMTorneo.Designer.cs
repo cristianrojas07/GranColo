@@ -1,6 +1,6 @@
 ﻿namespace GranColo.GUILayer.Fixture
 {
-    partial class FrmABMFixture
+    partial class FrmABMTorneo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gb_titulo = new System.Windows.Forms.GroupBox();
-            this.btn_salir = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
@@ -38,26 +38,26 @@
             // 
             // gb_titulo
             // 
-            this.gb_titulo.Controls.Add(this.btn_salir);
+            this.gb_titulo.Controls.Add(this.btn_cerrar);
             this.gb_titulo.Controls.Add(this.btn_aceptar);
             this.gb_titulo.Controls.Add(this.txt_nombre);
             this.gb_titulo.Controls.Add(this.lbl_nombre);
-            this.gb_titulo.Location = new System.Drawing.Point(13, 13);
+            this.gb_titulo.Location = new System.Drawing.Point(12, 12);
             this.gb_titulo.Name = "gb_titulo";
             this.gb_titulo.Size = new System.Drawing.Size(405, 106);
-            this.gb_titulo.TabIndex = 0;
+            this.gb_titulo.TabIndex = 2;
             this.gb_titulo.TabStop = false;
-            this.gb_titulo.Text = "groupBox1";
+            this.gb_titulo.Text = "Torneo";
             // 
-            // btn_salir
+            // btn_cerrar
             // 
-            this.btn_salir.Location = new System.Drawing.Point(324, 77);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(75, 23);
-            this.btn_salir.TabIndex = 3;
-            this.btn_salir.Text = "Cerrar";
-            this.btn_salir.UseVisualStyleBackColor = true;
-            this.btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
+            this.btn_cerrar.Location = new System.Drawing.Point(324, 77);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cerrar.TabIndex = 3;
+            this.btn_cerrar.Text = "Cerrar";
+            this.btn_cerrar.UseVisualStyleBackColor = true;
+            this.btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
             // btn_aceptar
             // 
@@ -72,8 +72,9 @@
             // txt_nombre
             // 
             this.txt_nombre.Location = new System.Drawing.Point(60, 32);
+            this.txt_nombre.MaxLength = 95;
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(113, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(186, 20);
             this.txt_nombre.TabIndex = 1;
             // 
             // lbl_nombre
@@ -85,15 +86,17 @@
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre:";
             // 
-            // FrmABMFixture
+            // FrmABMTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 123);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(428, 132);
             this.Controls.Add(this.gb_titulo);
-            this.Name = "FrmABMFixture";
+            this.MaximizeBox = false;
+            this.Name = "FrmABMTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmABMFixture";
+            this.Text = "Gran Colo";
             this.gb_titulo.ResumeLayout(false);
             this.gb_titulo.PerformLayout();
             this.ResumeLayout(false);
@@ -103,9 +106,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gb_titulo;
-        private System.Windows.Forms.Label lbl_nombre;
-        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button btn_aceptar;
-        private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Label lbl_nombre;
     }
 }

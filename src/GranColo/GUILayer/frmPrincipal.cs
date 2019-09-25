@@ -13,8 +13,10 @@ namespace GranColo.GUILayer
 {
     public partial class frmPrincipal : Form
     {
+        InterfazFixture Ifixture;
         public frmPrincipal()
         {
+            
             InitializeComponent();
         }
 
@@ -37,16 +39,23 @@ namespace GranColo.GUILayer
 
         private void FechaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFixture frmFixture = new FrmFixture(1);
-            frmFixture.ShowDialog();
+            Ifixture = new FrmFecha();
+            Ifixture.ShowDialog();
         }
 
         private void TorneoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFixture frmFixture = new FrmFixture(2);
-            frmFixture.ShowDialog();
+            Ifixture = new FrmTorneo();
+            Ifixture.ShowDialog();
         }
 
-
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Seguro que desea salir?", "Confimación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            
+        }
     }
 }

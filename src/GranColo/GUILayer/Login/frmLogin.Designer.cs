@@ -39,6 +39,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(108, 34);
+            this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(171, 20);
             this.txtUsuario.TabIndex = 0;
@@ -46,6 +47,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(108, 75);
+            this.txtContraseña.MaxLength = 50;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(171, 20);
             this.txtContraseña.TabIndex = 1;
@@ -94,6 +96,7 @@
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(333, 171);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);

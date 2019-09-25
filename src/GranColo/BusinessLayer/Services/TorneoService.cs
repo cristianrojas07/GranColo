@@ -27,7 +27,7 @@ namespace GranColo.BusinessLayer.Services
             return torneoDao.modifyTorneo(oTorneo, selected);
         }
 
-        internal bool eliminarFecha()
+        internal bool eliminarTorneo()
         {
             return torneoDao.deleteTorneo(selected);
         }

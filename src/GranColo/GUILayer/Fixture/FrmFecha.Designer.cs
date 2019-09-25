@@ -1,6 +1,6 @@
 ﻿namespace GranColo.GUILayer.Fixture
 {
-    partial class FrmFixture
+    partial class FrmFecha
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gb_titulo = new System.Windows.Forms.GroupBox();
-            this.btn_salir = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.dgw_fecha_torneo = new System.Windows.Forms.DataGridView();
+            this.dgw_fecha = new System.Windows.Forms.DataGridView();
             this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,36 +40,20 @@
             this.cb_todos = new System.Windows.Forms.CheckBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
+            this.gb_titulo = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha)).BeginInit();
             this.gb_titulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha_torneo)).BeginInit();
             this.SuspendLayout();
             // 
-            // gb_titulo
+            // btn_cerrar
             // 
-            this.gb_titulo.Controls.Add(this.btn_salir);
-            this.gb_titulo.Controls.Add(this.btn_eliminar);
-            this.gb_titulo.Controls.Add(this.btn_editar);
-            this.gb_titulo.Controls.Add(this.btn_agregar);
-            this.gb_titulo.Controls.Add(this.dgw_fecha_torneo);
-            this.gb_titulo.Controls.Add(this.btn_consultar);
-            this.gb_titulo.Controls.Add(this.cb_todos);
-            this.gb_titulo.Controls.Add(this.txt_nombre);
-            this.gb_titulo.Controls.Add(this.lbl_nombre);
-            this.gb_titulo.Location = new System.Drawing.Point(12, 12);
-            this.gb_titulo.Name = "gb_titulo";
-            this.gb_titulo.Size = new System.Drawing.Size(382, 448);
-            this.gb_titulo.TabIndex = 0;
-            this.gb_titulo.TabStop = false;
-            // 
-            // btn_salir
-            // 
-            this.btn_salir.Location = new System.Drawing.Point(276, 420);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(75, 23);
-            this.btn_salir.TabIndex = 35;
-            this.btn_salir.Text = "Cerrar";
-            this.btn_salir.UseVisualStyleBackColor = true;
-            this.btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
+            this.btn_cerrar.Location = new System.Drawing.Point(276, 420);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cerrar.TabIndex = 35;
+            this.btn_cerrar.Text = "Cerrar";
+            this.btn_cerrar.UseVisualStyleBackColor = true;
+            this.btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
             // btn_eliminar
             // 
@@ -102,26 +85,27 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.Btn_agregar_Click);
             // 
-            // dgw_fecha_torneo
+            // dgw_fecha
             // 
-            this.dgw_fecha_torneo.AllowUserToAddRows = false;
-            this.dgw_fecha_torneo.AllowUserToDeleteRows = false;
-            this.dgw_fecha_torneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_fecha_torneo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgw_fecha.AllowUserToAddRows = false;
+            this.dgw_fecha.AllowUserToDeleteRows = false;
+            this.dgw_fecha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_fecha.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_col,
             this.nombre_col,
             this.estado_col});
-            this.dgw_fecha_torneo.Location = new System.Drawing.Point(5, 95);
-            this.dgw_fecha_torneo.Name = "dgw_fecha_torneo";
-            this.dgw_fecha_torneo.ReadOnly = true;
-            this.dgw_fecha_torneo.Size = new System.Drawing.Size(347, 319);
-            this.dgw_fecha_torneo.TabIndex = 31;
+            this.dgw_fecha.Location = new System.Drawing.Point(5, 95);
+            this.dgw_fecha.Name = "dgw_fecha";
+            this.dgw_fecha.ReadOnly = true;
+            this.dgw_fecha.Size = new System.Drawing.Size(346, 319);
+            this.dgw_fecha.TabIndex = 31;
             // 
             // id_col
             // 
             this.id_col.HeaderText = "Nro.";
             this.id_col.Name = "id_col";
             this.id_col.ReadOnly = true;
+            this.id_col.Visible = false;
             // 
             // nombre_col
             // 
@@ -134,12 +118,13 @@
             this.estado_col.HeaderText = "Estado";
             this.estado_col.Name = "estado_col";
             this.estado_col.ReadOnly = true;
+            this.estado_col.Visible = false;
             // 
             // btn_consultar
             // 
-            this.btn_consultar.Location = new System.Drawing.Point(190, 25);
+            this.btn_consultar.Location = new System.Drawing.Point(275, 22);
             this.btn_consultar.Name = "btn_consultar";
-            this.btn_consultar.Size = new System.Drawing.Size(75, 47);
+            this.btn_consultar.Size = new System.Drawing.Size(76, 25);
             this.btn_consultar.TabIndex = 30;
             this.btn_consultar.Text = "Buscar";
             this.btn_consultar.UseVisualStyleBackColor = true;
@@ -157,9 +142,10 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(59, 22);
+            this.txt_nombre.Location = new System.Drawing.Point(59, 24);
+            this.txt_nombre.MaxLength = 95;
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(100, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(173, 20);
             this.txt_nombre.TabIndex = 28;
             // 
             // lbl_nombre
@@ -171,36 +157,57 @@
             this.lbl_nombre.TabIndex = 27;
             this.lbl_nombre.Text = "Nombre:";
             // 
-            // FrmFixture
+            // gb_titulo
+            // 
+            this.gb_titulo.Controls.Add(this.btn_cerrar);
+            this.gb_titulo.Controls.Add(this.btn_eliminar);
+            this.gb_titulo.Controls.Add(this.btn_editar);
+            this.gb_titulo.Controls.Add(this.btn_agregar);
+            this.gb_titulo.Controls.Add(this.dgw_fecha);
+            this.gb_titulo.Controls.Add(this.btn_consultar);
+            this.gb_titulo.Controls.Add(this.cb_todos);
+            this.gb_titulo.Controls.Add(this.txt_nombre);
+            this.gb_titulo.Controls.Add(this.lbl_nombre);
+            this.gb_titulo.Location = new System.Drawing.Point(12, 12);
+            this.gb_titulo.Name = "gb_titulo";
+            this.gb_titulo.Size = new System.Drawing.Size(382, 448);
+            this.gb_titulo.TabIndex = 1;
+            this.gb_titulo.TabStop = false;
+            this.gb_titulo.Text = "Fecha";
+            // 
+            // FrmFecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 472);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(403, 473);
             this.Controls.Add(this.gb_titulo);
-            this.Name = "FrmFixture";
+            this.MaximizeBox = false;
+            this.Name = "FrmFecha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmFixture";
+            this.Text = "Gran Colo";
+            this.Load += new System.EventHandler(this.FrmFecha_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha)).EndInit();
             this.gb_titulo.ResumeLayout(false);
             this.gb_titulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha_torneo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gb_titulo;
-        private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.DataGridView dgw_fecha_torneo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_col;
+        private System.Windows.Forms.DataGridView dgw_fecha;
         private System.Windows.Forms.Button btn_consultar;
         private System.Windows.Forms.CheckBox cb_todos;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_nombre;
+        private System.Windows.Forms.GroupBox gb_titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_col;
     }
 }
