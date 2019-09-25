@@ -1,0 +1,8 @@
+Modificar titulos ventanas
+Quitar boton maximizar a ventanas
+Checkbox habilitado por defecto
+Validar varchar(longitud)
+Ocultar columnas de id y estados
+Consulta SQL cambiar en where = por like (para que la busqueda no sea exacta)
+Al agregar un registro, actualizar/mostrar en datagridview
+Ordenar botones, tamaños, alineación, etc.
