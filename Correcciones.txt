@@ -8,5 +8,9 @@ Ocultar columnas de id y estados
 Consulta SQL cambiar en where = por like (para que la busqueda no sea exacta)
 Al agregar un registro, actualizar/mostrar en datagridview
 Ordenar botones, tamaños, alineación, etc.
+Validar no agregar dos registros con campos iguales
+
+
+
 
 * = realizadas
