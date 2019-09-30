@@ -58,7 +58,6 @@
     <Compile Include="DataLayer\Dao\FechaDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DataManager.cs" />
-    <Compile Include="DataLayer\DBHelper.cs" />
     <Compile Include="GUILayer\Fixture\FrmABMFecha.cs">
       <SubType>Form</SubType>
     </Compile>
