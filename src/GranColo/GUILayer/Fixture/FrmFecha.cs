@@ -21,22 +21,18 @@ namespace GranColo.GUILayer.Fixture
             InitializeComponent();
         }
 
+        internal void CargarGrid(IList<Fecha> listTodasFechas)
+        {
+            dgw_fecha.Rows.Clear();
+            foreach (Fecha fecha in listTodasFechas)
+            {
+                dgw_fecha.Rows.Add(new Object[] { fecha.idFecha.ToString(), fecha.nombre, fecha.estado });
+            }
+        }
+
         public void Btn_consultar_Click(object sender, EventArgs e)
         {
-            if (cb_todos.Checked)
-            {
-                IList<Fecha> listTodasFechas = service.obtenerTodasFechas();
-                if (listTodasFechas.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                dgw_fecha.Rows.Clear();
-                foreach (Fecha fecha in listTodasFechas)
-                {
-                    dgw_fecha.Rows.Add(new Object[] { fecha.idFecha.ToString(), fecha.nombre, fecha.estado });
-                }
-            }
-            else
+            if (!cb_todos.Checked)
             {
                 if (validarCampos())
                 {
@@ -47,13 +43,17 @@ namespace GranColo.GUILayer.Fixture
                     {
                         MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    dgw_fecha.Rows.Clear();
-                    foreach (Fecha fecha in list)
-                    {
-                        dgw_fecha.Rows.Add(new Object[] { fecha.idFecha.ToString(), fecha.nombre, fecha.estado });
-                    }
+                    CargarGrid(list);
                 }
-                
+            }
+            else
+            {
+                IList<Fecha> listTodasFechas = service.obtenerTodasFechas();
+                if (listTodasFechas.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                CargarGrid(listTodasFechas);
             }
         }
 
@@ -114,14 +114,8 @@ namespace GranColo.GUILayer.Fixture
         public void Btn_agregar_Click(object sender, EventArgs e)
         {
             FrmABMFecha frmABMFecha = new FrmABMFecha();
+            AddOwnedForm(frmABMFecha);
             frmABMFecha.ShowDialog();
         }
-
-        private void FrmFecha_Load(object sender, EventArgs e)
-        {
-            cb_todos.Checked = true;
-        }
-
-        
     }
 }

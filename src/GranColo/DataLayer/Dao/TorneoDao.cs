@@ -14,10 +14,10 @@ namespace GranColo.DataLayer.Dao
         {
             List<Torneo> list = new List<Torneo>();
             string sql = "SELECT * " +
-                " FROM Torneo t1 " + 
-                " WHERE t1.nombre = '" + oTorneo.nombre + "' " +
-                " AND t1.estado = 'S' ";
-            DataTable rtados = DBHelper.getDBHelper().ConsultaSQL(sql);
+                " FROM Torneo " + 
+                " WHERE nombre LIKE '%" + oTorneo.nombre + "%' " +
+                " AND estado = 'S' ";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach(DataRow row in rtados.Rows)
             {
                 list.Add(ObjectMapping(row));
@@ -30,14 +30,14 @@ namespace GranColo.DataLayer.Dao
             string sql = " UPDATE Torneo " +
                 " SET nombre = '" + oTorneo.nombre + "' " +
                 " WHERE idTorneo = '" + selected + "'";
-            return (DBHelper.getDBHelper().ejecutarSQL(sql) == 1);
+            return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
 
         internal IList<Torneo> getAllTorneos()
         {
             List<Torneo> list = new List<Torneo>();
-            string sql = " SELECT * FROM Torneo ";
-            DataTable rtados = DBHelper.getDBHelper().ConsultaSQL(sql);
+            string sql = " SELECT * FROM Torneo WHERE estado != 'N'";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
                 list.Add(ObjectMapping(row));
@@ -50,7 +50,7 @@ namespace GranColo.DataLayer.Dao
             string sql = " UPDATE Torneo " +
                 " SET estado = 'N' " +
                 " WHERE idTorneo = '" + selected + "'";
-            return (DBHelper.getDBHelper().ejecutarSQL(sql) == 1);
+            return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
 
         public bool insertTorneo(Torneo oTorneo)
@@ -58,7 +58,16 @@ namespace GranColo.DataLayer.Dao
             string sql = " INSERT INTO Torneo ( nombre, estado ) " +
                 " VALUES ('" + oTorneo.nombre + "', 'S' ) ";
 
-            return (DBHelper.getDBHelper().ejecutarSQL(sql) == 1);
+            return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
+        }
+
+        public bool getRepeat(Torneo oTorneo)
+        {
+            string sql = " SELECT * " + 
+                         " FROM Torneo " + 
+                         " WHERE nombre = '" + oTorneo.nombre + "'";
+
+            return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
         }
 
         private Torneo ObjectMapping(DataRow row)

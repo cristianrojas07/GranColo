@@ -36,5 +36,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return torneoDao.getAllTorneos();
         }
+
+        internal bool obtenerRepetidos(Torneo oTorneo)
+        {
+            return torneoDao.getRepeat(oTorneo);
+        }
     }
 }

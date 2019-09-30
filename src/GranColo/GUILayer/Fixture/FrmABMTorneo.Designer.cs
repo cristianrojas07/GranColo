@@ -93,6 +93,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(428, 132);
             this.Controls.Add(this.gb_titulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmABMTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

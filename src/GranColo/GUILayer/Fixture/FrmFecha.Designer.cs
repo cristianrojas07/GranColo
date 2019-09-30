@@ -47,7 +47,7 @@
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(276, 420);
+            this.btn_cerrar.Location = new System.Drawing.Point(277, 421);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(75, 23);
             this.btn_cerrar.TabIndex = 35;
@@ -57,7 +57,7 @@
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.Location = new System.Drawing.Point(169, 419);
+            this.btn_eliminar.Location = new System.Drawing.Point(167, 421);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
             this.btn_eliminar.TabIndex = 34;
@@ -67,7 +67,7 @@
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(87, 420);
+            this.btn_editar.Location = new System.Drawing.Point(86, 421);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(75, 23);
             this.btn_editar.TabIndex = 33;
@@ -112,6 +112,7 @@
             this.nombre_col.HeaderText = "Nombre";
             this.nombre_col.Name = "nombre_col";
             this.nombre_col.ReadOnly = true;
+            this.nombre_col.Width = 303;
             // 
             // estado_col
             // 
@@ -122,7 +123,7 @@
             // 
             // btn_consultar
             // 
-            this.btn_consultar.Location = new System.Drawing.Point(275, 22);
+            this.btn_consultar.Location = new System.Drawing.Point(275, 21);
             this.btn_consultar.Name = "btn_consultar";
             this.btn_consultar.Size = new System.Drawing.Size(76, 25);
             this.btn_consultar.TabIndex = 30;
@@ -133,6 +134,8 @@
             // cb_todos
             // 
             this.cb_todos.AutoSize = true;
+            this.cb_todos.Checked = true;
+            this.cb_todos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_todos.Location = new System.Drawing.Point(9, 55);
             this.cb_todos.Name = "cb_todos";
             this.cb_todos.Size = new System.Drawing.Size(56, 17);
@@ -182,11 +185,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(403, 473);
             this.Controls.Add(this.gb_titulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmFecha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";
-            this.Load += new System.EventHandler(this.FrmFecha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha)).EndInit();
             this.gb_titulo.ResumeLayout(false);
             this.gb_titulo.PerformLayout();

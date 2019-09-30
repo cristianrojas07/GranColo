@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +57,7 @@
     <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
     <Compile Include="DataLayer\Dao\FechaDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
+    <Compile Include="DataLayer\DataManager.cs" />
     <Compile Include="DataLayer\DBHelper.cs" />
     <Compile Include="GUILayer\Fixture\FrmABMFecha.cs">
       <SubType>Form</SubType>

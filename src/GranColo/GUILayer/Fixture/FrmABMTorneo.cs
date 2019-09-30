@@ -47,6 +47,16 @@ namespace GranColo.GUILayer.Fixture
             return true;
         }
 
+        public bool validarRepetidos(Torneo oTorneo)
+        {
+            if (service.obtenerRepetidos(oTorneo))
+            {
+                MessageBox.Show("Ya existe un torneo con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         public void Btn_aceptar_Click(object sender, EventArgs e)
         {
             Torneo oTorneo = new Torneo();
@@ -56,31 +66,40 @@ namespace GranColo.GUILayer.Fixture
                     if (validarCampos())
                     {
                         oTorneo.nombre = txt_nombre.Text;
-                        if (service.insertarTorneo(oTorneo))
+                        if (validarRepetidos(oTorneo))
                         {
-                            MessageBox.Show("Torneo agregado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (service.insertarTorneo(oTorneo))
+                            {
+                                MessageBox.Show("Torneo agregado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FrmTorneo frmTorneo = Owner as FrmTorneo;
+                                frmTorneo.CargarGrid(service.obtenerTodosTorneos());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error, torneo no agregado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("Error, torneo no agregado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        this.Close();
-
                     }
                     break;
                 case FormMode.update:
                     oTorneo.nombre = txt_nombre.Text;
                     if (validarCampos())
                     {
-                        if (service.modificarTorneo(oTorneo))
+                        if (validarRepetidos(oTorneo))
                         {
-                            MessageBox.Show("Torneo modificado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (service.modificarTorneo(oTorneo))
+                            {
+                                MessageBox.Show("Torneo modificado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FrmTorneo frmTorneo = Owner as FrmTorneo;
+                                frmTorneo.CargarGrid(service.obtenerTodosTorneos());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error, torneo no modificado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("Error, torneo no modificado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        this.Close();
                     }
                     break;
                     /*

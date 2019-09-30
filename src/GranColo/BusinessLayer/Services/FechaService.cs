@@ -36,5 +36,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return fechaDao.getAllFechas();
         }
+
+        internal bool obtenerRepetidos(Fecha oFecha)
+        {
+            return fechaDao.getRepeat(oFecha);
+        }
     }
 }

@@ -47,6 +47,16 @@ namespace GranColo.GUILayer.Fixture
             return true;
         }
 
+        public bool validarRepetidos(Fecha oFecha)
+        {
+            if (service.obtenerRepetidos(oFecha))
+            {
+                MessageBox.Show("Ya existe una fecha con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         public void Btn_aceptar_Click(object sender, EventArgs e)
         {
             Fecha oFecha = new Fecha();
@@ -56,31 +66,40 @@ namespace GranColo.GUILayer.Fixture
                     if (validarCampos())
                     {
                         oFecha.nombre = txt_nombre.Text;
-                        if (service.insertarFecha(oFecha))
+                        if (validarRepetidos(oFecha))
                         {
-                            MessageBox.Show("Fecha agregada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (service.insertarFecha(oFecha))
+                            {
+                                MessageBox.Show("Fecha agregada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FrmFecha frmFecha = Owner as FrmFecha;
+                                frmFecha.CargarGrid(service.obtenerTodasFechas());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error, fecha no agregada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("Error, fecha no agregada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        this.Close();
-                        
                     }
                     break;
                 case FormMode.update:
                     oFecha.nombre = txt_nombre.Text;
                     if (validarCampos())
                     {
-                        if (service.modificarFecha(oFecha))
+                        if (validarRepetidos(oFecha))
                         {
-                            MessageBox.Show("Fecha modificada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (service.modificarFecha(oFecha))
+                            {
+                                MessageBox.Show("Fecha modificada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FrmFecha frmFecha = Owner as FrmFecha;
+                                frmFecha.CargarGrid(service.obtenerTodasFechas());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error, fecha no modificada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("Error, fecha no modificada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        this.Close();
                     }
                     break;
                     /*

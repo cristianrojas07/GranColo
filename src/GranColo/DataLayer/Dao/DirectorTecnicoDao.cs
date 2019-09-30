@@ -13,12 +13,12 @@ namespace GranColo.DataLayer.Dao
     {
         internal bool validarDirectorTecnico(DirectorTecnico oDT)
         {
-            string sql = "SELECT t1.idDirectorTecnico " +
-                " FROM DirectorTecnico t1 " + 
-                " WHERE t1.nombreUsuario = '" + oDT.nombreUsuario + "'" +
-                " AND t1.password = '" + oDT.password + "'";
+            string sql = "SELECT idDirectorTecnico " +
+                " FROM DirectorTecnico " + 
+                " WHERE nombreUsuario = '" + oDT.nombreUsuario + "'" +
+                " AND password = '" + oDT.password + "'";
 
-            DataTable rtados  = DBHelper.getDBHelper().ConsultaSQL(sql);
+            DataTable rtados  = DataManager.GetInstance().ConsultaSQL(sql);
             
             return (rtados.Rows.Count>0);
         }

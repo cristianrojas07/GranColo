@@ -18,7 +18,7 @@ namespace GranColo.DataLayer
         private static DBHelper instance = new DBHelper(); 
     
         private DBHelper(){
-            string_conexion = "Data Source=DESKTOP-FMEHQAG;Initial Catalog=db_gran_colo;Integrated Security=True";
+            string_conexion = "Data Source=DESKTOP-P3GHDS3;Initial Catalog=db_gran_colo;Integrated Security=True";
         }
 
         public static DBHelper getDBHelper(){

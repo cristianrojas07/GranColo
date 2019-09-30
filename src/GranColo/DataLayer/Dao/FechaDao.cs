@@ -14,10 +14,10 @@ namespace GranColo.DataLayer.Dao
         {
             List<Fecha> list = new List<Fecha>();
             string sql = "SELECT * " +
-                " FROM Fecha t1 " +
-                " WHERE t1.nombre = '" + fecha.nombre + "' " +
-                " AND t1.estado = 'S' ";
-            DataTable rtados =  DBHelper.getDBHelper().ConsultaSQL(sql);
+                " FROM Fecha " +
+                " WHERE nombre LIKE '%" + fecha.nombre + "%' " +
+                " AND estado = 'S' ";
+            DataTable rtados =  DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
                 list.Add(ObjectMapping(row));
@@ -32,14 +32,14 @@ namespace GranColo.DataLayer.Dao
                 " SET nombre = '" + oFecha.nombre + "' " +
                 " WHERE nroFecha = '" + selected + "'";
 
-            return (DBHelper.getDBHelper().ejecutarSQL(sql) == 1);
+            return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
 
         internal IList<Fecha> getAllFechas()
         {
             List<Fecha> list = new List<Fecha>();
-            string sql = " SELECT * FROM Fecha";
-            DataTable rtados = DBHelper.getDBHelper().ConsultaSQL(sql);
+            string sql = " SELECT * FROM Fecha WHERE estado != 'N'";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
                 list.Add(ObjectMapping(row));
@@ -52,7 +52,7 @@ namespace GranColo.DataLayer.Dao
             string sql = " UPDATE Fecha " +
                 " SET estado = 'N' " + 
                 " WHERE nroFecha = '" + selected + "'";
-            return (DBHelper.getDBHelper().ejecutarSQL(sql) == 1);
+            return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
 
         public bool insertFecha(Fecha oFecha)
@@ -60,8 +60,17 @@ namespace GranColo.DataLayer.Dao
             string sql = " INSERT INTO Fecha ( nombre, estado ) " + 
                 " VALUES ('" + oFecha.nombre + "', 'S' ) ";
 
-            return (DBHelper.getDBHelper().ejecutarSQL(sql) == 1);
+            return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
 
+        }
+
+        public bool getRepeat(Fecha oFecha)
+        {
+            string sql = " SELECT * " +
+                         " FROM Fecha " +
+                         " WHERE nombre = '" + oFecha.nombre + "'";
+
+            return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
         }
 
         private Fecha ObjectMapping(DataRow row)
