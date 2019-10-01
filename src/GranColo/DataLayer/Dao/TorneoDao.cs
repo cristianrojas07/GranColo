@@ -33,10 +33,24 @@ namespace GranColo.DataLayer.Dao
             return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
 
-        internal IList<Torneo> getAllTorneos()
+        public IList<Torneo> getAllTorneos()
         {
             List<Torneo> list = new List<Torneo>();
             string sql = " SELECT * FROM Torneo WHERE estado != 'N'";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+        }
+
+        public IList<Torneo> getTorneosById(int selected)
+        {
+            List<Torneo> list = new List<Torneo>();
+            string sql = "SELECT * " +
+                " FROM Torneo " +
+                " WHERE idTorneo = '" + selected + "' ";
             DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
@@ -65,7 +79,8 @@ namespace GranColo.DataLayer.Dao
         {
             string sql = " SELECT * " + 
                          " FROM Torneo " + 
-                         " WHERE nombre = '" + oTorneo.nombre + "'";
+                         " WHERE nombre = '" + oTorneo.nombre + "' " +
+                         " AND estado = 'S' ";
 
             return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
         }

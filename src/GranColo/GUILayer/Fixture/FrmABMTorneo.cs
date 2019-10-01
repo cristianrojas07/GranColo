@@ -28,13 +28,13 @@ namespace GranColo.GUILayer.Fixture
         {
             insert,
             update
-            //delete
+            
         }
 
-        public void determinarOperacion(FormMode op, Torneo oTorneo)
+        public void determinarOperacion(FormMode op, TorneoService oTorneoService)
         {
             this.formMode = op;
-            this.torneo = oTorneo;
+            this.service  = oTorneoService;
         }
 
         public bool validarCampos()
@@ -91,8 +91,7 @@ namespace GranColo.GUILayer.Fixture
                             if (service.modificarTorneo(oTorneo))
                             {
                                 MessageBox.Show("Torneo modificado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                FrmTorneo frmTorneo = Owner as FrmTorneo;
-                                frmTorneo.CargarGrid(service.obtenerTodosTorneos());
+                                
                             }
                             else
                             {
@@ -118,7 +117,8 @@ namespace GranColo.GUILayer.Fixture
         {
             if (formMode == FormMode.update)
             {
-                txt_nombre.Text = torneo.nombre;
+                IList<Torneo> list = service.obtenerTorneosPorId();
+                txt_nombre.Text = list[0].nombre.ToString();
             }
         }
 

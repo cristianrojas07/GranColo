@@ -68,7 +68,7 @@ namespace GranColo.GUILayer.Fixture
             if (dgw_fecha.CurrentRow != null)
             {
                 FrmABMFecha frmABMFecha = new FrmABMFecha();
-                //Fecha oFecha = (Fecha)dgw_fecha.CurrentRow.DataBoundItem;
+                
                 service.selected = Int32.Parse(dgw_fecha.CurrentRow.Cells["id_col"].Value.ToString());
                 frmABMFecha.determinarOperacion(FrmABMFecha.FormMode.update, service);
                 frmABMFecha.ShowDialog();

@@ -98,6 +98,7 @@
             this.Name = "FrmABMTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";
+            this.Load += new System.EventHandler(this.FrmABMTorneo_Load);
             this.gb_titulo.ResumeLayout(false);
             this.gb_titulo.PerformLayout();
             this.ResumeLayout(false);

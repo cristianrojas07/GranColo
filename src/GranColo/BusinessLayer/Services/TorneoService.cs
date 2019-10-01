@@ -41,5 +41,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return torneoDao.getRepeat(oTorneo);
         }
+
+        public IList<Torneo> obtenerTorneosPorId()
+        {
+            return torneoDao.getTorneosById(selected);
+        }
     }
 }

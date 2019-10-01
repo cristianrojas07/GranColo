@@ -57,14 +57,21 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
+        public void actualizarGrilla()
+        {
+            IList<Torneo> listTodosTorneos = service.obtenerTodosTorneos();
+            CargarGrid(listTodosTorneos);
+        }
+
         public void Btn_editar_Click(object sender, EventArgs e)
         {
             if (dgw_torneo.CurrentRow != null)
             {
                 FrmABMTorneo frmABMTorneo = new FrmABMTorneo();
-                Torneo oTorneo = (Torneo)dgw_torneo.CurrentRow.DataBoundItem;
-                frmABMTorneo.determinarOperacion(FrmABMTorneo.FormMode.update, oTorneo);
+                service.selected = Int32.Parse(dgw_torneo.CurrentRow.Cells["id_col"].Value.ToString());
+                frmABMTorneo.determinarOperacion(FrmABMTorneo.FormMode.update, service);
                 frmABMTorneo.ShowDialog();
+                actualizarGrilla();
             }
             else
             {
@@ -82,6 +89,7 @@ namespace GranColo.GUILayer.Fixture
                     if (service.eliminarTorneo())
                     {
                         MessageBox.Show("Torneo eliminado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        actualizarGrilla();
                     }
                     else
                     {

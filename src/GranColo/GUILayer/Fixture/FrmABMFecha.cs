@@ -28,7 +28,7 @@ namespace GranColo.GUILayer.Fixture
         {
             insert,
             update
-            //delete
+            
         }
 
         public void determinarOperacion(FormMode op, FechaService oFechaService)
@@ -91,8 +91,7 @@ namespace GranColo.GUILayer.Fixture
                             if (service.modificarFecha(oFecha))
                             {
                                 MessageBox.Show("Fecha modificada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                /*FrmFecha frmFecha = Owner as FrmFecha;
-                                frmFecha.CargarGrid(service.obtenerTodasFechas());*/
+                                
                             }
                             else
                             {
@@ -118,7 +117,7 @@ namespace GranColo.GUILayer.Fixture
         {
             if (formMode == FormMode.update)
             {
-                //txt_nombre.Text = fecha.nombre;
+                
                 IList<Fecha> list =  service.obtenerFechasPorId();
                 txt_nombre.Text = list[0].nombre.ToString();
             }
