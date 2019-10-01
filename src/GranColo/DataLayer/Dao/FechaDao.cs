@@ -26,6 +26,21 @@ namespace GranColo.DataLayer.Dao
 
         }
 
+        public IList<Fecha> getFechasById(int selected)
+        {
+            List<Fecha> list = new List<Fecha>();
+            string sql = "SELECT * " +
+                " FROM Fecha " +
+                " WHERE nroFecha = '" + selected + "' " ;
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+
+        }
+
         public bool modifyFecha(Fecha oFecha, int selected)
         {
             string sql = " UPDATE Fecha " +
@@ -68,7 +83,8 @@ namespace GranColo.DataLayer.Dao
         {
             string sql = " SELECT * " +
                          " FROM Fecha " +
-                         " WHERE nombre = '" + oFecha.nombre + "'";
+                         " WHERE nombre = '" + oFecha.nombre + "' " +
+                         " AND estado = 'S' ";
 
             return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
         }

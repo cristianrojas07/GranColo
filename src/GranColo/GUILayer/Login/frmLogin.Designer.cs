@@ -109,7 +109,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Inicio de Sesión";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosed);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

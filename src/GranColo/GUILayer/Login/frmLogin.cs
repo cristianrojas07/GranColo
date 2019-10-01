@@ -14,6 +14,8 @@ namespace GranColo.GUILayer
 {
     public partial class frmLogin : Form
     {
+        public bool bandera { get; set; }
+
         DirectorTecnicoService service;
         public frmLogin()
         {
@@ -23,12 +25,13 @@ namespace GranColo.GUILayer
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            bandera = true;
             this.CenterToParent();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 Environment.Exit(0);
             }
@@ -36,6 +39,7 @@ namespace GranColo.GUILayer
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
+            
             //Validamos que se haya ingresado un usuario.
             if ((txtUsuario.Text == ""))
             {
@@ -56,6 +60,7 @@ namespace GranColo.GUILayer
             if (service.validarDirectorTecnico(oDT))
             {
                 MessageBox.Show("Bienvenido a gran colo !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bandera = false;
                 this.Close();
             } else
             {
@@ -63,12 +68,28 @@ namespace GranColo.GUILayer
             }
         }
 
-        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        
+
+        private void FrmLogin_FormClosed(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (bandera)
             {
-                Environment.Exit(0);
+                if (MessageBox.Show("¿Seguro que desea salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
             }
+            
+            
+                /*DialogResult rpta;
+                rpta = MessageBox.Show("¿Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rpta == DialogResult.No)
+                    e.Cancel = true;*/
+            
+            
+
         }
     }
+
+    
 }

@@ -17,6 +17,11 @@ namespace GranColo.BusinessLayer.Services
             return fechaDao.getFechasByNombre(fecha);
         }
 
+        public IList<Fecha> obtenerFechasPorId()
+        {
+            return fechaDao.getFechasById(selected);
+        }
+
         public bool insertarFecha(Fecha oFecha)
         {
             return fechaDao.insertFecha(oFecha);

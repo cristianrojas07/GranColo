@@ -57,14 +57,22 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
+        public void actualizarGrilla()
+        {
+            IList<Fecha> listTodasFechas = service.obtenerTodasFechas();
+            CargarGrid(listTodasFechas);
+        }
+
         public void Btn_editar_Click(object sender, EventArgs e)
         {
             if (dgw_fecha.CurrentRow != null)
             {
                 FrmABMFecha frmABMFecha = new FrmABMFecha();
-                Fecha oFecha = (Fecha)dgw_fecha.CurrentRow.DataBoundItem;
-                frmABMFecha.determinarOperacion(FrmABMFecha.FormMode.update, oFecha);
+                //Fecha oFecha = (Fecha)dgw_fecha.CurrentRow.DataBoundItem;
+                service.selected = Int32.Parse(dgw_fecha.CurrentRow.Cells["id_col"].Value.ToString());
+                frmABMFecha.determinarOperacion(FrmABMFecha.FormMode.update, service);
                 frmABMFecha.ShowDialog();
+                actualizarGrilla();
             }
             else
             {
@@ -82,6 +90,7 @@ namespace GranColo.GUILayer.Fixture
                     if (service.eliminarFecha())
                     {
                         MessageBox.Show("Fecha elminada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        actualizarGrilla();
                     }
                     else
                     {
