@@ -57,5 +57,11 @@ namespace GranColo.GUILayer
             }
             
         }
+
+        private void AsignarFechasATorneosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAsignarFecha frmAsignarFecha = new FrmAsignarFecha();
+            frmAsignarFecha.ShowDialog();
+        }
     }
 }

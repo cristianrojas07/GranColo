@@ -34,6 +34,7 @@
             this.fechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarFechasATorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,22 +61,23 @@
             // 
             this.fixtureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fechaToolStripMenuItem,
-            this.torneoToolStripMenuItem});
+            this.torneoToolStripMenuItem,
+            this.asignarFechasATorneosToolStripMenuItem});
             this.fixtureToolStripMenuItem.Name = "fixtureToolStripMenuItem";
-            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fixtureToolStripMenuItem.Text = "Fixture";
             // 
             // fechaToolStripMenuItem
             // 
             this.fechaToolStripMenuItem.Name = "fechaToolStripMenuItem";
-            this.fechaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.fechaToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.fechaToolStripMenuItem.Text = "Fecha";
             this.fechaToolStripMenuItem.Click += new System.EventHandler(this.FechaToolStripMenuItem_Click);
             // 
             // torneoToolStripMenuItem
             // 
             this.torneoToolStripMenuItem.Name = "torneoToolStripMenuItem";
-            this.torneoToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.torneoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.torneoToolStripMenuItem.Text = "Torneo";
             this.torneoToolStripMenuItem.Click += new System.EventHandler(this.TorneoToolStripMenuItem_Click);
             // 
@@ -85,6 +87,13 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
+            // 
+            // asignarFechasATorneosToolStripMenuItem
+            // 
+            this.asignarFechasATorneosToolStripMenuItem.Name = "asignarFechasATorneosToolStripMenuItem";
+            this.asignarFechasATorneosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.asignarFechasATorneosToolStripMenuItem.Text = "Asignar Fechas a Torneos";
+            this.asignarFechasATorneosToolStripMenuItem.Click += new System.EventHandler(this.AsignarFechasATorneosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -113,5 +122,6 @@
         private System.Windows.Forms.ToolStripMenuItem fechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem torneoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarFechasATorneosToolStripMenuItem;
     }
 }

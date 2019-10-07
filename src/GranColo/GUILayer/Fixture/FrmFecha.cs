@@ -26,7 +26,7 @@ namespace GranColo.GUILayer.Fixture
             dgw_fecha.Rows.Clear();
             foreach (Fecha fecha in listTodasFechas)
             {
-                dgw_fecha.Rows.Add(new Object[] { fecha.idFecha.ToString(), fecha.nombre, fecha.estado });
+                dgw_fecha.Rows.Add(new Object[] { fecha.IdFecha.ToString(), fecha.Nombre, fecha.Estado });
             }
         }
 
@@ -37,7 +37,7 @@ namespace GranColo.GUILayer.Fixture
                 if (validarCampos())
                 {
                     Fecha oFecha = new Fecha();
-                    oFecha.nombre = txt_nombre.Text;
+                    oFecha.Nombre = txt_nombre.Text;
                     IList<Fecha> list = service.obtenerFechasPorNombre(oFecha);
                     if (list.Count == 0)
                     {

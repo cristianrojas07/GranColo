@@ -65,7 +65,7 @@ namespace GranColo.GUILayer.Fixture
                 case FormMode.insert:
                     if (validarCampos())
                     {
-                        oFecha.nombre = txt_nombre.Text;
+                        oFecha.Nombre = txt_nombre.Text;
                         if (validarRepetidos(oFecha))
                         {
                             if (service.insertarFecha(oFecha))
@@ -83,7 +83,7 @@ namespace GranColo.GUILayer.Fixture
                     }
                     break;
                 case FormMode.update:
-                    oFecha.nombre = txt_nombre.Text;
+                    oFecha.Nombre = txt_nombre.Text;
                     if (validarCampos())
                     {
                         if (validarRepetidos(oFecha))
@@ -119,7 +119,7 @@ namespace GranColo.GUILayer.Fixture
             {
                 
                 IList<Fecha> list =  service.obtenerFechasPorId();
-                txt_nombre.Text = list[0].nombre.ToString();
+                txt_nombre.Text = list[0].Nombre.ToString();
             }
         }
     } 

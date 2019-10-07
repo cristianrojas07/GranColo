@@ -15,8 +15,8 @@ namespace GranColo.DataLayer.Dao
         {
             string sql = "SELECT idDirectorTecnico " +
                 " FROM DirectorTecnico " + 
-                " WHERE nombreUsuario = '" + oDT.nombreUsuario + "'" +
-                " AND password = '" + oDT.password + "'";
+                " WHERE nombreUsuario = '" + oDT.NombreUsuario + "'" +
+                " AND password = '" + oDT.Password + "'";
 
             DataTable rtados  = DataManager.GetInstance().ConsultaSQL(sql);
             
@@ -27,15 +27,15 @@ namespace GranColo.DataLayer.Dao
         private DirectorTecnico ObjectMapping(DataRow row)
         {
             DirectorTecnico oDT = new DirectorTecnico();
-            oDT.idDirectorTecnico = Int32.Parse(row[0].ToString());
-            oDT.nombre = row[1].ToString();
-            oDT.apellido = row[2].ToString();
-            oDT.nroDoc = Int32.Parse(row[3].ToString());
-            oDT.tipoDoc = Int32.Parse(row[4].ToString());
-            oDT.nombreUsuario = row[5].ToString();
-            oDT.password = row[6].ToString();
-            oDT.email = row[7].ToString();
-            oDT.idClubHincha = Int32.Parse(row[8].ToString());
+            oDT.IdDirectorTecnico = Int32.Parse(row[0].ToString());
+            oDT.Nombre = row[1].ToString();
+            oDT.Apellido = row[2].ToString();
+            oDT.NroDoc = Int32.Parse(row[3].ToString());
+            oDT.TipoDoc = Int32.Parse(row[4].ToString());
+            oDT.NombreUsuario = row[5].ToString();
+            oDT.Password = row[6].ToString();
+            oDT.Email = row[7].ToString();
+            oDT.IdClubHincha = Int32.Parse(row[8].ToString());
 
             return oDT;
         }

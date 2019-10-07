@@ -26,7 +26,7 @@ namespace GranColo.GUILayer.Fixture
             dgw_torneo.Rows.Clear();
             foreach (Torneo torneo in listTodosTorneos)
             {
-                dgw_torneo.Rows.Add(new Object[] { torneo.idFecha.ToString(), torneo.nombre, torneo.estado });
+                dgw_torneo.Rows.Add(new Object[] { torneo.IdTorneo.ToString(), torneo.Nombre, torneo.Estado });
             }
         }
 
@@ -37,7 +37,7 @@ namespace GranColo.GUILayer.Fixture
                 if (validarCampos())
                 {
                     Torneo oTorneo = new Torneo();
-                    oTorneo.nombre = txt_nombre.Text;
+                    oTorneo.Nombre = txt_nombre.Text;
                     IList<Torneo> list = service.obtenerTorneosPorNombre(oTorneo);
                     if (list.Count == 0)
                     {

@@ -55,8 +55,8 @@ namespace GranColo.GUILayer
             }
 
             DirectorTecnico oDT = new DirectorTecnico();
-            oDT.nombreUsuario = txtUsuario.Text;
-            oDT.password = txtContraseña.Text;
+            oDT.NombreUsuario = txtUsuario.Text;
+            oDT.Password = txtContraseña.Text;
             if (service.validarDirectorTecnico(oDT))
             {
                 MessageBox.Show("Bienvenido a gran colo !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);

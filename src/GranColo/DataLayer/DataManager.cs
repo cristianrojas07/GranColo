@@ -165,6 +165,32 @@ public class DataManager
         return rtdo;
     }
 
-    
+    /// Resumen:
+    ///     Se utiliza para sentencias SQL del tipo “Select”. Recibe por valor una sentencia sql como string
+    /// Devuelve:
+    ///      un valor entero
+    /// Excepciones:
+    ///      System.Data.SqlClient.SqlException:
+    ///          El error de conexión se produce:
+    ///              a) durante la apertura de la conexión
+    ///              b) durante la ejecución del comando.
+    public object ConsultaSQLScalar(string strSql)
+    {
+        SqlCommand cmd = new SqlCommand();
+        try
+        {
+            cmd.Connection = dbConnection;
+            cmd.Transaction = dbTransaction;
+            cmd.CommandType = CommandType.Text;
+            // Establece la instrucción a ejecutar
+            cmd.CommandText = strSql;
+            return cmd.ExecuteScalar();
+        }
+        catch (SqlException ex)
+        {
+            throw (ex);
+        }
+    }
+
 
 }

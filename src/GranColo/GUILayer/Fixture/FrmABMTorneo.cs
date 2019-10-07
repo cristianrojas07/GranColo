@@ -65,7 +65,7 @@ namespace GranColo.GUILayer.Fixture
                 case FormMode.insert:
                     if (validarCampos())
                     {
-                        oTorneo.nombre = txt_nombre.Text;
+                        oTorneo.Nombre = txt_nombre.Text;
                         if (validarRepetidos(oTorneo))
                         {
                             if (service.insertarTorneo(oTorneo))
@@ -83,7 +83,7 @@ namespace GranColo.GUILayer.Fixture
                     }
                     break;
                 case FormMode.update:
-                    oTorneo.nombre = txt_nombre.Text;
+                    oTorneo.Nombre = txt_nombre.Text;
                     if (validarCampos())
                     {
                         if (validarRepetidos(oTorneo))
@@ -118,7 +118,7 @@ namespace GranColo.GUILayer.Fixture
             if (formMode == FormMode.update)
             {
                 IList<Torneo> list = service.obtenerTorneosPorId();
-                txt_nombre.Text = list[0].nombre.ToString();
+                txt_nombre.Text = list[0].Nombre.ToString();
             }
         }
 

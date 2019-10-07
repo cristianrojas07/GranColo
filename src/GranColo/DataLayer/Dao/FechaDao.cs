@@ -15,7 +15,7 @@ namespace GranColo.DataLayer.Dao
             List<Fecha> list = new List<Fecha>();
             string sql = "SELECT * " +
                 " FROM Fecha " +
-                " WHERE nombre LIKE '%" + fecha.nombre + "%' " +
+                " WHERE nombre LIKE '%" + fecha.Nombre + "%' " +
                 " AND estado = 'S' ";
             DataTable rtados =  DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
@@ -44,7 +44,7 @@ namespace GranColo.DataLayer.Dao
         public bool modifyFecha(Fecha oFecha, int selected)
         {
             string sql = " UPDATE Fecha " +
-                " SET nombre = '" + oFecha.nombre + "' " +
+                " SET nombre = '" + oFecha.Nombre + "' " +
                 " WHERE nroFecha = '" + selected + "'";
 
             return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
@@ -73,7 +73,7 @@ namespace GranColo.DataLayer.Dao
         public bool insertFecha(Fecha oFecha)
         {
             string sql = " INSERT INTO Fecha ( nombre, estado ) " + 
-                " VALUES ('" + oFecha.nombre + "', 'S' ) ";
+                " VALUES ('" + oFecha.Nombre + "', 'S' ) ";
 
             return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
 
@@ -83,7 +83,7 @@ namespace GranColo.DataLayer.Dao
         {
             string sql = " SELECT * " +
                          " FROM Fecha " +
-                         " WHERE nombre = '" + oFecha.nombre + "' " +
+                         " WHERE nombre = '" + oFecha.Nombre + "' " +
                          " AND estado = 'S' ";
 
             return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
@@ -92,9 +92,9 @@ namespace GranColo.DataLayer.Dao
         private Fecha ObjectMapping(DataRow row)
         {
             Fecha fecha = new Fecha();
-            fecha.idFecha = Int32.Parse(row[0].ToString());
-            fecha.nombre = row[1].ToString();
-            fecha.estado = row[2].ToString();
+            fecha.IdFecha = Int32.Parse(row[0].ToString());
+            fecha.Nombre = row[1].ToString();
+            fecha.Estado = row[2].ToString();
 
             return fecha;
         }

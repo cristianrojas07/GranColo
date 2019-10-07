@@ -49,15 +49,24 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\Entities\DirectorTecnico.cs" />
     <Compile Include="BusinessLayer\Entities\Fecha.cs" />
+    <Compile Include="BusinessLayer\Entities\FechaXTorneo.cs" />
     <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
     <Compile Include="BusinessLayer\Entities\Torneo.cs" />
     <Compile Include="BusinessLayer\Services\DirectorTecnicoService.cs" />
     <Compile Include="BusinessLayer\Services\FechaService.cs" />
+    <Compile Include="BusinessLayer\Services\FechaXTorneoService.cs" />
     <Compile Include="BusinessLayer\Services\TorneoService.cs" />
     <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
     <Compile Include="DataLayer\Dao\FechaDao.cs" />
+    <Compile Include="DataLayer\Dao\FechaXTorneoDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DataManager.cs" />
+    <Compile Include="GUILayer\Fixture\FrmAsignarFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmAsignarFecha.Designer.cs">
+      <DependentUpon>FrmAsignarFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Fixture\FrmABMFecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmABMTorneo.resx">
       <DependentUpon>FrmABMTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmAsignarFecha.resx">
+      <DependentUpon>FrmAsignarFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmFecha.resx">
       <DependentUpon>FrmFecha.cs</DependentUpon>

@@ -15,7 +15,7 @@ namespace GranColo.DataLayer.Dao
             List<Torneo> list = new List<Torneo>();
             string sql = "SELECT * " +
                 " FROM Torneo " + 
-                " WHERE nombre LIKE '%" + oTorneo.nombre + "%' " +
+                " WHERE nombre LIKE '%" + oTorneo.Nombre + "%' " +
                 " AND estado = 'S' ";
             DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach(DataRow row in rtados.Rows)
@@ -28,7 +28,7 @@ namespace GranColo.DataLayer.Dao
         public bool modifyTorneo(Torneo oTorneo, int selected)
         {
             string sql = " UPDATE Torneo " +
-                " SET nombre = '" + oTorneo.nombre + "' " +
+                " SET nombre = '" + oTorneo.Nombre + "' " +
                 " WHERE idTorneo = '" + selected + "'";
             return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
@@ -70,7 +70,7 @@ namespace GranColo.DataLayer.Dao
         public bool insertTorneo(Torneo oTorneo)
         {
             string sql = " INSERT INTO Torneo ( nombre, estado ) " +
-                " VALUES ('" + oTorneo.nombre + "', 'S' ) ";
+                " VALUES ('" + oTorneo.Nombre + "', 'S' ) ";
 
             return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
@@ -79,7 +79,7 @@ namespace GranColo.DataLayer.Dao
         {
             string sql = " SELECT * " + 
                          " FROM Torneo " + 
-                         " WHERE nombre = '" + oTorneo.nombre + "' " +
+                         " WHERE nombre = '" + oTorneo.Nombre + "' " +
                          " AND estado = 'S' ";
 
             return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
@@ -88,9 +88,9 @@ namespace GranColo.DataLayer.Dao
         private Torneo ObjectMapping(DataRow row)
         {
             Torneo torneo = new Torneo();
-            torneo.idFecha = Int32.Parse(row[0].ToString());
-            torneo.nombre = row[1].ToString();
-            torneo.estado = row[2].ToString();
+            torneo.IdTorneo = Int32.Parse(row[0].ToString());
+            torneo.Nombre = row[1].ToString();
+            torneo.Estado = row[2].ToString();
 
             return torneo;
         }

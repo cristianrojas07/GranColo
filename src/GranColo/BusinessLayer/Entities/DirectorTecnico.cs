@@ -1,9 +1,4 @@
 ﻿using GranColo.BusinessLayer.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer
 {
@@ -11,15 +6,15 @@ namespace GranColo.BusinessLayer
     {
         private TipoDocumento tipoDocumento;
 
-        public int idDirectorTecnico { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public int nroDoc { get; set; }
-        public int tipoDoc { get; set; }
-        public string nombreUsuario { get; set; } 
-        public string password { get; set; }
-        public string email { get; set; }
-        public int idClubHincha { get; set; }
+        public int IdDirectorTecnico { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int NroDoc { get; set; }
+        public int TipoDoc { get; set; }
+        public string NombreUsuario { get; set; } 
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public int IdClubHincha { get; set; }
 
         public DirectorTecnico()
         {
