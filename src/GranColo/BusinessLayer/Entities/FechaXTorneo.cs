@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer.Entities
 {
-    class FechaXTorneo
+    public class FechaXTorneo
     {
         public Fecha Fecha { get; set; }
         public Torneo Torneo { get; set; }

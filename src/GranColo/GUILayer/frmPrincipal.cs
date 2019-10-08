@@ -63,5 +63,11 @@ namespace GranColo.GUILayer
             FrmAsignarFecha frmAsignarFecha = new FrmAsignarFecha();
             frmAsignarFecha.ShowDialog();
         }
+
+        private void ConsultarFechasAsignadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarAsignarFecha frmAMBAsignarFecha = new FrmConsultarAsignarFecha();
+            frmAMBAsignarFecha.ShowDialog();
+        }
     }
 }

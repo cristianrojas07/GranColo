@@ -61,6 +61,12 @@
     <Compile Include="DataLayer\Dao\FechaXTorneoDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DataManager.cs" />
+    <Compile Include="GUILayer\Fixture\FrmConsultarAsignarFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmConsultarAsignarFecha.Designer.cs">
+      <DependentUpon>FrmConsultarAsignarFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Fixture\FrmAsignarFecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="GUILayer\Fixture\FrmABMTorneo.Designer.cs">
       <DependentUpon>FrmABMTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmEditarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Fixture\FrmEditarAsignacion.Designer.cs">
+      <DependentUpon>FrmEditarAsignacion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Fixture\FrmFecha.cs">
       <SubType>Form</SubType>
@@ -112,8 +124,14 @@
     <EmbeddedResource Include="GUILayer\Fixture\FrmABMTorneo.resx">
       <DependentUpon>FrmABMTorneo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmConsultarAsignarFecha.resx">
+      <DependentUpon>FrmConsultarAsignarFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmAsignarFecha.resx">
       <DependentUpon>FrmAsignarFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Fixture\FrmEditarAsignacion.resx">
+      <DependentUpon>FrmEditarAsignacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmFecha.resx">
       <DependentUpon>FrmFecha.cs</DependentUpon>

@@ -54,6 +54,7 @@ namespace GranColo.GUILayer.Fixture
         {
             btnAgregar.Enabled = false;
             btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
             cboTorneo.SelectedIndex = -1;
             cboFecha.SelectedIndex = -1;
             dgvDetalle.Rows.Clear();
@@ -73,8 +74,9 @@ namespace GranColo.GUILayer.Fixture
                 Fecha = fecha,
                 Torneo = torneo,
                 Estado = "S"
-            }); ;
+            });
             btnEliminar.Enabled = (dgvDetalle.Rows.Count > 0);
+            btnGuardar.Enabled = (dgvDetalle.Rows.Count > 0);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -119,5 +121,7 @@ namespace GranColo.GUILayer.Fixture
                 listaFechaXTorneo.Remove(itemSeleccionado);
             }
         }
+
+        
     }
 }

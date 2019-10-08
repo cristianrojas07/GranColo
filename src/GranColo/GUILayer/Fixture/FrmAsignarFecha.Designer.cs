@@ -33,14 +33,14 @@
             this.cboTorneo = new System.Windows.Forms.ComboBox();
             this.cboFecha = new System.Windows.Forms.ComboBox();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
+            this.IdTorneo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.IdTorneo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,9 +97,36 @@
             this.dgvDetalle.Size = new System.Drawing.Size(375, 246);
             this.dgvDetalle.TabIndex = 4;
             // 
+            // IdTorneo
+            // 
+            this.IdTorneo.DataPropertyName = "TorneoNombre";
+            this.IdTorneo.Frozen = true;
+            this.IdTorneo.HeaderText = "Torneo";
+            this.IdTorneo.Name = "IdTorneo";
+            this.IdTorneo.ReadOnly = true;
+            this.IdTorneo.Width = 166;
+            // 
+            // IdFecha
+            // 
+            this.IdFecha.DataPropertyName = "FechaNombre";
+            this.IdFecha.Frozen = true;
+            this.IdFecha.HeaderText = "Fecha";
+            this.IdFecha.Name = "IdFecha";
+            this.IdFecha.ReadOnly = true;
+            this.IdFecha.Width = 166;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            this.Estado.Width = 72;
+            // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(234, 54);
+            this.btnAgregar.Location = new System.Drawing.Point(234, 15);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 5;
@@ -109,7 +136,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(315, 54);
+            this.btnEliminar.Location = new System.Drawing.Point(315, 15);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 6;
@@ -147,33 +174,6 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // IdTorneo
-            // 
-            this.IdTorneo.DataPropertyName = "TorneoNombre";
-            this.IdTorneo.Frozen = true;
-            this.IdTorneo.HeaderText = "Torneo";
-            this.IdTorneo.Name = "IdTorneo";
-            this.IdTorneo.ReadOnly = true;
-            this.IdTorneo.Width = 166;
-            // 
-            // IdFecha
-            // 
-            this.IdFecha.DataPropertyName = "FechaNombre";
-            this.IdFecha.Frozen = true;
-            this.IdFecha.HeaderText = "Fecha";
-            this.IdFecha.Name = "IdFecha";
-            this.IdFecha.ReadOnly = true;
-            this.IdFecha.Width = 166;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
-            this.Estado.Width = 72;
-            // 
             // FrmAsignarFecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +190,7 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTorneo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmAsignarFecha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";

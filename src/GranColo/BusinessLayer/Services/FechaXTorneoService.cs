@@ -12,9 +12,29 @@ namespace GranColo.BusinessLayer.Services
     {
         FechaXTorneoDao FechaXTorneoDao = new FechaXTorneoDao();
 
-        internal bool Crear(IList<FechaXTorneo> listaFechaXTorneo)
+        public bool Crear(IList<FechaXTorneo> listaFechaXTorneo)
         {
             return FechaXTorneoDao.Create(listaFechaXTorneo);
+        }
+
+        public IList<FechaXTorneo> obtenerTodos()
+        {
+            return FechaXTorneoDao.getAll();
+        }
+
+        public IList<FechaXTorneo> obtenerRegistrosConFiltros(Torneo torneo)
+        {
+            return FechaXTorneoDao.getRegistrosConFiltros(torneo);
+        }
+
+        public bool eliminar(FechaXTorneo fechaXTorneo)
+        {
+           return FechaXTorneoDao.remove(fechaXTorneo);
+        }
+
+        public bool modificar(FechaXTorneo fechaXTorneo, int fechaSeleccionada, int torneoSeleccionado)
+        {
+            return FechaXTorneoDao.modify(fechaXTorneo, fechaSeleccionada, torneoSeleccionado);
         }
     }
 }
