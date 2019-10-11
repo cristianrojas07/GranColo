@@ -67,8 +67,7 @@ namespace GranColo.DataLayer.Dao
         public bool remove(FechaXTorneo fechaXTorneo)
         {
             
-            string sql = "UPDATE FechaXTorneo " +
-                " SET estado='N' " +
+            string sql = "DELETE FechaXTorneo " +
                 " WHERE nroFecha=@nroFecha AND idTorneo=@idTorneo ";
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("idTorneo", fechaXTorneo.Torneo.IdTorneo);
