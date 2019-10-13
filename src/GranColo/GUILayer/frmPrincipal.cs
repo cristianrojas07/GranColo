@@ -51,10 +51,7 @@ namespace GranColo.GUILayer
 
         private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Seguro que desea salir?", "Confimación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Environment.Exit(0);
-            }
+            
             
         }
 
@@ -68,6 +65,24 @@ namespace GranColo.GUILayer
         {
             FrmConsultarAsignarFecha frmAMBAsignarFecha = new FrmConsultarAsignarFecha();
             frmAMBAsignarFecha.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
