@@ -35,8 +35,8 @@
             this.torneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarFechasATorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarFechasAsignadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +57,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(377, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -79,7 +79,7 @@
             this.asignarFechasATorneosToolStripMenuItem,
             this.consultarFechasAsignadasToolStripMenuItem});
             this.fixtureToolStripMenuItem.Name = "fixtureToolStripMenuItem";
-            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.fixtureToolStripMenuItem.Text = "Fixture";
             // 
             // fechaToolStripMenuItem
@@ -110,19 +110,19 @@
             this.consultarFechasAsignadasToolStripMenuItem.Text = "Consultar fechas asignadas";
             this.consultarFechasAsignadasToolStripMenuItem.Click += new System.EventHandler(this.ConsultarFechasAsignadasToolStripMenuItem_Click);
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.salirToolStripMenuItem.Text = "Transacciones";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
-            // 
             // salirToolStripMenuItem1
             // 
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
             this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.salirToolStripMenuItem.Text = "Transacciones";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -151,8 +151,8 @@
             // aCercaDeGranColoToolStripMenuItem
             // 
             this.aCercaDeGranColoToolStripMenuItem.Name = "aCercaDeGranColoToolStripMenuItem";
-            this.aCercaDeGranColoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.aCercaDeGranColoToolStripMenuItem.Text = "A cerca de Gran Colo";
+            this.aCercaDeGranColoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.aCercaDeGranColoToolStripMenuItem.Text = "Acerca de Gran Colo";
             // 
             // soporteTecnicoToolStripMenuItem
             // 
@@ -177,14 +177,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::GranColo.Properties.Resources.grancolo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(377, 245);
+            this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.menuStrip1);
+            this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmPrincipal";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ShowIcon = false;
