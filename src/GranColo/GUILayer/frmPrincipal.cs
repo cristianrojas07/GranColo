@@ -1,4 +1,5 @@
-﻿using GranColo.GUILayer.Fixture;
+﻿using GranColo.GUILayer.Equipos.Jugadores;
+using GranColo.GUILayer.Fixture;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,6 +84,12 @@ namespace GranColo.GUILayer
             {
                 Environment.Exit(0);
             }
+        }
+
+        private void añadirJugadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmABMJugador frmJugador = new FrmABMJugador();
+            frmJugador.ShowDialog();
         }
     }
 }

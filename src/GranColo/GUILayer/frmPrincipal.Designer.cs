@@ -44,6 +44,9 @@
             this.soporteTecnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.añadirJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +55,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.salirToolStripMenuItem,
+            this.equiposToolStripMenuItem,
             this.reportesToolStripMenuItem,
             this.estadisticasToolStripMenuItem,
             this.ayudaToolStripMenuItem});
@@ -79,7 +83,7 @@
             this.asignarFechasATorneosToolStripMenuItem,
             this.consultarFechasAsignadasToolStripMenuItem});
             this.fixtureToolStripMenuItem.Name = "fixtureToolStripMenuItem";
-            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.fixtureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fixtureToolStripMenuItem.Text = "Fixture";
             // 
             // fechaToolStripMenuItem
@@ -113,7 +117,7 @@
             // salirToolStripMenuItem1
             // 
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
             this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
@@ -157,20 +161,43 @@
             // soporteTecnicoToolStripMenuItem
             // 
             this.soporteTecnicoToolStripMenuItem.Name = "soporteTecnicoToolStripMenuItem";
-            this.soporteTecnicoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.soporteTecnicoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.soporteTecnicoToolStripMenuItem.Text = "Soporte Tecnico";
             // 
             // registrarProductoToolStripMenuItem
             // 
             this.registrarProductoToolStripMenuItem.Name = "registrarProductoToolStripMenuItem";
-            this.registrarProductoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.registrarProductoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.registrarProductoToolStripMenuItem.Text = "Registrar Producto";
             // 
             // verAyudaToolStripMenuItem
             // 
             this.verAyudaToolStripMenuItem.Name = "verAyudaToolStripMenuItem";
-            this.verAyudaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.verAyudaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.verAyudaToolStripMenuItem.Text = "Ver Ayuda";
+            // 
+            // equiposToolStripMenuItem
+            // 
+            this.equiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jugadoresToolStripMenuItem});
+            this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.equiposToolStripMenuItem.Text = "Equipos";
+            // 
+            // jugadoresToolStripMenuItem
+            // 
+            this.jugadoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.añadirJugadorToolStripMenuItem});
+            this.jugadoresToolStripMenuItem.Name = "jugadoresToolStripMenuItem";
+            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jugadoresToolStripMenuItem.Text = "Jugadores";
+            // 
+            // añadirJugadorToolStripMenuItem
+            // 
+            this.añadirJugadorToolStripMenuItem.Name = "añadirJugadorToolStripMenuItem";
+            this.añadirJugadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.añadirJugadorToolStripMenuItem.Text = "Añadir Jugador";
+            this.añadirJugadorToolStripMenuItem.Click += new System.EventHandler(this.añadirJugadorToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -215,5 +242,8 @@
         private System.Windows.Forms.ToolStripMenuItem soporteTecnicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verAyudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jugadoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem añadirJugadorToolStripMenuItem;
     }
 }
