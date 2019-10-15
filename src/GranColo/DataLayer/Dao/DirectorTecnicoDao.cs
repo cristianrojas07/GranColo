@@ -35,7 +35,7 @@ namespace GranColo.DataLayer.Dao
             oDT.NombreUsuario = row[5].ToString();
             oDT.Password = row[6].ToString();
             oDT.Email = row[7].ToString();
-            oDT.IdClubHincha = Int32.Parse(row[8].ToString());
+            oDT.Club.IdClub = Int32.Parse(row[8].ToString());
 
             return oDT;
         }

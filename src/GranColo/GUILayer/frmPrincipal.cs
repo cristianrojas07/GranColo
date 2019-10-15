@@ -88,7 +88,7 @@ namespace GranColo.GUILayer
 
         private void añadirJugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmABMJugador frmJugador = new FrmABMJugador();
+            FrmJugador frmJugador = new FrmJugador();
             frmJugador.ShowDialog();
         }
     }

@@ -16,5 +16,10 @@ namespace GranColo.GUILayer.Equipos.Jugadores
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

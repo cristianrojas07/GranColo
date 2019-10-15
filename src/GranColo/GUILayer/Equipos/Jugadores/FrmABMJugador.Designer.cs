@@ -30,26 +30,26 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.txt_apellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.lblClub = new System.Windows.Forms.Label();
-            this.cboClub = new System.Windows.Forms.ComboBox();
-            this.cboPosicion = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboEstado = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_club = new System.Windows.Forms.Label();
+            this.cbo_club = new System.Windows.Forms.ComboBox();
+            this.cbo_posicion = new System.Windows.Forms.ComboBox();
+            this.lbl_posicion = new System.Windows.Forms.Label();
+            this.cbo_estado = new System.Windows.Forms.ComboBox();
+            this.lbl_estado = new System.Windows.Forms.Label();
+            this.lbl_nroDoc = new System.Windows.Forms.Label();
+            this.txt_nroDoc = new System.Windows.Forms.TextBox();
+            this.lbl_tipoDoc = new System.Windows.Forms.Label();
+            this.lbl_costo = new System.Windows.Forms.Label();
+            this.nud_costo = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_tipoDoc = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_costo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -66,170 +66,170 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(17, 23);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(49, 13);
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombres";
+            this.lblNombre.Text = "Nombre:";
             // 
-            // textBox1
+            // txt_nombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 2;
+            this.txt_nombre.Location = new System.Drawing.Point(76, 20);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(155, 20);
+            this.txt_nombre.TabIndex = 2;
             // 
-            // textBox2
+            // txt_apellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(328, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_apellido.Location = new System.Drawing.Point(328, 19);
+            this.txt_apellido.Name = "txt_apellido";
+            this.txt_apellido.Size = new System.Drawing.Size(152, 20);
+            this.txt_apellido.TabIndex = 4;
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Location = new System.Drawing.Point(268, 23);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(49, 13);
+            this.lblApellido.Size = new System.Drawing.Size(47, 13);
             this.lblApellido.TabIndex = 3;
-            this.lblApellido.Text = "Apellidos";
+            this.lblApellido.Text = "Apellido:";
             // 
-            // lblClub
+            // lbl_club
             // 
-            this.lblClub.AutoSize = true;
-            this.lblClub.Location = new System.Drawing.Point(17, 28);
-            this.lblClub.Name = "lblClub";
-            this.lblClub.Size = new System.Drawing.Size(28, 13);
-            this.lblClub.TabIndex = 5;
-            this.lblClub.Text = "Club";
+            this.lbl_club.AutoSize = true;
+            this.lbl_club.Location = new System.Drawing.Point(17, 28);
+            this.lbl_club.Name = "lbl_club";
+            this.lbl_club.Size = new System.Drawing.Size(31, 13);
+            this.lbl_club.TabIndex = 5;
+            this.lbl_club.Text = "Club:";
             // 
-            // cboClub
+            // cbo_club
             // 
-            this.cboClub.FormattingEnabled = true;
-            this.cboClub.Location = new System.Drawing.Point(76, 25);
-            this.cboClub.Name = "cboClub";
-            this.cboClub.Size = new System.Drawing.Size(155, 21);
-            this.cboClub.TabIndex = 6;
+            this.cbo_club.FormattingEnabled = true;
+            this.cbo_club.Location = new System.Drawing.Point(76, 25);
+            this.cbo_club.Name = "cbo_club";
+            this.cbo_club.Size = new System.Drawing.Size(155, 21);
+            this.cbo_club.TabIndex = 6;
             // 
-            // cboPosicion
+            // cbo_posicion
             // 
-            this.cboPosicion.FormattingEnabled = true;
-            this.cboPosicion.Location = new System.Drawing.Point(76, 57);
-            this.cboPosicion.Name = "cboPosicion";
-            this.cboPosicion.Size = new System.Drawing.Size(155, 21);
-            this.cboPosicion.TabIndex = 8;
+            this.cbo_posicion.FormattingEnabled = true;
+            this.cbo_posicion.Location = new System.Drawing.Point(76, 57);
+            this.cbo_posicion.Name = "cbo_posicion";
+            this.cbo_posicion.Size = new System.Drawing.Size(155, 21);
+            this.cbo_posicion.TabIndex = 8;
             // 
-            // label2
+            // lbl_posicion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Posición";
+            this.lbl_posicion.AutoSize = true;
+            this.lbl_posicion.Location = new System.Drawing.Point(17, 60);
+            this.lbl_posicion.Name = "lbl_posicion";
+            this.lbl_posicion.Size = new System.Drawing.Size(50, 13);
+            this.lbl_posicion.TabIndex = 7;
+            this.lbl_posicion.Text = "Posición:";
             // 
-            // cboEstado
+            // cbo_estado
             // 
-            this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(328, 25);
-            this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(152, 21);
-            this.cboEstado.TabIndex = 10;
+            this.cbo_estado.FormattingEnabled = true;
+            this.cbo_estado.Location = new System.Drawing.Point(328, 25);
+            this.cbo_estado.Name = "cbo_estado";
+            this.cbo_estado.Size = new System.Drawing.Size(152, 21);
+            this.cbo_estado.TabIndex = 10;
             // 
-            // label3
+            // lbl_estado
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(268, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Estado";
+            this.lbl_estado.AutoSize = true;
+            this.lbl_estado.Location = new System.Drawing.Point(268, 28);
+            this.lbl_estado.Name = "lbl_estado";
+            this.lbl_estado.Size = new System.Drawing.Size(43, 13);
+            this.lbl_estado.TabIndex = 9;
+            this.lbl_estado.Text = "Estado:";
             // 
-            // label4
+            // lbl_nroDoc
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Nro. Doc.";
+            this.lbl_nroDoc.AutoSize = true;
+            this.lbl_nroDoc.Location = new System.Drawing.Point(17, 53);
+            this.lbl_nroDoc.Name = "lbl_nroDoc";
+            this.lbl_nroDoc.Size = new System.Drawing.Size(53, 13);
+            this.lbl_nroDoc.TabIndex = 11;
+            this.lbl_nroDoc.Text = "Nro. Doc.";
             // 
-            // textBox3
+            // txt_nroDoc
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 20);
-            this.textBox3.TabIndex = 12;
+            this.txt_nroDoc.Location = new System.Drawing.Point(76, 51);
+            this.txt_nroDoc.Name = "txt_nroDoc";
+            this.txt_nroDoc.Size = new System.Drawing.Size(155, 20);
+            this.txt_nroDoc.TabIndex = 12;
             // 
-            // label5
+            // lbl_tipoDoc
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(268, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Tipo Doc.";
+            this.lbl_tipoDoc.AutoSize = true;
+            this.lbl_tipoDoc.Location = new System.Drawing.Point(268, 54);
+            this.lbl_tipoDoc.Name = "lbl_tipoDoc";
+            this.lbl_tipoDoc.Size = new System.Drawing.Size(54, 13);
+            this.lbl_tipoDoc.TabIndex = 13;
+            this.lbl_tipoDoc.Text = "Tipo Doc.";
             // 
-            // label6
+            // lbl_costo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(268, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Costo";
+            this.lbl_costo.AutoSize = true;
+            this.lbl_costo.Location = new System.Drawing.Point(268, 60);
+            this.lbl_costo.Name = "lbl_costo";
+            this.lbl_costo.Size = new System.Drawing.Size(37, 13);
+            this.lbl_costo.TabIndex = 15;
+            this.lbl_costo.Text = "Costo:";
             // 
-            // numericUpDown1
+            // nud_costo
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(328, 57);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(152, 20);
-            this.numericUpDown1.TabIndex = 17;
+            this.nud_costo.Location = new System.Drawing.Point(328, 57);
+            this.nud_costo.Name = "nud_costo";
+            this.nud_costo.Size = new System.Drawing.Size(152, 20);
+            this.nud_costo.TabIndex = 17;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_tipoDoc);
+            this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.lblApellido);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txt_apellido);
+            this.groupBox1.Controls.Add(this.lbl_tipoDoc);
+            this.groupBox1.Controls.Add(this.lbl_nroDoc);
+            this.groupBox1.Controls.Add(this.txt_nroDoc);
             this.groupBox1.Location = new System.Drawing.Point(15, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(534, 100);
+            this.groupBox1.Size = new System.Drawing.Size(509, 100);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Jugador";
             // 
-            // comboBox1
+            // txt_tipoDoc
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(328, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 21);
-            this.comboBox1.TabIndex = 19;
+            this.txt_tipoDoc.FormattingEnabled = true;
+            this.txt_tipoDoc.Location = new System.Drawing.Point(328, 51);
+            this.txt_tipoDoc.Name = "txt_tipoDoc";
+            this.txt_tipoDoc.Size = new System.Drawing.Size(152, 21);
+            this.txt_tipoDoc.TabIndex = 19;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblClub);
-            this.groupBox2.Controls.Add(this.cboClub);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cboPosicion);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cboEstado);
+            this.groupBox2.Controls.Add(this.lbl_club);
+            this.groupBox2.Controls.Add(this.cbo_club);
+            this.groupBox2.Controls.Add(this.nud_costo);
+            this.groupBox2.Controls.Add(this.lbl_posicion);
+            this.groupBox2.Controls.Add(this.lbl_costo);
+            this.groupBox2.Controls.Add(this.cbo_posicion);
+            this.groupBox2.Controls.Add(this.lbl_estado);
+            this.groupBox2.Controls.Add(this.cbo_estado);
             this.groupBox2.Location = new System.Drawing.Point(15, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(534, 100);
+            this.groupBox2.Size = new System.Drawing.Size(509, 100);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Añadir a Club";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(474, 224);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 224);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 20;
@@ -238,26 +238,31 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(393, 224);
+            this.btnCancelar.Location = new System.Drawing.Point(449, 224);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // FrmJugador
+            // FrmABMJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 260);
+            this.ClientSize = new System.Drawing.Size(539, 260);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "FrmJugador";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmABMJugador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gran Colo";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_costo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -270,22 +275,22 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblClub;
-        private System.Windows.Forms.ComboBox cboClub;
-        private System.Windows.Forms.ComboBox cboPosicion;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboEstado;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lbl_club;
+        private System.Windows.Forms.ComboBox cbo_club;
+        private System.Windows.Forms.ComboBox cbo_posicion;
+        private System.Windows.Forms.Label lbl_posicion;
+        private System.Windows.Forms.ComboBox cbo_estado;
+        private System.Windows.Forms.Label lbl_estado;
+        private System.Windows.Forms.Label lbl_nroDoc;
+        private System.Windows.Forms.TextBox txt_nroDoc;
+        private System.Windows.Forms.Label lbl_tipoDoc;
+        private System.Windows.Forms.Label lbl_costo;
+        private System.Windows.Forms.NumericUpDown nud_costo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txt_tipoDoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;

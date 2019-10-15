@@ -14,8 +14,8 @@ namespace GranColo.GUILayer.Fixture
 {
     public partial class FrmConsultarAsignarFecha : Form
     {
-        FechaXTorneoService fechaXTorneoService;
-        TorneoService torneoService;
+        private FechaXTorneoService fechaXTorneoService;
+        private TorneoService torneoService;
         public FrmConsultarAsignarFecha()
         {
             torneoService = new TorneoService();
@@ -36,9 +36,11 @@ namespace GranColo.GUILayer.Fixture
         {
             if (dgw_asignadas.CurrentRow != null)
             {
-                FechaXTorneo fechaXTorneo = new FechaXTorneo();
-                fechaXTorneo.Fecha = new Fecha();
-                fechaXTorneo.Torneo = new Torneo();
+                FechaXTorneo fechaXTorneo = new FechaXTorneo
+                {
+                    Fecha = new Fecha(),
+                    Torneo = new Torneo()
+                };
                 fechaXTorneo.Fecha.IdFecha = Int32.Parse(dgw_asignadas.CurrentRow.Cells["id_fecha_col"].Value.ToString());
                 fechaXTorneo.Torneo.IdTorneo = Int32.Parse(dgw_asignadas.CurrentRow.Cells["id_torneo_col"].Value.ToString());
                 fechaXTorneo.Fecha.Nombre = dgw_asignadas.CurrentRow.Cells["nombre_fecha_col"].Value.ToString();
@@ -46,7 +48,7 @@ namespace GranColo.GUILayer.Fixture
                 FrmEditarAsignacion frmEditarAsignacion = new FrmEditarAsignacion(fechaXTorneo);
                 frmEditarAsignacion.ShowDialog();
             }
-            actualizarGrilla();
+            ActualizarGrilla();
         }
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
@@ -55,9 +57,11 @@ namespace GranColo.GUILayer.Fixture
             {
                 if(MessageBox.Show("Esta seguro que desea eliminar el registro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    FechaXTorneo fechaXTorneo = new FechaXTorneo();
-                    fechaXTorneo.Fecha = new Fecha();
-                    fechaXTorneo.Torneo = new Torneo();
+                    FechaXTorneo fechaXTorneo = new FechaXTorneo
+                    {
+                        Fecha = new Fecha(),
+                        Torneo = new Torneo()
+                    };
                     fechaXTorneo.Fecha.IdFecha = Int32.Parse(dgw_asignadas.CurrentRow.Cells["id_fecha_col"].Value.ToString());
                     fechaXTorneo.Torneo.IdTorneo = Int32.Parse(dgw_asignadas.CurrentRow.Cells["id_torneo_col"].Value.ToString());
                     if (fechaXTorneoService.eliminar(fechaXTorneo))
@@ -69,7 +73,7 @@ namespace GranColo.GUILayer.Fixture
                         MessageBox.Show("Registro no eliminado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
-                    actualizarGrilla();
+                    ActualizarGrilla();
                 }
             }
             else
@@ -78,7 +82,7 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
-        public void actualizarGrilla()
+        public void ActualizarGrilla()
         {
             if (cb_todos.Checked)
             {
@@ -87,10 +91,12 @@ namespace GranColo.GUILayer.Fixture
             }
             else
             {
-                    Torneo torneo = new Torneo();
-                    torneo.IdTorneo = Int32.Parse(cbo_torneo.SelectedValue.ToString());
-                    IList<FechaXTorneo> list = fechaXTorneoService.obtenerRegistrosConFiltros(torneo);
-                    CargarGrid(list);
+                Torneo torneo = new Torneo
+                {
+                    IdTorneo = Int32.Parse(cbo_torneo.SelectedValue.ToString())
+                };
+                IList<FechaXTorneo> list = fechaXTorneoService.obtenerRegistrosConFiltros(torneo);
+                CargarGrid(list);
             }
         }
 
@@ -114,8 +120,10 @@ namespace GranColo.GUILayer.Fixture
             {
                 if (validarCampos())
                 {
-                    Torneo torneo = new Torneo();
-                    torneo.IdTorneo = Int32.Parse(cbo_torneo.SelectedValue.ToString());
+                    Torneo torneo = new Torneo
+                    {
+                        IdTorneo = Int32.Parse(cbo_torneo.SelectedValue.ToString())
+                    };
                     IList<FechaXTorneo> list = fechaXTorneoService.obtenerRegistrosConFiltros(torneo);
                     if (list.Count == 0)
                     {

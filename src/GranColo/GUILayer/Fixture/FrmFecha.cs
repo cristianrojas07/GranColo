@@ -126,5 +126,13 @@ namespace GranColo.GUILayer.Fixture
             AddOwnedForm(frmABMFecha);
             frmABMFecha.ShowDialog();
         }
+
+        private void cb_todos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_todos.Checked)
+                txt_nombre.Enabled = false;
+            else
+                txt_nombre.Enabled = true;
+        }
     }
 }

@@ -142,9 +142,11 @@
             this.cb_todos.TabIndex = 29;
             this.cb_todos.Text = "Todos";
             this.cb_todos.UseVisualStyleBackColor = true;
+            this.cb_todos.CheckedChanged += new System.EventHandler(this.cb_todos_CheckedChanged);
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Enabled = false;
             this.txt_nombre.Location = new System.Drawing.Point(59, 24);
             this.txt_nombre.MaxLength = 95;
             this.txt_nombre.Name = "txt_nombre";

@@ -14,7 +14,7 @@ namespace GranColo.BusinessLayer
         public string NombreUsuario { get; set; } 
         public string Password { get; set; }
         public string Email { get; set; }
-        public int IdClubHincha { get; set; }
+        public Club Club { get; set; }
 
         public DirectorTecnico()
         {
