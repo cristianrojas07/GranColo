@@ -16,16 +16,17 @@ namespace GranColo.GUILayer.Equipos.Jugadores
         private readonly JugadorService JugadorService;
         private readonly ClubService ClubService;
         private readonly PosicionService PosicionService;
+
         public FrmJugador()
         {
+            InitializeComponent();
             JugadorService = new JugadorService();
             ClubService = new ClubService();
             PosicionService = new PosicionService();
-            InitializeComponent();
             LlenarCombo(cb_club, ClubService.ObtenerTodosClubes(), "Nombre", "IdClub");
-            //LlenarCombo(cb_posicion, PosicionService.ObtenerTodosPosiciones(), "Nombre", "IdPosicion");
-
+            LlenarCombo(cb_posicion, PosicionService.ObtenerTodosPosiciones(), "Nombre", "IdPosicion");
         }
+
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             cbo.ValueMember = value;

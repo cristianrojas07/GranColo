@@ -8,28 +8,27 @@ using GranColo.BusinessLayer.Entities;
 
 namespace GranColo.DataLayer.Dao
 {
-    class PosicionDao
+    class EstadoActualDao
     {
-        internal bool InsertPosicion(Posicion oPosicion)
+        internal bool InsertEstadoActual(EstadoActual oEstadoActual)
         {
             throw new NotImplementedException();
         }
 
-        internal bool DeletePosicion(int selected)
+        internal bool ModifyEstadoActual(EstadoActual oEstadoActual, int selected)
         {
             throw new NotImplementedException();
         }
 
-        internal bool ModifyPosicion(Posicion oPosicion, int selected)
+        internal bool DeleteEstadoActual(int selected)
         {
             throw new NotImplementedException();
         }
 
-
-        internal IList<Posicion> GetAllPosicion()
+        internal IList<EstadoActual> GetAllEstadoActual()
         {
-            List<Posicion> list = new List<Posicion>();
-            string sql = " SELECT * FROM Posicion ";
+            List<EstadoActual> list = new List<EstadoActual>();
+            string sql = " SELECT * FROM EstadoActual ";
             DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
@@ -38,12 +37,12 @@ namespace GranColo.DataLayer.Dao
             return list;
         }
 
-        private Posicion ObjectMapping(DataRow row)
+        private EstadoActual ObjectMapping(DataRow row)
         {
-            Posicion Posicion = new Posicion();
-            Posicion.IdPosicion = Int32.Parse(row[0].ToString());
-            Posicion.Nombre = row[1].ToString();
-            return Posicion;
+            EstadoActual EstadoActual = new EstadoActual();
+            EstadoActual.IdEstadoActual = Int32.Parse(row[0].ToString());
+            EstadoActual.Nombre = row[1].ToString();
+            return EstadoActual;
         }
     }
 }

@@ -45,7 +45,7 @@
             this.lbl_costo = new System.Windows.Forms.Label();
             this.nud_costo = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_tipoDoc = new System.Windows.Forms.ComboBox();
+            this.cbo_tipoDoc = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -104,6 +104,7 @@
             // 
             // cbo_club
             // 
+            this.cbo_club.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_club.FormattingEnabled = true;
             this.cbo_club.Location = new System.Drawing.Point(76, 25);
             this.cbo_club.Name = "cbo_club";
@@ -112,6 +113,7 @@
             // 
             // cbo_posicion
             // 
+            this.cbo_posicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_posicion.FormattingEnabled = true;
             this.cbo_posicion.Location = new System.Drawing.Point(76, 57);
             this.cbo_posicion.Name = "cbo_posicion";
@@ -129,6 +131,7 @@
             // 
             // cbo_estado
             // 
+            this.cbo_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_estado.FormattingEnabled = true;
             this.cbo_estado.Location = new System.Drawing.Point(328, 25);
             this.cbo_estado.Name = "cbo_estado";
@@ -187,7 +190,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_tipoDoc);
+            this.groupBox1.Controls.Add(this.cbo_tipoDoc);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.lblApellido);
@@ -202,13 +205,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Jugador";
             // 
-            // txt_tipoDoc
+            // cbo_tipoDoc
             // 
-            this.txt_tipoDoc.FormattingEnabled = true;
-            this.txt_tipoDoc.Location = new System.Drawing.Point(328, 51);
-            this.txt_tipoDoc.Name = "txt_tipoDoc";
-            this.txt_tipoDoc.Size = new System.Drawing.Size(152, 21);
-            this.txt_tipoDoc.TabIndex = 19;
+            this.cbo_tipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_tipoDoc.FormattingEnabled = true;
+            this.cbo_tipoDoc.Location = new System.Drawing.Point(328, 51);
+            this.cbo_tipoDoc.Name = "cbo_tipoDoc";
+            this.cbo_tipoDoc.Size = new System.Drawing.Size(152, 21);
+            this.cbo_tipoDoc.TabIndex = 19;
             // 
             // groupBox2
             // 
@@ -235,6 +239,7 @@
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -242,7 +247,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -290,7 +295,7 @@
         private System.Windows.Forms.Label lbl_costo;
         private System.Windows.Forms.NumericUpDown nud_costo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox txt_tipoDoc;
+        private System.Windows.Forms.ComboBox cbo_tipoDoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;

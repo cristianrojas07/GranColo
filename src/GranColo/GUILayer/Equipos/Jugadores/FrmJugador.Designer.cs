@@ -115,6 +115,11 @@
             this.nud_max.Name = "nud_max";
             this.nud_max.Size = new System.Drawing.Size(131, 20);
             this.nud_max.TabIndex = 3;
+            this.nud_max.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // label5
             // 

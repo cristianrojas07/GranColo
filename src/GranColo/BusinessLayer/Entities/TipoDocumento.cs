@@ -8,7 +8,7 @@ namespace GranColo.BusinessLayer.Entities
 {
     public class TipoDocumento
     {
-        public string IdTipoDocumento { get; set; }
+        public int IdTipoDocumento { get; set; }
         public string Nombre { get; set; }
     }
 }
