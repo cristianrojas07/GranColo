@@ -21,6 +21,6 @@ namespace GranColo.GUILayer.Fixture
 
         DialogResult ShowDialog();
 
-        bool validarCampos();
+        bool ValidarCampos();
     }
 }

@@ -162,6 +162,7 @@
             this.txt_nroDoc.Name = "txt_nroDoc";
             this.txt_nroDoc.Size = new System.Drawing.Size(155, 20);
             this.txt_nroDoc.TabIndex = 12;
+            this.txt_nroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroDoc_KeyPress);
             // 
             // lbl_tipoDoc
             // 
@@ -184,6 +185,11 @@
             // nud_costo
             // 
             this.nud_costo.Location = new System.Drawing.Point(328, 57);
+            this.nud_costo.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.nud_costo.Name = "nud_costo";
             this.nud_costo.Size = new System.Drawing.Size(152, 20);
             this.nud_costo.TabIndex = 17;
@@ -239,7 +245,7 @@
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -249,7 +255,7 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // FrmABMJugador
             // 
@@ -267,6 +273,7 @@
             this.Name = "FrmABMJugador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gran Colo";
+            this.Load += new System.EventHandler(this.FrmABMJugador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_costo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

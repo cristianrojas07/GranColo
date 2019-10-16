@@ -34,7 +34,7 @@ namespace GranColo.GUILayer.Fixture
         {
             if (!cb_todos.Checked)
             {
-                if (validarCampos())
+                if (ValidarCampos())
                 {
                     Torneo oTorneo = new Torneo();
                     oTorneo.Nombre = txt_nombre.Text;
@@ -109,7 +109,7 @@ namespace GranColo.GUILayer.Fixture
             this.Close();
         }
 
-        public bool validarCampos()
+        public bool ValidarCampos()
         {
             if (String.IsNullOrEmpty(txt_nombre.Text))
             {

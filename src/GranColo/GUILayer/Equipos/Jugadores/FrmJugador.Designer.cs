@@ -45,19 +45,20 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.dgw_fecha = new System.Windows.Forms.DataGridView();
-            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Posición = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.cb_todos = new System.Windows.Forms.CheckBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdClub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEstadoActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdTipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPosición = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_titulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_max)).BeginInit();
@@ -255,10 +256,11 @@
             this.id_col,
             this.nombre_col,
             this.Apellido,
-            this.Club,
-            this.Estado,
+            this.IdClub,
+            this.IdEstadoActual,
             this.Documento,
-            this.Posición,
+            this.IdTipoDocumento,
+            this.IdPosición,
             this.Costo,
             this.estado_col});
             this.dgw_fecha.Location = new System.Drawing.Point(9, 161);
@@ -266,68 +268,6 @@
             this.dgw_fecha.ReadOnly = true;
             this.dgw_fecha.Size = new System.Drawing.Size(490, 297);
             this.dgw_fecha.TabIndex = 31;
-            // 
-            // id_col
-            // 
-            this.id_col.HeaderText = "Nro.";
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            this.id_col.Visible = false;
-            // 
-            // nombre_col
-            // 
-            this.nombre_col.HeaderText = "Nombre";
-            this.nombre_col.Name = "nombre_col";
-            this.nombre_col.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Club
-            // 
-            this.Club.HeaderText = "Club";
-            this.Club.Name = "Club";
-            this.Club.ReadOnly = true;
-            this.Club.Width = 75;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 75;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Nro. Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 75;
-            // 
-            // Posición
-            // 
-            this.Posición.HeaderText = "Posición";
-            this.Posición.Name = "Posición";
-            this.Posición.ReadOnly = true;
-            this.Posición.Width = 75;
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo";
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            this.Costo.Width = 75;
-            // 
-            // estado_col
-            // 
-            this.estado_col.HeaderText = "Estado";
-            this.estado_col.Name = "estado_col";
-            this.estado_col.ReadOnly = true;
-            this.estado_col.Visible = false;
-            this.estado_col.Width = 75;
             // 
             // btn_consultar
             // 
@@ -370,6 +310,75 @@
             this.lbl_nombre.TabIndex = 27;
             this.lbl_nombre.Text = "Nombre:";
             // 
+            // id_col
+            // 
+            this.id_col.HeaderText = "Nro.";
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Visible = false;
+            // 
+            // nombre_col
+            // 
+            this.nombre_col.HeaderText = "Nombre";
+            this.nombre_col.Name = "nombre_col";
+            this.nombre_col.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // IdClub
+            // 
+            this.IdClub.DataPropertyName = "ClubNombre";
+            this.IdClub.HeaderText = "Club";
+            this.IdClub.Name = "IdClub";
+            this.IdClub.ReadOnly = true;
+            this.IdClub.Width = 75;
+            // 
+            // IdEstadoActual
+            // 
+            this.IdEstadoActual.HeaderText = "Estado Actual";
+            this.IdEstadoActual.Name = "IdEstadoActual";
+            this.IdEstadoActual.ReadOnly = true;
+            this.IdEstadoActual.Width = 75;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Nro. Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            this.Documento.Width = 75;
+            // 
+            // IdTipoDocumento
+            // 
+            this.IdTipoDocumento.HeaderText = "Tipo Documento";
+            this.IdTipoDocumento.Name = "IdTipoDocumento";
+            this.IdTipoDocumento.ReadOnly = true;
+            // 
+            // IdPosición
+            // 
+            this.IdPosición.HeaderText = "Posición";
+            this.IdPosición.Name = "IdPosición";
+            this.IdPosición.ReadOnly = true;
+            this.IdPosición.Width = 75;
+            // 
+            // Costo
+            // 
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.ReadOnly = true;
+            this.Costo.Width = 75;
+            // 
+            // estado_col
+            // 
+            this.estado_col.HeaderText = "Estado";
+            this.estado_col.Name = "estado_col";
+            this.estado_col.ReadOnly = true;
+            this.estado_col.Visible = false;
+            this.estado_col.Width = 75;
+            // 
             // FrmJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,19 +420,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Club;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Posición;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_col;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nud_max;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nud_min;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdClub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEstadoActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdTipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPosición;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_col;
     }
 }

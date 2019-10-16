@@ -118,7 +118,7 @@ namespace GranColo.GUILayer.Fixture
             }
             else
             {
-                if (validarCampos())
+                if (ValidarCampos())
                 {
                     Torneo torneo = new Torneo
                     {
@@ -145,7 +145,7 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
-        public bool validarCampos()
+        public bool ValidarCampos()
         {
             if (String.IsNullOrEmpty(cbo_torneo.Text))
             {
@@ -158,6 +158,18 @@ namespace GranColo.GUILayer.Fixture
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Cb_todos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_todos.Checked)
+            {
+                cbo_torneo.Enabled = false;
+            }
+            else
+            {
+                cbo_torneo.Enabled = true;
+            }
         }
     }
 }

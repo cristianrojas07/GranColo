@@ -34,7 +34,7 @@ namespace GranColo.GUILayer.Fixture
         {
             if (!cb_todos.Checked)
             {
-                if (validarCampos())
+                if (ValidarCampos())
                 {
                     Fecha oFecha = new Fecha();
                     oFecha.Nombre = txt_nombre.Text;
@@ -110,7 +110,7 @@ namespace GranColo.GUILayer.Fixture
             this.Close();
         }
 
-        public bool validarCampos()
+        public bool ValidarCampos()
         {
             if (String.IsNullOrEmpty(txt_nombre.Text))
             {

@@ -15,7 +15,6 @@ namespace GranColo.GUILayer.Fixture
     public partial class FrmABMFecha : Form
     {
         private FormMode formMode = FormMode.insert;
-        private Fecha fecha;
         private FechaService service;
 
         public FrmABMFecha()
@@ -83,9 +82,9 @@ namespace GranColo.GUILayer.Fixture
                     }
                     break;
                 case FormMode.update:
-                    oFecha.Nombre = txt_nombre.Text;
                     if (validarCampos())
                     {
+                        oFecha.Nombre = txt_nombre.Text;
                         if (validarRepetidos(oFecha))
                         {
                             if (service.modificarFecha(oFecha))

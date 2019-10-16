@@ -32,5 +32,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return JugadorDao.getAllJugador();
         }
+
+        internal bool ObtenerRepetidos(Jugador oJugador)
+        {
+            return JugadorDao.getRepeat(oJugador);
+        }
     }
 }

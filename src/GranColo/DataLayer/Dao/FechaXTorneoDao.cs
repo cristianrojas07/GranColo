@@ -96,7 +96,7 @@ namespace GranColo.DataLayer.Dao
 
         public IList<FechaXTorneo> getAll()
         {
-            IList<FechaXTorneo> list = new List<FechaXTorneo>();
+            List<FechaXTorneo> list = new List<FechaXTorneo>();
             string sql = "SELECT t3.idTorneo, t3.nombre, t2.nroFecha, t2.nombre " +
                     " FROM FechaXTorneo t1 JOIN Fecha t2 ON t1.nroFecha = t2.nroFecha " +
                     " JOIN Torneo t3 ON t1.idTorneo = t3.idTorneo " +

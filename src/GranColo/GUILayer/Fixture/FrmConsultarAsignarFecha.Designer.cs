@@ -76,6 +76,7 @@
             // 
             // cbo_torneo
             // 
+            this.cbo_torneo.Enabled = false;
             this.cbo_torneo.FormattingEnabled = true;
             this.cbo_torneo.Location = new System.Drawing.Point(62, 14);
             this.cbo_torneo.Name = "cbo_torneo";
@@ -104,12 +105,15 @@
             // cb_todos
             // 
             this.cb_todos.AutoSize = true;
+            this.cb_todos.Checked = true;
+            this.cb_todos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_todos.Location = new System.Drawing.Point(12, 41);
             this.cb_todos.Name = "cb_todos";
             this.cb_todos.Size = new System.Drawing.Size(56, 17);
             this.cb_todos.TabIndex = 10;
             this.cb_todos.Text = "Todos";
             this.cb_todos.UseVisualStyleBackColor = true;
+            this.cb_todos.CheckedChanged += new System.EventHandler(this.Cb_todos_CheckedChanged);
             // 
             // dgw_asignadas
             // 
