@@ -18,6 +18,7 @@ namespace GranColo.DataLayer.Dao
                                             "           ,idClub        ",
                                             "           ,idPosicion        ",
                                             "           ,idEstadoActual        ",
+                                            "           ,estado                 ",
                                             "           ,nroDoc        ",
                                             "           ,tipoDoc        ",
                                             "           ,costo)      ",
@@ -27,6 +28,7 @@ namespace GranColo.DataLayer.Dao
                                             "           ,@idClub          ",
                                             "           ,@idPosicion          ",
                                             "           ,@idEstadoActual          ",
+                                            "           ,@estado                ",
                                             "           ,@nroDoc          ",
                                             "           ,@tipoDoc          ",
                                             "           ,@costo)       ");
@@ -37,6 +39,7 @@ namespace GranColo.DataLayer.Dao
             parametros.Add("idClub", oJugador.Club.IdClub);
             parametros.Add("idPosicion", oJugador.Posicion.IdPosicion);
             parametros.Add("idEstadoActual", oJugador.EstadoActual.IdEstadoActual);
+            parametros.Add("estado", "S");
             parametros.Add("nroDoc", oJugador.NroDocumento);
             parametros.Add("tipoDoc", oJugador.TipoDocumento.IdTipoDocumento);
             parametros.Add("costo", oJugador.Costo);
@@ -62,7 +65,8 @@ namespace GranColo.DataLayer.Dao
                     " FROM Jugador j JOIN Posicion p ON j.idPosicion = p.idPosicion  " +
                     " JOIN EstadoActual e ON j.idEstadoActual = e.idEstadoActual " +
                     " JOIN Club c ON j.idClub = c.idClub  " +
-                    " JOIN TipoDocumento t ON j.tipoDoc = t.idTipoDocumento ";
+                    " JOIN TipoDocumento t ON j.tipoDoc = t.idTipoDocumento " +
+                    " WHERE j.estado='S' ";
             DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
