@@ -48,6 +48,10 @@ namespace GranColo.GUILayer.Fixture
                 FrmEditarAsignacion frmEditarAsignacion = new FrmEditarAsignacion(fechaXTorneo);
                 frmEditarAsignacion.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             ActualizarGrilla();
         }
 

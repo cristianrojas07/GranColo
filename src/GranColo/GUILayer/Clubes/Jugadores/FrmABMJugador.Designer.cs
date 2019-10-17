@@ -271,7 +271,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmABMJugador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";
             this.Load += new System.EventHandler(this.FrmABMJugador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_costo)).EndInit();

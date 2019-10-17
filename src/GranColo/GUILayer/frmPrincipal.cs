@@ -68,10 +68,7 @@ namespace GranColo.GUILayer
             frmAMBAsignarFecha.ShowDialog();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -87,6 +84,44 @@ namespace GranColo.GUILayer
         }
 
         private void añadirJugadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmJugador frmJugador = new FrmJugador();
+            frmJugador.ShowDialog();
+        }
+
+        private void FechaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Ifixture = new FrmFecha();
+            Ifixture.ShowDialog();
+        }
+
+        private void TorneoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Ifixture = new FrmTorneo();
+            Ifixture.ShowDialog();
+        }
+
+        private void AsignarFechasATorneosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAsignarFecha frmAsignarFecha = new FrmAsignarFecha();
+            frmAsignarFecha.ShowDialog();
+        }
+
+        private void ConsultarFechasAsignadasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultarAsignarFecha frmAMBAsignarFecha = new FrmConsultarAsignarFecha();
+            frmAMBAsignarFecha.ShowDialog();
+        }
+
+        private void SalirToolStripMenuItem2_Click(object sender, EventArgs e)
+        { 
+            if (MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        private void JugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmJugador frmJugador = new FrmJugador();
             frmJugador.ShowDialog();

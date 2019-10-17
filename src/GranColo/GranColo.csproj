@@ -77,16 +77,16 @@
     <Compile Include="DataLayer\Dao\TipoDocumentoDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DataManager.cs" />
-    <Compile Include="GUILayer\Equipos\Jugadores\FrmABMJugador.cs">
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmABMJugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Equipos\Jugadores\FrmABMJugador.Designer.cs">
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmABMJugador.Designer.cs">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Equipos\Jugadores\FrmJugador.cs">
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmJugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Equipos\Jugadores\FrmJugador.Designer.cs">
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmJugador.Designer.cs">
       <DependentUpon>FrmJugador.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Fixture\FrmConsultarAsignarFecha.cs">
@@ -146,10 +146,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUILayer\Equipos\Jugadores\FrmABMJugador.resx">
+    <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmABMJugador.resx">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Equipos\Jugadores\FrmJugador.resx">
+    <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmJugador.resx">
       <DependentUpon>FrmJugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmABMFecha.resx">

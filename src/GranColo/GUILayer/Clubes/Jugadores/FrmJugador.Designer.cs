@@ -45,10 +45,6 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.dgw_fecha = new System.Windows.Forms.DataGridView();
-            this.btn_consultar = new System.Windows.Forms.Button();
-            this.cb_todos = new System.Windows.Forms.CheckBox();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.lbl_nombre = new System.Windows.Forms.Label();
             this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +55,10 @@
             this.IdPosición = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_consultar = new System.Windows.Forms.Button();
+            this.cb_todos = new System.Windows.Forms.CheckBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.lbl_nombre = new System.Windows.Forms.Label();
             this.gb_titulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_max)).BeginInit();
@@ -269,47 +269,6 @@
             this.dgw_fecha.Size = new System.Drawing.Size(490, 297);
             this.dgw_fecha.TabIndex = 31;
             // 
-            // btn_consultar
-            // 
-            this.btn_consultar.Location = new System.Drawing.Point(423, 19);
-            this.btn_consultar.Name = "btn_consultar";
-            this.btn_consultar.Size = new System.Drawing.Size(76, 25);
-            this.btn_consultar.TabIndex = 30;
-            this.btn_consultar.Text = "Buscar";
-            this.btn_consultar.UseVisualStyleBackColor = true;
-            this.btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
-            // 
-            // cb_todos
-            // 
-            this.cb_todos.AutoSize = true;
-            this.cb_todos.Checked = true;
-            this.cb_todos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_todos.Location = new System.Drawing.Point(9, 138);
-            this.cb_todos.Name = "cb_todos";
-            this.cb_todos.Size = new System.Drawing.Size(56, 17);
-            this.cb_todos.TabIndex = 29;
-            this.cb_todos.Text = "Todos";
-            this.cb_todos.UseVisualStyleBackColor = true;
-            this.cb_todos.CheckedChanged += new System.EventHandler(this.Cb_todos_CheckedChanged);
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Enabled = false;
-            this.txt_nombre.Location = new System.Drawing.Point(59, 21);
-            this.txt_nombre.MaxLength = 95;
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(131, 20);
-            this.txt_nombre.TabIndex = 28;
-            // 
-            // lbl_nombre
-            // 
-            this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(6, 25);
-            this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(47, 13);
-            this.lbl_nombre.TabIndex = 27;
-            this.lbl_nombre.Text = "Nombre:";
-            // 
             // id_col
             // 
             this.id_col.HeaderText = "Nro.";
@@ -379,6 +338,47 @@
             this.estado_col.Visible = false;
             this.estado_col.Width = 75;
             // 
+            // btn_consultar
+            // 
+            this.btn_consultar.Location = new System.Drawing.Point(423, 19);
+            this.btn_consultar.Name = "btn_consultar";
+            this.btn_consultar.Size = new System.Drawing.Size(76, 25);
+            this.btn_consultar.TabIndex = 30;
+            this.btn_consultar.Text = "Buscar";
+            this.btn_consultar.UseVisualStyleBackColor = true;
+            this.btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
+            // 
+            // cb_todos
+            // 
+            this.cb_todos.AutoSize = true;
+            this.cb_todos.Checked = true;
+            this.cb_todos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_todos.Location = new System.Drawing.Point(9, 138);
+            this.cb_todos.Name = "cb_todos";
+            this.cb_todos.Size = new System.Drawing.Size(56, 17);
+            this.cb_todos.TabIndex = 29;
+            this.cb_todos.Text = "Todos";
+            this.cb_todos.UseVisualStyleBackColor = true;
+            this.cb_todos.CheckedChanged += new System.EventHandler(this.Cb_todos_CheckedChanged);
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Enabled = false;
+            this.txt_nombre.Location = new System.Drawing.Point(59, 21);
+            this.txt_nombre.MaxLength = 95;
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(131, 20);
+            this.txt_nombre.TabIndex = 28;
+            // 
+            // lbl_nombre
+            // 
+            this.lbl_nombre.AutoSize = true;
+            this.lbl_nombre.Location = new System.Drawing.Point(6, 25);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(47, 13);
+            this.lbl_nombre.TabIndex = 27;
+            this.lbl_nombre.Text = "Nombre:";
+            // 
             // FrmJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,7 +389,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmJugador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";
             this.gb_titulo.ResumeLayout(false);
             this.gb_titulo.PerformLayout();
