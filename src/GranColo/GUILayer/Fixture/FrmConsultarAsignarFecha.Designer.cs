@@ -36,8 +36,8 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.cb_todos = new System.Windows.Forms.CheckBox();
             this.dgw_asignadas = new System.Windows.Forms.DataGridView();
-            this.nombre_torneo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_torneo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_torneo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_fecha_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_fecha_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,8 +121,8 @@
             this.dgw_asignadas.AllowUserToDeleteRows = false;
             this.dgw_asignadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_asignadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombre_torneo_col,
             this.id_torneo_col,
+            this.nombre_torneo_col,
             this.id_fecha_col,
             this.nombre_fecha_col,
             this.estado_col});
@@ -132,22 +132,25 @@
             this.dgw_asignadas.Size = new System.Drawing.Size(378, 355);
             this.dgw_asignadas.TabIndex = 1;
             // 
-            // nombre_torneo_col
-            // 
-            this.nombre_torneo_col.HeaderText = "Torneo";
-            this.nombre_torneo_col.Name = "nombre_torneo_col";
-            this.nombre_torneo_col.ReadOnly = true;
-            this.nombre_torneo_col.Width = 167;
-            // 
             // id_torneo_col
             // 
+            this.id_torneo_col.DataPropertyName = "IdTorneo";
             this.id_torneo_col.HeaderText = "idTorneo";
             this.id_torneo_col.Name = "id_torneo_col";
             this.id_torneo_col.ReadOnly = true;
             this.id_torneo_col.Visible = false;
             // 
+            // nombre_torneo_col
+            // 
+            this.nombre_torneo_col.DataPropertyName = "TorneoNombre";
+            this.nombre_torneo_col.HeaderText = "Torneo";
+            this.nombre_torneo_col.Name = "nombre_torneo_col";
+            this.nombre_torneo_col.ReadOnly = true;
+            this.nombre_torneo_col.Width = 167;
+            // 
             // id_fecha_col
             // 
+            this.id_fecha_col.DataPropertyName = "IdFecha";
             this.id_fecha_col.HeaderText = "idFecha";
             this.id_fecha_col.Name = "id_fecha_col";
             this.id_fecha_col.ReadOnly = true;
@@ -155,6 +158,7 @@
             // 
             // nombre_fecha_col
             // 
+            this.nombre_fecha_col.DataPropertyName = "FechaNombre";
             this.nombre_fecha_col.HeaderText = "Fecha";
             this.nombre_fecha_col.Name = "nombre_fecha_col";
             this.nombre_fecha_col.ReadOnly = true;
@@ -181,6 +185,7 @@
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.dgw_asignadas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmConsultarAsignarFecha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -201,8 +206,8 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.CheckBox cb_todos;
         private System.Windows.Forms.DataGridView dgw_asignadas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_torneo_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_torneo_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_torneo_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_fecha_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_fecha_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_col;

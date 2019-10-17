@@ -29,37 +29,7 @@ namespace GranColo.GUILayer.Fixture
             listaFechaXTorneo = new BindingList<FechaXTorneo>();
         }
 
-        private void BtnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FrmAsignarFecha_Load(object sender, EventArgs e)
-        {
-            InicializarFormulario();
-            LlenarCombo(cboTorneo, torneoService.obtenerTodosTorneos(), "Nombre", "IdTorneo");
-            LlenarCombo(cboFecha, fechaService.obtenerTodasFechas(), "Nombre", "IdFecha");
-            dgvDetalle.DataSource = listaFechaXTorneo;
-        }
-
-        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.ValueMember = value;
-            cbo.DisplayMember = display;
-            cbo.DataSource = source;
-            cbo.SelectedIndex = -1;
-        }
-
-        private void InicializarFormulario()
-        {
-            btnAgregar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = false;
-            cboTorneo.SelectedIndex = -1;
-            cboFecha.SelectedIndex = -1;
-            dgvDetalle.Rows.Clear();
-        }
-
+        //-----------------------BOTONES ABM--------------------------------//
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             InicializarFormulario();
@@ -77,6 +47,11 @@ namespace GranColo.GUILayer.Fixture
             });
             btnEliminar.Enabled = (dgvDetalle.Rows.Count > 0);
             btnGuardar.Enabled = (dgvDetalle.Rows.Count > 0);
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -97,6 +72,45 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvDetalle.CurrentRow != null)
+            {
+                var itemSeleccionado = (FechaXTorneo)dgvDetalle.CurrentRow.DataBoundItem;
+                listaFechaXTorneo.Remove(itemSeleccionado);
+            }
+        }
+        //----------------------------------------------------------------------//
+
+        //-----------------------SHOW FORM ABM--------------------------------//
+        private void FrmAsignarFecha_Load(object sender, EventArgs e)
+        {
+            InicializarFormulario();
+            LlenarCombo(cboTorneo, torneoService.obtenerTodosTorneos(), "Nombre", "IdTorneo");
+            LlenarCombo(cboFecha, fechaService.obtenerTodasFechas(), "Nombre", "IdFecha");
+            dgvDetalle.DataSource = listaFechaXTorneo;
+        }
+        //----------------------------------------------------------------------//
+
+        //-----------------------OTRAS FUNCIONES--------------------------------//
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
+        }
+
+        private void InicializarFormulario()
+        {
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+            cboTorneo.SelectedIndex = -1;
+            cboFecha.SelectedIndex = -1;
+            dgvDetalle.Rows.Clear();
+        }
+
         private void CboTorneo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboFecha.SelectedIndex != -1 & cboTorneo.SelectedIndex != -1)
@@ -112,16 +126,6 @@ namespace GranColo.GUILayer.Fixture
                 btnAgregar.Enabled = true;
             }
         }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvDetalle.CurrentRow != null)
-            {
-                var itemSeleccionado = (FechaXTorneo)dgvDetalle.CurrentRow.DataBoundItem;
-                listaFechaXTorneo.Remove(itemSeleccionado);
-            }
-        }
-
-        
+        //----------------------------------------------------------------------//
     }
 }

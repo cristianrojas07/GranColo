@@ -15,7 +15,6 @@ namespace GranColo.GUILayer.Fixture
     public partial class FrmABMTorneo : Form
     {
         private FormMode formMode = FormMode.insert;
-        private Torneo torneo;
         private TorneoService service;
 
         public FrmABMTorneo()
@@ -31,48 +30,29 @@ namespace GranColo.GUILayer.Fixture
             
         }
 
-        public void determinarOperacion(FormMode op, TorneoService oTorneoService)
+        public void DeterminarOperacion(FormMode op, TorneoService oTorneoService)
         {
             this.formMode = op;
             this.service  = oTorneoService;
         }
 
-        public bool validarCampos()
-        {
-            if (String.IsNullOrEmpty(txt_nombre.Text))
-            {
-                MessageBox.Show("Se debe ingresar un nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            return true;
-        }
-
-        public bool validarRepetidos(Torneo oTorneo)
-        {
-            if (service.obtenerRepetidos(oTorneo))
-            {
-                MessageBox.Show("Ya existe un torneo con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
-
+        //-----------------------BOTONES ABM--------------------------------//
         public void Btn_aceptar_Click(object sender, EventArgs e)
         {
             Torneo oTorneo = new Torneo();
             switch (formMode)
             {
                 case FormMode.insert:
-                    if (validarCampos())
+                    if (ValidarCampos())
                     {
                         oTorneo.Nombre = txt_nombre.Text;
-                        if (validarRepetidos(oTorneo))
+                        if (ValidarRepetidos(oTorneo))
                         {
                             if (service.insertarTorneo(oTorneo))
                             {
                                 MessageBox.Show("Torneo agregado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 FrmTorneo frmTorneo = Owner as FrmTorneo;
-                                frmTorneo.CargarGrid(service.obtenerTodosTorneos());
+                                frmTorneo.ActualizarGrilla();
                             }
                             else
                             {
@@ -84,14 +64,15 @@ namespace GranColo.GUILayer.Fixture
                     break;
                 case FormMode.update:
                     oTorneo.Nombre = txt_nombre.Text;
-                    if (validarCampos())
+                    if (ValidarCampos())
                     {
-                        if (validarRepetidos(oTorneo))
+                        if (ValidarRepetidos(oTorneo))
                         {
                             if (service.modificarTorneo(oTorneo))
                             {
                                 MessageBox.Show("Torneo modificado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
+                                FrmTorneo frmTorneo = Owner as FrmTorneo;
+                                frmTorneo.ActualizarGrilla();
                             }
                             else
                             {
@@ -101,10 +82,6 @@ namespace GranColo.GUILayer.Fixture
                         }
                     }
                     break;
-                    /*
-                case FormMode.delete:
-                    break;
-                    */
             }
         }
 
@@ -112,7 +89,31 @@ namespace GranColo.GUILayer.Fixture
         {
             this.Close();
         }
+        //----------------------------------------------------------------------//
 
+        //-----------------------VALIDACIONES--------------------------------//
+        public bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txt_nombre.Text))
+            {
+                MessageBox.Show("Se debe ingresar un nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidarRepetidos(Torneo oTorneo)
+        {
+            if (service.obtenerRepetidos(oTorneo))
+            {
+                MessageBox.Show("Ya existe un torneo con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        //----------------------------------------------------------------------//
+
+        //-----------------------SHOW FORM ABM--------------------------------//
         private void FrmABMTorneo_Load(object sender, EventArgs e)
         {
             if (formMode == FormMode.update)
@@ -121,7 +122,7 @@ namespace GranColo.GUILayer.Fixture
                 txt_nombre.Text = list[0].Nombre.ToString();
             }
         }
+        //----------------------------------------------------------------------//
 
-        
     }
 }

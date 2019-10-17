@@ -14,20 +14,21 @@ namespace GranColo.GUILayer.Fixture
 {
     public partial class FrmFecha : Form, InterfazFixture
     {
-        FechaService service;
+        readonly FechaService service;
+
         public FrmFecha()
         {
-            service = new FechaService();
             InitializeComponent();
+            service = new FechaService();
+            dgw_fecha.AutoGenerateColumns = false;
         }
 
-        internal void CargarGrid(IList<Fecha> listTodasFechas)
+        //-----------------------BOTONES ABM--------------------------------//
+        public void Btn_agregar_Click(object sender, EventArgs e)
         {
-            dgw_fecha.Rows.Clear();
-            foreach (Fecha fecha in listTodasFechas)
-            {
-                dgw_fecha.Rows.Add(new Object[] { fecha.IdFecha.ToString(), fecha.Nombre, fecha.Estado });
-            }
+            FrmABMFecha frmABMFecha = new FrmABMFecha();
+            AddOwnedForm(frmABMFecha);
+            frmABMFecha.ShowDialog();
         }
 
         public void Btn_consultar_Click(object sender, EventArgs e)
@@ -39,40 +40,32 @@ namespace GranColo.GUILayer.Fixture
                     Fecha oFecha = new Fecha();
                     oFecha.Nombre = txt_nombre.Text;
                     IList<Fecha> list = service.obtenerFechasPorNombre(oFecha);
+                    dgw_fecha.DataSource = list;
                     if (list.Count == 0)
                     {
                         MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    CargarGrid(list);
                 }
             }
             else
             {
                 IList<Fecha> listTodasFechas = service.obtenerTodasFechas();
-                if (listTodasFechas.Count == 0)
+                dgw_fecha.DataSource = listTodasFechas;
+                if (dgw_fecha.Rows.Count == 0)
                 {
                     MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                CargarGrid(listTodasFechas);
             }
         }
-
-        public void actualizarGrilla()
-        {
-            IList<Fecha> listTodasFechas = service.obtenerTodasFechas();
-            CargarGrid(listTodasFechas);
-        }
-
         public void Btn_editar_Click(object sender, EventArgs e)
         {
             if (dgw_fecha.CurrentRow != null)
             {
                 FrmABMFecha frmABMFecha = new FrmABMFecha();
-                
+                AddOwnedForm(frmABMFecha);
                 service.selected = Int32.Parse(dgw_fecha.CurrentRow.Cells["id_col"].Value.ToString());
-                frmABMFecha.determinarOperacion(FrmABMFecha.FormMode.update, service);
+                frmABMFecha.DeterminarOperacion(FrmABMFecha.FormMode.update, service);
                 frmABMFecha.ShowDialog();
-                actualizarGrilla();
             }
             else
             {
@@ -90,14 +83,14 @@ namespace GranColo.GUILayer.Fixture
                     if (service.eliminarFecha())
                     {
                         MessageBox.Show("Fecha elminada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        actualizarGrilla();
+                        ActualizarGrilla();
                     }
                     else
                     {
                         MessageBox.Show("Error, fecha no eliminada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-                
+
             }
             else
             {
@@ -109,7 +102,9 @@ namespace GranColo.GUILayer.Fixture
         {
             this.Close();
         }
+        //----------------------------------------------------------------------//
 
+        //-----------------------VALIDACIONES--------------------------------//
         public bool ValidarCampos()
         {
             if (String.IsNullOrEmpty(txt_nombre.Text))
@@ -119,12 +114,13 @@ namespace GranColo.GUILayer.Fixture
             }
             return true;
         }
+        //----------------------------------------------------------------------//
 
-        public void Btn_agregar_Click(object sender, EventArgs e)
+        //-----------------------OTRAS FUNCIONES--------------------------------//
+        public void ActualizarGrilla()
         {
-            FrmABMFecha frmABMFecha = new FrmABMFecha();
-            AddOwnedForm(frmABMFecha);
-            frmABMFecha.ShowDialog();
+            IList<Fecha> listTodasFechas = service.obtenerTodasFechas();
+            dgw_fecha.DataSource = listTodasFechas;
         }
 
         private void cb_todos_CheckedChanged(object sender, EventArgs e)
@@ -134,5 +130,6 @@ namespace GranColo.GUILayer.Fixture
             else
                 txt_nombre.Enabled = true;
         }
+        //----------------------------------------------------------------------//
     }
 }

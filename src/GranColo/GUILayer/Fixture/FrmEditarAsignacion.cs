@@ -14,19 +14,20 @@ namespace GranColo.GUILayer.Fixture
 {
     public partial class FrmEditarAsignacion : Form
     {
-        FechaXTorneo fechaXTorneo;
-        FechaXTorneoService fechaXTorneoService;
-        TorneoService torneoService;
-        FechaService fechaService;
+        readonly FechaXTorneo fechaXTorneo;
+        readonly FechaXTorneoService fechaXTorneoService;
+        readonly TorneoService torneoService;
+        readonly FechaService fechaService;
         int torneoSeleccionado;
         int fechaSeleccionada;
+
         public FrmEditarAsignacion(FechaXTorneo fechaXTorneo)
         {
+            InitializeComponent();
             this.fechaXTorneo = fechaXTorneo;
             fechaService = new FechaService();
             torneoService = new TorneoService();
             fechaXTorneoService = new FechaXTorneoService();
-            InitializeComponent();
             LlenarCombo(cboTorneo, torneoService.obtenerTodosTorneos(), "Nombre", "IdTorneo");
             LlenarCombo(cboFecha, fechaService.obtenerTodasFechas(), "Nombre", "IdFecha");
         }
@@ -59,6 +60,8 @@ namespace GranColo.GUILayer.Fixture
             if (fechaXTorneoService.modificar(fechaXTorneo, fechaSeleccionada, torneoSeleccionado))
             {
                 MessageBox.Show("Registro modificado con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FrmConsultarAsignarFecha frmConsultarAsignarFecha = Owner as FrmConsultarAsignarFecha;
+                frmConsultarAsignarFecha.ActualizarGrilla();
             }
             else
             {

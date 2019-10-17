@@ -195,10 +195,10 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                 txt_nombre.Text = jugador[0].Nombre;
                 txt_apellido.Text = jugador[0].Apellido;
                 txt_nroDoc.Text = jugador[0].NroDocumento.ToString();
-                cbo_club.SelectedIndex = (jugador[0].Club.IdClub - 1);
-                cbo_posicion.SelectedIndex = (jugador[0].Posicion.IdPosicion - 1);
-                cbo_estado.SelectedIndex = (jugador[0].EstadoActual.IdEstadoActual - 1);
-                cbo_tipoDoc.SelectedIndex = (jugador[0].TipoDocumento.IdTipoDocumento - 1);
+                cbo_club.Text = jugador[0].Club.Nombre;
+                cbo_posicion.Text = jugador[0].Posicion.Nombre;
+                cbo_estado.Text = jugador[0].EstadoActual.Nombre;
+                cbo_tipoDoc.Text = jugador[0].TipoDocumento.Nombre;
                 nud_costo.Value = jugador[0].Costo;
                 jugadorSinModificar = jugador[0];
             }
@@ -221,11 +221,6 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                     e.Handled = true;
                 }
             }
-        }
-
-        private void txt_nroDoc_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

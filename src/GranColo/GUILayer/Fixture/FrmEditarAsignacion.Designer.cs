@@ -104,6 +104,7 @@
             this.Controls.Add(this.cboTorneo);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTorneo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmEditarAsignacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

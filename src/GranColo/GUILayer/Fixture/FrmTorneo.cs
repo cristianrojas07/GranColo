@@ -14,53 +14,21 @@ namespace GranColo.GUILayer.Fixture
 {
     public partial class FrmTorneo : Form, InterfazFixture
     {
-        TorneoService service;
+        readonly TorneoService service;
+
         public FrmTorneo()
         {
-            service = new TorneoService();
             InitializeComponent();
+            service = new TorneoService();
+            dgw_torneo.AutoGenerateColumns = false;
         }
 
-        internal void CargarGrid(IList<Torneo> listTodosTorneos)
+        //-----------------------BOTONES ABM--------------------------------//
+        public void Btn_agregar_Click(object sender, EventArgs e)
         {
-            dgw_torneo.Rows.Clear();
-            foreach (Torneo torneo in listTodosTorneos)
-            {
-                dgw_torneo.Rows.Add(new Object[] { torneo.IdTorneo.ToString(), torneo.Nombre, torneo.Estado });
-            }
-        }
-
-        public void Btn_consultar_Click(object sender, EventArgs e)
-        {
-            if (!cb_todos.Checked)
-            {
-                if (ValidarCampos())
-                {
-                    Torneo oTorneo = new Torneo();
-                    oTorneo.Nombre = txt_nombre.Text;
-                    IList<Torneo> list = service.obtenerTorneosPorNombre(oTorneo);
-                    if (list.Count == 0)
-                    {
-                        MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    CargarGrid(list);
-                }
-            }
-            else
-            {
-                IList<Torneo> listTodosTorneos = service.obtenerTodosTorneos();
-                if (listTodosTorneos.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                CargarGrid(listTodosTorneos);
-            }
-        }
-
-        public void actualizarGrilla()
-        {
-            IList<Torneo> listTodosTorneos = service.obtenerTodosTorneos();
-            CargarGrid(listTodosTorneos);
+            FrmABMTorneo frmABMTorneo = new FrmABMTorneo();
+            AddOwnedForm(frmABMTorneo);
+            frmABMTorneo.ShowDialog();
         }
 
         public void Btn_editar_Click(object sender, EventArgs e)
@@ -68,10 +36,10 @@ namespace GranColo.GUILayer.Fixture
             if (dgw_torneo.CurrentRow != null)
             {
                 FrmABMTorneo frmABMTorneo = new FrmABMTorneo();
+                AddOwnedForm(frmABMTorneo);
                 service.selected = Int32.Parse(dgw_torneo.CurrentRow.Cells["id_col"].Value.ToString());
-                frmABMTorneo.determinarOperacion(FrmABMTorneo.FormMode.update, service);
+                frmABMTorneo.DeterminarOperacion(FrmABMTorneo.FormMode.update, service);
                 frmABMTorneo.ShowDialog();
-                actualizarGrilla();
             }
             else
             {
@@ -89,7 +57,7 @@ namespace GranColo.GUILayer.Fixture
                     if (service.eliminarTorneo())
                     {
                         MessageBox.Show("Torneo eliminado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        actualizarGrilla();
+                        ActualizarGrilla();
                     }
                     else
                     {
@@ -104,11 +72,40 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
+        public void Btn_consultar_Click(object sender, EventArgs e)
+        {
+            if (!cb_todos.Checked)
+            {
+                if (ValidarCampos())
+                {
+                    Torneo oTorneo = new Torneo();
+                    oTorneo.Nombre = txt_nombre.Text;
+                    IList<Torneo> list = service.obtenerTorneosPorNombre(oTorneo);
+                    dgw_torneo.DataSource = list;
+                    if (dgw_torneo.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                IList<Torneo> listTodosTorneos = service.obtenerTodosTorneos();
+                dgw_torneo.DataSource = listTodosTorneos;
+                if (dgw_torneo.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
         public void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        //----------------------------------------------------------------------//
 
+        //-----------------------VALIDACIONES--------------------------------//
         public bool ValidarCampos()
         {
             if (String.IsNullOrEmpty(txt_nombre.Text))
@@ -118,12 +115,13 @@ namespace GranColo.GUILayer.Fixture
             }
             return true;
         }
+        //----------------------------------------------------------------------//
 
-        public void Btn_agregar_Click(object sender, EventArgs e)
+        //-----------------------OTRAS FUNCIONES--------------------------------//
+        public void ActualizarGrilla()
         {
-            FrmABMTorneo frmABMTorneo = new FrmABMTorneo();
-            AddOwnedForm(frmABMTorneo);
-            frmABMTorneo.ShowDialog();
+            IList<Torneo> listTodosTorneos = service.obtenerTodosTorneos();
+            dgw_torneo.DataSource = listTodosTorneos;
         }
 
         private void cb_todos_CheckedChanged(object sender, EventArgs e)
@@ -133,5 +131,6 @@ namespace GranColo.GUILayer.Fixture
             else
                 txt_nombre.Enabled = true;
         }
+        //----------------------------------------------------------------------//
     }
 }

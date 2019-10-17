@@ -33,14 +33,14 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.dgw_fecha = new System.Windows.Forms.DataGridView();
-            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.cb_todos = new System.Windows.Forms.CheckBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.gb_titulo = new System.Windows.Forms.GroupBox();
+            this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha)).BeginInit();
             this.gb_titulo.SuspendLayout();
             this.SuspendLayout();
@@ -100,27 +100,6 @@
             this.dgw_fecha.Size = new System.Drawing.Size(346, 319);
             this.dgw_fecha.TabIndex = 31;
             // 
-            // id_col
-            // 
-            this.id_col.HeaderText = "Nro.";
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            this.id_col.Visible = false;
-            // 
-            // nombre_col
-            // 
-            this.nombre_col.HeaderText = "Nombre";
-            this.nombre_col.Name = "nombre_col";
-            this.nombre_col.ReadOnly = true;
-            this.nombre_col.Width = 303;
-            // 
-            // estado_col
-            // 
-            this.estado_col.HeaderText = "Estado";
-            this.estado_col.Name = "estado_col";
-            this.estado_col.ReadOnly = true;
-            this.estado_col.Visible = false;
-            // 
             // btn_consultar
             // 
             this.btn_consultar.Location = new System.Drawing.Point(275, 21);
@@ -179,6 +158,29 @@
             this.gb_titulo.TabIndex = 1;
             this.gb_titulo.TabStop = false;
             this.gb_titulo.Text = "Fecha";
+            // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "IdFecha";
+            this.id_col.HeaderText = "Nro.";
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Visible = false;
+            // 
+            // nombre_col
+            // 
+            this.nombre_col.DataPropertyName = "Nombre";
+            this.nombre_col.HeaderText = "Nombre";
+            this.nombre_col.Name = "nombre_col";
+            this.nombre_col.ReadOnly = true;
+            this.nombre_col.Width = 303;
+            // 
+            // estado_col
+            // 
+            this.estado_col.HeaderText = "Estado";
+            this.estado_col.Name = "estado_col";
+            this.estado_col.ReadOnly = true;
+            this.estado_col.Visible = false;
             // 
             // FrmFecha
             // 

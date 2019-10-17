@@ -27,51 +27,31 @@ namespace GranColo.GUILayer.Fixture
         {
             insert,
             update
-            
         }
 
-        public void determinarOperacion(FormMode op, FechaService oFechaService)
+        public void DeterminarOperacion(FormMode op, FechaService oFechaService)
         {
             this.formMode = op;
             this.service = oFechaService;
         }
 
-        public bool validarCampos()
-        {
-            if (String.IsNullOrEmpty(txt_nombre.Text))
-            {
-                MessageBox.Show("Se debe ingresar un nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            return true;
-        }
-
-        public bool validarRepetidos(Fecha oFecha)
-        {
-            if (service.obtenerRepetidos(oFecha))
-            {
-                MessageBox.Show("Ya existe una fecha con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
-
+        //-----------------------BOTONES ABM--------------------------------//
         public void Btn_aceptar_Click(object sender, EventArgs e)
         {
             Fecha oFecha = new Fecha();
             switch (formMode)
             {
                 case FormMode.insert:
-                    if (validarCampos())
+                    if (ValidarCampos())
                     {
                         oFecha.Nombre = txt_nombre.Text;
-                        if (validarRepetidos(oFecha))
+                        if (ValidarRepetidos(oFecha))
                         {
                             if (service.insertarFecha(oFecha))
                             {
                                 MessageBox.Show("Fecha agregada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 FrmFecha frmFecha = Owner as FrmFecha;
-                                frmFecha.CargarGrid(service.obtenerTodasFechas());
+                                frmFecha.ActualizarGrilla();
                             }
                             else
                             {
@@ -82,15 +62,16 @@ namespace GranColo.GUILayer.Fixture
                     }
                     break;
                 case FormMode.update:
-                    if (validarCampos())
+                    if (ValidarCampos())
                     {
                         oFecha.Nombre = txt_nombre.Text;
-                        if (validarRepetidos(oFecha))
+                        if (ValidarRepetidos(oFecha))
                         {
                             if (service.modificarFecha(oFecha))
                             {
                                 MessageBox.Show("Fecha modificada con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
+                                FrmFecha frmFecha = Owner as FrmFecha;
+                                frmFecha.ActualizarGrilla();
                             }
                             else
                             {
@@ -100,10 +81,6 @@ namespace GranColo.GUILayer.Fixture
                         }
                     }
                     break;
-                    /*
-                case FormMode.delete:
-                    break;
-                    */
             }
         }
 
@@ -111,7 +88,31 @@ namespace GranColo.GUILayer.Fixture
         {
             this.Close();
         }
+        //----------------------------------------------------------------------//
 
+        //-----------------------VALIDACIONES--------------------------------//
+        public bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txt_nombre.Text))
+            {
+                MessageBox.Show("Se debe ingresar un nombre", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidarRepetidos(Fecha oFecha)
+        {
+            if (service.obtenerRepetidos(oFecha))
+            {
+                MessageBox.Show("Ya existe una fecha con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        //----------------------------------------------------------------------//
+
+        //-----------------------SHOW FORM ABM--------------------------------//
         private void FrmABMFecha_Load(object sender, EventArgs e)
         {
             if (formMode == FormMode.update)
@@ -120,5 +121,6 @@ namespace GranColo.GUILayer.Fixture
                 txt_nombre.Text = list[0].Nombre.ToString();
             }
         }
-    } 
+        //----------------------------------------------------------------------//
+    }
 }

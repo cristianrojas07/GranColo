@@ -21,11 +21,27 @@ namespace GranColo.BusinessLayer.Entities
             }
         }
 
+        public int IdFecha
+        {
+            get
+            {
+                return Fecha.IdFecha;
+            }
+        }
+
         public string TorneoNombre
         {
             get
             {
                 return Torneo.Nombre;
+            }
+        }
+
+        public int IdTorneo
+        {
+            get
+            {
+                return Torneo.IdTorneo;
             }
         }
     }
