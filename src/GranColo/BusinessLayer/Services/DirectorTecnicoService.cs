@@ -1,4 +1,5 @@
-﻿using GranColo.DataLayer.Dao;
+﻿using GranColo.BusinessLayer.Entities;
+using GranColo.DataLayer.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace GranColo.BusinessLayer.Services
         internal bool validarDirectorTecnico(DirectorTecnico oDT)
         {
             return oDTDao.validarDirectorTecnico(oDT);
+        }
+
+        internal IList<DirectorTecnico> obtenerTodos()
+        {
+            return oDTDao.getAll();
         }
     }
 }

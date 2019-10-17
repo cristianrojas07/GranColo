@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Entities\Club.cs" />
+    <Compile Include="BusinessLayer\Entities\Color.cs" />
     <Compile Include="BusinessLayer\Entities\DirectorTecnico.cs" />
+    <Compile Include="BusinessLayer\Entities\Equipo.cs" />
     <Compile Include="BusinessLayer\Entities\EstadoActual.cs" />
     <Compile Include="BusinessLayer\Entities\Fecha.cs" />
     <Compile Include="BusinessLayer\Entities\FechaXTorneo.cs" />
@@ -59,7 +61,9 @@
     <Compile Include="BusinessLayer\Entities\TipoDocumento.cs" />
     <Compile Include="BusinessLayer\Entities\Torneo.cs" />
     <Compile Include="BusinessLayer\Services\ClubService.cs" />
+    <Compile Include="BusinessLayer\Services\ColorService.cs" />
     <Compile Include="BusinessLayer\Services\DirectorTecnicoService.cs" />
+    <Compile Include="BusinessLayer\Services\EquipoService.cs" />
     <Compile Include="BusinessLayer\Services\EstadoActualService.cs" />
     <Compile Include="BusinessLayer\Services\FechaService.cs" />
     <Compile Include="BusinessLayer\Services\FechaXTorneoService.cs" />
@@ -68,7 +72,9 @@
     <Compile Include="BusinessLayer\Services\TipoDocumentoService.cs" />
     <Compile Include="BusinessLayer\Services\TorneoService.cs" />
     <Compile Include="DataLayer\Dao\ClubDao.cs" />
+    <Compile Include="DataLayer\Dao\ColorDao.cs" />
     <Compile Include="DataLayer\Dao\DirectorTecnicoDao.cs" />
+    <Compile Include="DataLayer\Dao\EquipoDao.cs" />
     <Compile Include="DataLayer\Dao\EstadoActualDao.cs" />
     <Compile Include="DataLayer\Dao\FechaDao.cs" />
     <Compile Include="DataLayer\Dao\FechaXTorneoDao.cs" />
@@ -77,6 +83,18 @@
     <Compile Include="DataLayer\Dao\TipoDocumentoDao.cs" />
     <Compile Include="DataLayer\Dao\TorneoDao.cs" />
     <Compile Include="DataLayer\DataManager.cs" />
+    <Compile Include="GUILayer\Clubes\Equipos\FrmABMEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Equipos\FrmABMEquipo.Designer.cs">
+      <DependentUpon>FrmABMEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Equipos\FrmEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Equipos\FrmEquipo.Designer.cs">
+      <DependentUpon>FrmEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Clubes\Jugadores\FrmABMJugador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +164,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\Clubes\Equipos\FrmABMEquipo.resx">
+      <DependentUpon>FrmABMEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\Equipos\FrmEquipo.resx">
+      <DependentUpon>FrmEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmABMJugador.resx">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer.Entities
 {
-    public class Localidad
+    public class Color
     {
-        public int IdLocalidad { get; set; }
+        public int IdColor { get; set; }
         public string Nombre { get; set; }
-        public Provincia Provincia { get; set; }
+
     }
 }

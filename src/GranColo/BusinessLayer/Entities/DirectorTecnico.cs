@@ -1,8 +1,8 @@
 ﻿using GranColo.BusinessLayer.Entities;
 
-namespace GranColo.BusinessLayer
+namespace GranColo.BusinessLayer.Entities
 {
-    class DirectorTecnico
+    public class DirectorTecnico
     {
         private TipoDocumento tipoDocumento;
 

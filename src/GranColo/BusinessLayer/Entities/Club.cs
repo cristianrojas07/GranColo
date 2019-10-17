@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer.Entities
 {
-    class Club
+    public class Club
     {
         public int IdClub { get; set; }
         public string Nombre { get; set; }

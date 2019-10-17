@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GranColo.BusinessLayer;
+using GranColo.BusinessLayer.Entities;
 using GranColo.DataLayer;
 
 namespace GranColo.DataLayer.Dao
@@ -23,10 +24,25 @@ namespace GranColo.DataLayer.Dao
             return (rtados.Rows.Count>0);
         }
 
+        internal IList<DirectorTecnico> getAll()
+        {
+            IList<DirectorTecnico> list = new List<DirectorTecnico>();
+            string sql = "SELECT * " +
+                " FROM DirectorTecnico ";
+
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+        }
 
         private DirectorTecnico ObjectMapping(DataRow row)
         {
             DirectorTecnico oDT = new DirectorTecnico();
+            oDT.Club = new Club();
             oDT.IdDirectorTecnico = Int32.Parse(row[0].ToString());
             oDT.Nombre = row[1].ToString();
             oDT.Apellido = row[2].ToString();
@@ -36,6 +52,7 @@ namespace GranColo.DataLayer.Dao
             oDT.Password = row[6].ToString();
             oDT.Email = row[7].ToString();
             oDT.Club.IdClub = Int32.Parse(row[8].ToString());
+         
 
             return oDT;
         }

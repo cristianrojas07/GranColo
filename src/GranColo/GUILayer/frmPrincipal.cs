@@ -1,4 +1,5 @@
-﻿using GranColo.GUILayer.Equipos.Jugadores;
+﻿using GranColo.GUILayer.Clubes.Equipos;
+using GranColo.GUILayer.Equipos.Jugadores;
 using GranColo.GUILayer.Fixture;
 using System;
 using System.Collections.Generic;
@@ -125,6 +126,12 @@ namespace GranColo.GUILayer
         {
             FrmJugador frmJugador = new FrmJugador();
             frmJugador.ShowDialog();
+        }
+
+        private void EquipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEquipo frmEquipo = new FrmEquipo();
+            frmEquipo.ShowDialog();
         }
     }
 }

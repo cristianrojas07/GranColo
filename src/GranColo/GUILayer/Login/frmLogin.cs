@@ -1,4 +1,5 @@
 ﻿using GranColo.BusinessLayer;
+using GranColo.BusinessLayer.Entities;
 using GranColo.BusinessLayer.Services;
 using System;
 using System.Collections.Generic;

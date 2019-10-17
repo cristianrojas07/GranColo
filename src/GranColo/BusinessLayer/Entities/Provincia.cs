@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer.Entities
 {
-    class Provincia
+    public class Provincia
     {
         public int IdProvincia { get; set; }
         public string Nombre { get; set; }
