@@ -37,5 +37,15 @@ namespace GranColo.BusinessLayer.Services
         {
             return JugadorDao.getRepeat(oJugador);
         }
+
+        internal IList<Jugador> ConsultarJugadoresConFiltros(Dictionary<string, object> parametros)
+        {
+            return JugadorDao.GetJugadorByFilters(parametros);
+        }
+
+        internal IList<Jugador> ObtenerJugadorPorId()
+        {
+            return JugadorDao.getJugadorById(Selected);
+        }
     }
 }

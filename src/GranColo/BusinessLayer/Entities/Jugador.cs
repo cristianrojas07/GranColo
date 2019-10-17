@@ -18,5 +18,34 @@ namespace GranColo.BusinessLayer.Entities
         public TipoDocumento TipoDocumento { get; set; }
         public decimal Costo { get; set; }
         public string Estado { get; set; }
+
+        public string ClubNombre
+        {
+            get
+            {
+                return Club.Nombre;
+            }
+        }
+        public string PosicionNombre
+        {
+            get
+            {
+                return Posicion.Nombre;
+            }
+        }
+        public string EstadoActualNombre
+        {
+            get
+            {
+                return EstadoActual.Nombre;
+            }
+        }
+        public string TipoDocumentoNombre
+        {
+            get
+            {
+                return TipoDocumento.Nombre;
+            }
+        }
     }
 }

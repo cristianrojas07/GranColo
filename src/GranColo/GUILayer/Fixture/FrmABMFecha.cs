@@ -116,7 +116,6 @@ namespace GranColo.GUILayer.Fixture
         {
             if (formMode == FormMode.update)
             {
-                
                 IList<Fecha> list =  service.obtenerFechasPorId();
                 txt_nombre.Text = list[0].Nombre.ToString();
             }

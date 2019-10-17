@@ -165,6 +165,7 @@
             this.txt_nroDoc.Name = "txt_nroDoc";
             this.txt_nroDoc.Size = new System.Drawing.Size(155, 20);
             this.txt_nroDoc.TabIndex = 12;
+            this.txt_nroDoc.TextChanged += new System.EventHandler(this.txt_nroDoc_TextChanged);
             this.txt_nroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroDoc_KeyPress);
             // 
             // lbl_tipoDoc

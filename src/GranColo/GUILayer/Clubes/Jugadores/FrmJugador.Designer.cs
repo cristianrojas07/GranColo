@@ -44,7 +44,11 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.dgw_fecha = new System.Windows.Forms.DataGridView();
+            this.dgvJugadores = new System.Windows.Forms.DataGridView();
+            this.btn_consultar = new System.Windows.Forms.Button();
+            this.cb_todos = new System.Windows.Forms.CheckBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.lbl_nombre = new System.Windows.Forms.Label();
             this.id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,15 +59,11 @@
             this.IdPosición = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_consultar = new System.Windows.Forms.Button();
-            this.cb_todos = new System.Windows.Forms.CheckBox();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.lbl_nombre = new System.Windows.Forms.Label();
             this.gb_titulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_max)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_min)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_titulo
@@ -79,7 +79,7 @@
             this.gb_titulo.Controls.Add(this.btn_eliminar);
             this.gb_titulo.Controls.Add(this.btn_editar);
             this.gb_titulo.Controls.Add(this.btn_agregar);
-            this.gb_titulo.Controls.Add(this.dgw_fecha);
+            this.gb_titulo.Controls.Add(this.dgvJugadores);
             this.gb_titulo.Controls.Add(this.btn_consultar);
             this.gb_titulo.Controls.Add(this.cb_todos);
             this.gb_titulo.Controls.Add(this.txt_nombre);
@@ -227,6 +227,7 @@
             this.btn_eliminar.TabIndex = 34;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_editar
             // 
@@ -236,6 +237,7 @@
             this.btn_editar.TabIndex = 33;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_agregar
             // 
@@ -247,12 +249,12 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.Btn_agregar_Click);
             // 
-            // dgw_fecha
+            // dgvJugadores
             // 
-            this.dgw_fecha.AllowUserToAddRows = false;
-            this.dgw_fecha.AllowUserToDeleteRows = false;
-            this.dgw_fecha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_fecha.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvJugadores.AllowUserToAddRows = false;
+            this.dgvJugadores.AllowUserToDeleteRows = false;
+            this.dgvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJugadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_col,
             this.nombre_col,
             this.Apellido,
@@ -263,80 +265,11 @@
             this.IdPosición,
             this.Costo,
             this.estado_col});
-            this.dgw_fecha.Location = new System.Drawing.Point(9, 161);
-            this.dgw_fecha.Name = "dgw_fecha";
-            this.dgw_fecha.ReadOnly = true;
-            this.dgw_fecha.Size = new System.Drawing.Size(490, 297);
-            this.dgw_fecha.TabIndex = 31;
-            // 
-            // id_col
-            // 
-            this.id_col.HeaderText = "Nro.";
-            this.id_col.Name = "id_col";
-            this.id_col.ReadOnly = true;
-            this.id_col.Visible = false;
-            // 
-            // nombre_col
-            // 
-            this.nombre_col.HeaderText = "Nombre";
-            this.nombre_col.Name = "nombre_col";
-            this.nombre_col.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // IdClub
-            // 
-            this.IdClub.DataPropertyName = "ClubNombre";
-            this.IdClub.HeaderText = "Club";
-            this.IdClub.Name = "IdClub";
-            this.IdClub.ReadOnly = true;
-            this.IdClub.Width = 75;
-            // 
-            // IdEstadoActual
-            // 
-            this.IdEstadoActual.HeaderText = "Estado Actual";
-            this.IdEstadoActual.Name = "IdEstadoActual";
-            this.IdEstadoActual.ReadOnly = true;
-            this.IdEstadoActual.Width = 75;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Nro. Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 75;
-            // 
-            // IdTipoDocumento
-            // 
-            this.IdTipoDocumento.HeaderText = "Tipo Documento";
-            this.IdTipoDocumento.Name = "IdTipoDocumento";
-            this.IdTipoDocumento.ReadOnly = true;
-            // 
-            // IdPosición
-            // 
-            this.IdPosición.HeaderText = "Posición";
-            this.IdPosición.Name = "IdPosición";
-            this.IdPosición.ReadOnly = true;
-            this.IdPosición.Width = 75;
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo";
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            this.Costo.Width = 75;
-            // 
-            // estado_col
-            // 
-            this.estado_col.HeaderText = "Estado";
-            this.estado_col.Name = "estado_col";
-            this.estado_col.ReadOnly = true;
-            this.estado_col.Visible = false;
-            this.estado_col.Width = 75;
+            this.dgvJugadores.Location = new System.Drawing.Point(9, 161);
+            this.dgvJugadores.Name = "dgvJugadores";
+            this.dgvJugadores.ReadOnly = true;
+            this.dgvJugadores.Size = new System.Drawing.Size(490, 297);
+            this.dgvJugadores.TabIndex = 31;
             // 
             // btn_consultar
             // 
@@ -379,6 +312,83 @@
             this.lbl_nombre.TabIndex = 27;
             this.lbl_nombre.Text = "Nombre:";
             // 
+            // id_col
+            // 
+            this.id_col.DataPropertyName = "IdJugador";
+            this.id_col.HeaderText = "Nro.";
+            this.id_col.Name = "id_col";
+            this.id_col.ReadOnly = true;
+            this.id_col.Visible = false;
+            // 
+            // nombre_col
+            // 
+            this.nombre_col.DataPropertyName = "Nombre";
+            this.nombre_col.HeaderText = "Nombre";
+            this.nombre_col.Name = "nombre_col";
+            this.nombre_col.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // IdClub
+            // 
+            this.IdClub.DataPropertyName = "ClubNombre";
+            this.IdClub.HeaderText = "Club";
+            this.IdClub.Name = "IdClub";
+            this.IdClub.ReadOnly = true;
+            this.IdClub.Width = 75;
+            // 
+            // IdEstadoActual
+            // 
+            this.IdEstadoActual.DataPropertyName = "EstadoActualNombre";
+            this.IdEstadoActual.HeaderText = "Estado Actual";
+            this.IdEstadoActual.Name = "IdEstadoActual";
+            this.IdEstadoActual.ReadOnly = true;
+            this.IdEstadoActual.Width = 75;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "NroDocumento";
+            this.Documento.HeaderText = "Nro. Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            this.Documento.Width = 75;
+            // 
+            // IdTipoDocumento
+            // 
+            this.IdTipoDocumento.DataPropertyName = "TipoDocumentoNombre";
+            this.IdTipoDocumento.HeaderText = "Tipo Documento";
+            this.IdTipoDocumento.Name = "IdTipoDocumento";
+            this.IdTipoDocumento.ReadOnly = true;
+            // 
+            // IdPosición
+            // 
+            this.IdPosición.DataPropertyName = "PosicionNombre";
+            this.IdPosición.HeaderText = "Posición";
+            this.IdPosición.Name = "IdPosición";
+            this.IdPosición.ReadOnly = true;
+            this.IdPosición.Width = 75;
+            // 
+            // Costo
+            // 
+            this.Costo.DataPropertyName = "Costo";
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.ReadOnly = true;
+            this.Costo.Width = 75;
+            // 
+            // estado_col
+            // 
+            this.estado_col.HeaderText = "Estado";
+            this.estado_col.Name = "estado_col";
+            this.estado_col.ReadOnly = true;
+            this.estado_col.Visible = false;
+            this.estado_col.Width = 75;
+            // 
             // FrmJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +407,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_max)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_min)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_fecha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,7 +419,7 @@
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.DataGridView dgw_fecha;
+        private System.Windows.Forms.DataGridView dgvJugadores;
         private System.Windows.Forms.Button btn_consultar;
         private System.Windows.Forms.CheckBox cb_todos;
         private System.Windows.Forms.TextBox txt_nombre;

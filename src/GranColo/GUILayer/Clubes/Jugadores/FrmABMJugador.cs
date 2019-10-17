@@ -15,11 +15,12 @@ namespace GranColo.GUILayer.Equipos.Jugadores
     public partial class FrmABMJugador : Form
     {
         private readonly ClubService ClubService;
-        private readonly JugadorService JugadorService;
+        private JugadorService JugadorService;
         private readonly PosicionService PosicionService;
         private readonly TipoDocumentoService TipoDocumentoService;
         private readonly EstadoActualService EstadoActualService;
-        private readonly FormMode formMode = FormMode.insert;
+        private FormMode formMode = FormMode.insert;
+        private Jugador jugadorSinModificar;
 
         public enum FormMode
         {
@@ -76,7 +77,7 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                             {
                                 MessageBox.Show("Jugador agregado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 FrmJugador frmJugador = Owner as FrmJugador;
-                                frmJugador.CargarGrid(JugadorService.ObtenerTodosJugadores());
+                                frmJugador.ActualizarGrilla();
                             }
                             else
                             {
@@ -89,6 +90,7 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                 case FormMode.update:
                     if (ValidarCampos())
                     {
+                        var dniAnterior = jugadorSinModificar.NroDocumento;
                         oJugador.Nombre = txt_nombre.Text;
                         oJugador.Apellido = txt_apellido.Text;
                         oJugador.NroDocumento = Int32.Parse(txt_nroDoc.Text);
@@ -97,11 +99,30 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                         oJugador.Posicion = (Posicion)cbo_posicion.SelectedItem;
                         oJugador.TipoDocumento = (TipoDocumento)cbo_tipoDoc.SelectedItem;
                         oJugador.Costo = nud_costo.Value;
-                        if (ValidarRepetidos(oJugador))
+                        if (dniAnterior != oJugador.NroDocumento)
+                        {
+                            if (ValidarRepetidos(oJugador))
+                            {
+                                if (JugadorService.ModificarJugador(oJugador))
+                                {
+                                    MessageBox.Show("Jugador modificado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    FrmJugador frmJugador = Owner as FrmJugador;
+                                    frmJugador.ActualizarGrilla();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error, jugador no modificado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                }
+                                this.Close();
+                            }
+                        }
+                        else
                         {
                             if (JugadorService.ModificarJugador(oJugador))
                             {
                                 MessageBox.Show("Jugador modificado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FrmJugador frmJugador = Owner as FrmJugador;
+                                frmJugador.ActualizarGrilla();
                             }
                             else
                             {
@@ -109,6 +130,7 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                             }
                             this.Close();
                         }
+                        
                     }
                     break;
                     /*
@@ -141,6 +163,12 @@ namespace GranColo.GUILayer.Equipos.Jugadores
             return false;
         }
 
+        internal void DeterminarOperacion(FormMode op, JugadorService jugadorService)
+        {
+            this.formMode = op;
+            this.JugadorService = jugadorService;
+        }
+
         private bool ValidarTextBoxVacio(TextBox textBox, String mensaje)
         {
             if (String.IsNullOrEmpty(textBox.Text))
@@ -163,8 +191,16 @@ namespace GranColo.GUILayer.Equipos.Jugadores
         {
             if (formMode == FormMode.update)
             {
-                //IList<Fecha> list = service.obtenerFechasPorId();
-                //txt_nombre.Text = list[0].Nombre.ToString();
+                IList<Jugador> jugador = JugadorService.ObtenerJugadorPorId();
+                txt_nombre.Text = jugador[0].Nombre;
+                txt_apellido.Text = jugador[0].Apellido;
+                txt_nroDoc.Text = jugador[0].NroDocumento.ToString();
+                cbo_club.SelectedIndex = (jugador[0].Club.IdClub - 1);
+                cbo_posicion.SelectedIndex = (jugador[0].Posicion.IdPosicion - 1);
+                cbo_estado.SelectedIndex = (jugador[0].EstadoActual.IdEstadoActual - 1);
+                cbo_tipoDoc.SelectedIndex = (jugador[0].TipoDocumento.IdTipoDocumento - 1);
+                nud_costo.Value = jugador[0].Costo;
+                jugadorSinModificar = jugador[0];
             }
         }
 
@@ -185,6 +221,11 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                     e.Handled = true;
                 }
             }
+        }
+
+        private void txt_nroDoc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

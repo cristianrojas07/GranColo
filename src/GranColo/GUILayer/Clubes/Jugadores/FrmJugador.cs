@@ -21,6 +21,7 @@ namespace GranColo.GUILayer.Equipos.Jugadores
         public FrmJugador()
         {
             InitializeComponent();
+            dgvJugadores.AutoGenerateColumns = false;
             JugadorService = new JugadorService();
             ClubService = new ClubService();
             PosicionService = new PosicionService();
@@ -63,26 +64,33 @@ namespace GranColo.GUILayer.Equipos.Jugadores
         {
             if (!cb_todos.Checked)
             {
-                /*if (ValidarCampos())
+                if (ValidarCampos())
                 {
-                    Fecha oFecha = new Fecha();
-                    oFecha.Nombre = txt_nombre.Text;
-                    IList<Fecha> list = service.obtenerFechasPorNombre(oFecha);
-                    if (list.Count == 0)
+                    Dictionary<string, object> parametros = new Dictionary<string, object>();
+                    parametros.Add("costoDesde", nud_min.Value);
+                    parametros.Add("costoHasta", nud_max.Value);
+                    parametros.Add("nombre", "%" + txt_nombre.Text + "%");
+                    parametros.Add("apellido", "%" + txt_apellido.Text + "%");
+                    parametros.Add("idPosicion", cb_posicion.SelectedValue.ToString());
+                    parametros.Add("idClub", cb_club.SelectedValue.ToString());
+
+                    IList<Jugador> listadoJugadores = JugadorService.ConsultarJugadoresConFiltros(parametros);
+                    dgvJugadores.DataSource = listadoJugadores;
+
+                    if (dgvJugadores.Rows.Count == 0)
                     {
-                        MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    CargarGrid(list);
-                }*/
+                }
             }
             else
             {
                 IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadores();
-                if (listTodosJugadores.Count == 0)
+                dgvJugadores.DataSource = listTodosJugadores;
+                if (dgvJugadores.Rows.Count == 0)
                 {
                     MessageBox.Show("No se encontraron registros en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                CargarGrid(listTodosJugadores);
             }
         }
 
@@ -124,22 +132,53 @@ namespace GranColo.GUILayer.Equipos.Jugadores
         public void ActualizarGrilla()
         {
             IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadores();
-            CargarGrid(listTodosJugadores);
-        }
-
-        internal void CargarGrid(IList<Jugador> listTodosJugadores)
-        {
-            dgw_fecha.Rows.Clear();
-            foreach (Jugador Jugador in listTodosJugadores)
-            {
-                dgw_fecha.Rows.Add(new Object[] { Jugador.IdJugador.ToString(), Jugador.Nombre, Jugador.Apellido, Jugador.Club.Nombre
-                    , Jugador.EstadoActual.Nombre, Jugador.NroDocumento.ToString(), Jugador.TipoDocumento.Nombre, Jugador.Posicion.Nombre, Jugador.Costo.ToString()});
-            }
+            dgvJugadores.DataSource = listTodosJugadores;
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            if (dgvJugadores.CurrentRow != null)
+            {
+                FrmABMJugador frmABMJugador = new FrmABMJugador();
+                AddOwnedForm(frmABMJugador);
+                JugadorService.Selected = Int32.Parse(dgvJugadores.CurrentRow.Cells["id_col"].Value.ToString());
+                frmABMJugador.DeterminarOperacion(FrmABMJugador.FormMode.update, JugadorService);
+                frmABMJugador.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvJugadores.CurrentRow != null)
+            {
+                if (MessageBox.Show("Seguro que desea eliminar el jugador?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    JugadorService.Selected = Int32.Parse(dgvJugadores.CurrentRow.Cells["id_col"].Value.ToString());
+                    if (JugadorService.EliminarJugador())
+                    {
+                        MessageBox.Show("Jugador eliminado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ActualizarGrilla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, jugador no eliminado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
