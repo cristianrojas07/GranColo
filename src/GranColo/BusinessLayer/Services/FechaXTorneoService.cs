@@ -36,5 +36,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return FechaXTorneoDao.modify(fechaXTorneo, fechaSeleccionada, torneoSeleccionado);
         }
+
+        public bool obtenerRepetidos(FechaXTorneo oFechaxTorneo)
+        {
+            return FechaXTorneoDao.getRepeat(oFechaxTorneo);
+        }
     }
 }

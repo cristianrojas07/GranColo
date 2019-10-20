@@ -51,6 +51,17 @@ namespace GranColo.DataLayer.Dao
             return true;
         }
 
+        public bool getRepeat(FechaXTorneo oFechaxTorneo)
+        {
+            string sql = " SELECT * " +
+                         " FROM FechaXTorneo " +
+                         " WHERE nroFecha = '" + oFechaxTorneo.IdFecha + "' " +
+                         " AND idTorneo = '" + oFechaxTorneo.IdTorneo + "' " +
+                         " AND estado = 'S' ";
+
+            return (DataManager.GetInstance().ConsultaSQL(sql).Rows.Count == 1);
+        }
+
         public  bool modify(FechaXTorneo fechaXTorneo, int fechaSeleccionada, int torneoSeleccionado)
         {
             string sql = "UPDATE FechaXTorneo " +

@@ -21,6 +21,9 @@ namespace GranColo.GUILayer.Fixture
         int torneoSeleccionado;
         int fechaSeleccionada;
 
+        public string nombreFecha { get; set; }
+        public string nombreTorneo { get; set; }
+
         public FrmEditarAsignacion(FechaXTorneo fechaXTorneo)
         {
             InitializeComponent();
@@ -49,26 +52,57 @@ namespace GranColo.GUILayer.Fixture
         {
             cboFecha.Text = fechaXTorneo.Fecha.Nombre;
             cboTorneo.Text = fechaXTorneo.Torneo.Nombre;
+            nombreFecha = cboFecha.Text;
+            nombreTorneo = cboTorneo.Text;
             fechaSeleccionada = fechaXTorneo.Fecha.IdFecha;
             torneoSeleccionado = fechaXTorneo.Torneo.IdTorneo;
         }
 
         private void Btn_aceptar_Click(object sender, EventArgs e)
         {
+            
             fechaXTorneo.Fecha.IdFecha = Int32.Parse(cboFecha.SelectedValue.ToString());
             fechaXTorneo.Torneo.IdTorneo = Int32.Parse(cboTorneo.SelectedValue.ToString());
-            if (fechaXTorneoService.modificar(fechaXTorneo, fechaSeleccionada, torneoSeleccionado))
-            {
-                MessageBox.Show("Registro modificado con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FrmConsultarAsignarFecha frmConsultarAsignarFecha = Owner as FrmConsultarAsignarFecha;
-                frmConsultarAsignarFecha.ActualizarGrilla();
-            }
-            else
-            {
-                MessageBox.Show("Registro no modificado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            if (ValidarRepetidos(fechaXTorneo))
+            {
+                if (fechaXTorneoService.modificar(fechaXTorneo, fechaSeleccionada, torneoSeleccionado))
+                {
+                    MessageBox.Show("Registro modificado con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmConsultarAsignarFecha frmConsultarAsignarFecha = Owner as FrmConsultarAsignarFecha;
+                    frmConsultarAsignarFecha.ActualizarGrilla();
+                }
+                else
+                {
+                    MessageBox.Show("Registro no modificado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                this.Close();
             }
-            this.Close();
+            
         }
+
+        public bool ValidarRepetidos(FechaXTorneo oFechaxTorneo)
+        {
+            if (cambioDatos())
+            {
+                if (fechaXTorneoService.obtenerRepetidos(oFechaxTorneo))
+                {
+                    MessageBox.Show("Ya existe registro con los mismos datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool cambioDatos()
+        {
+            if (nombreFecha == cboFecha.Text && nombreTorneo==cboTorneo.Text)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

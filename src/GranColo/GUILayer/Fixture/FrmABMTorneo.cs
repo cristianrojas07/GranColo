@@ -16,7 +16,9 @@ namespace GranColo.GUILayer.Fixture
     {
         private FormMode formMode = FormMode.insert;
         private TorneoService service;
-
+        
+        
+        public string nombreTorneo { get; set; }
         public FrmABMTorneo()
         {
             service = new TorneoService();
@@ -104,13 +106,26 @@ namespace GranColo.GUILayer.Fixture
 
         public bool ValidarRepetidos(Torneo oTorneo)
         {
-            if (service.obtenerRepetidos(oTorneo))
+            if (cambioDatos())
             {
-                MessageBox.Show("Ya existe un torneo con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (service.obtenerRepetidos(oTorneo))
+                {
+                    MessageBox.Show("Ya existe un torneo con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool cambioDatos()
+        {
+            if (nombreTorneo == txt_nombre.Text)
+            {
                 return false;
             }
             return true;
         }
+
         //----------------------------------------------------------------------//
 
         //-----------------------SHOW FORM ABM--------------------------------//
@@ -120,6 +135,7 @@ namespace GranColo.GUILayer.Fixture
             {
                 IList<Torneo> list = service.obtenerTorneosPorId();
                 txt_nombre.Text = list[0].Nombre.ToString();
+                nombreTorneo = txt_nombre.Text;
             }
         }
         //----------------------------------------------------------------------//

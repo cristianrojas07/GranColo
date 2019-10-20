@@ -77,6 +77,9 @@ namespace GranColo.GUILayer.Fixture
             }
         }
 
+        
+
+
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
             if (cb_todos.Checked)

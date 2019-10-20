@@ -16,6 +16,7 @@ namespace GranColo.GUILayer.Fixture
     {
         private FormMode formMode = FormMode.insert;
         private FechaService service;
+        public string nombreFecha { get; set; }
 
         public FrmABMFecha()
         {
@@ -45,6 +46,7 @@ namespace GranColo.GUILayer.Fixture
                     if (ValidarCampos())
                     {
                         oFecha.Nombre = txt_nombre.Text;
+                                            
                         if (ValidarRepetidos(oFecha))
                         {
                             if (service.insertarFecha(oFecha))
@@ -59,6 +61,7 @@ namespace GranColo.GUILayer.Fixture
                             }
                             this.Close();
                         }
+
                     }
                     break;
                 case FormMode.update:
@@ -103,13 +106,26 @@ namespace GranColo.GUILayer.Fixture
 
         public bool ValidarRepetidos(Fecha oFecha)
         {
-            if (service.obtenerRepetidos(oFecha))
+            if (cambioDatos())
             {
-                MessageBox.Show("Ya existe una fecha con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (service.obtenerRepetidos(oFecha))
+                {
+                    MessageBox.Show("Ya existe una fecha con el mismo nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool cambioDatos()
+        {
+            if (nombreFecha==txt_nombre.Text)
+            {
                 return false;
             }
             return true;
         }
+
         //----------------------------------------------------------------------//
 
         //-----------------------SHOW FORM ABM--------------------------------//
@@ -119,6 +135,7 @@ namespace GranColo.GUILayer.Fixture
             {
                 IList<Fecha> list =  service.obtenerFechasPorId();
                 txt_nombre.Text = list[0].Nombre.ToString();
+                nombreFecha = txt_nombre.Text;
             }
         }
         //----------------------------------------------------------------------//
