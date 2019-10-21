@@ -13,8 +13,10 @@ namespace GranColo.DataLayer.Dao
         public IList<Equipo> getAll()
         {
             IList<Equipo> list = new List<Equipo>();
-            string sql = "SELECT * " +
-                " FROM Equipo ";
+            string sql = "SELECT e.idEquipo, e.nombre, dt.nombre, e.lema, c.nombre " +
+                " FROM Equipo e JOIN DirectorTecnico dt ON e.idDirectorTecnico = dt.idDirectorTecnico " +
+                " JOIN Color c ON e.color = c.idColor " +
+                " WHERE e.estado = 'S' ";
 
             DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
@@ -25,6 +27,77 @@ namespace GranColo.DataLayer.Dao
             return list;
         }
 
+        public bool validarRepeat(Equipo equipo)
+        {
+            string sql = "SELECT * " +
+                " FROM Equipo " +
+                " WHERE nombre = @nombre " +
+                " AND color = @idColor " +
+                " AND estado='S' ";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("nombre", equipo.Nombre);
+            parametros.Add("idColor", equipo.Color.IdColor);
+
+            DataTable rtados = DataManager.GetInstance().ConsultaSQLConParametros(sql, parametros);
+
+            return rtados.Rows.Count > 0;
+        }
+
+        public bool remove(Equipo equipo)
+        {
+            string sql = " UPDATE Equipo " +
+                " SET estado = 'N' " +
+                " WHERE idEquipo = '" + equipo.IdEquipo + "' " ;
+
+            return DataManager.GetInstance().EjecutarSQL(sql)>0;
+        }
+
+        public bool insertEquipo(Equipo equipo)
+        {
+            string sql = "INSERT INTO Equipo (nombre, idDirectorTecnico, lema, color, estado) " +
+                " VALUES(@nombre, @idDirectorTecnico, @lema, @color, 'S') ";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("nombre", equipo.Nombre);
+            parametros.Add("idDirectorTecnico", equipo.DT.IdDirectorTecnico);
+            parametros.Add("lema", equipo.Lema);
+            parametros.Add("color", equipo.Color.IdColor);
+
+            return DataManager.GetInstance().EjecutarSQL(sql, parametros)==1;
+         
+        }
+
+        public IList<Equipo> getEquiposByFilters(Equipo equipo)
+        {
+            IList<Equipo> list = new List<Equipo>();
+
+            string sql = "SELECT e.idEquipo, e.nombre, dt.nombre, e.lema, c.nombre " +
+                " FROM Equipo e JOIN DirectorTecnico dt ON e.idDirectorTecnico = dt.idDirectorTecnico " +
+                " JOIN Color c ON e.color=c.idColor " +
+                " WHERE e.nombre LIKE  '%" + equipo.Nombre +  "%' " +
+                " AND 1=1 ";
+            if (!String.IsNullOrEmpty(equipo.DT.Nombre))
+            {
+                sql += " AND  dt.nombre = '" + equipo.DT.Nombre + "' ";
+            }
+            if (!String.IsNullOrEmpty(equipo.Lema))
+            {
+                sql += " AND  e.lema LIKE '%" + equipo.Lema + "%' ";
+            }
+            if (!String.IsNullOrEmpty(equipo.Color.Nombre))
+            {
+                sql += " AND  c.nombre = '" + equipo.Color.Nombre + "' ";
+            }
+            sql += " AND e.estado='S' ";
+
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+        }
+
         private Equipo ObjectMapping(DataRow row)
         {
             Equipo equipo = new Equipo();
@@ -32,9 +105,9 @@ namespace GranColo.DataLayer.Dao
             equipo.DT = new DirectorTecnico();
             equipo.IdEquipo = Int32.Parse(row[0].ToString());
             equipo.Nombre = row[1].ToString();
-            equipo.DT.IdDirectorTecnico = Int32.Parse(row[2].ToString());
+            equipo.DT.Nombre = row[2].ToString();
             equipo.Lema = row[3].ToString();
-            equipo.Color.IdColor = Int32.Parse(row[4].ToString());
+            equipo.Color.Nombre = row[4].ToString();
 
             return equipo;
         }

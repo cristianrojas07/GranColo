@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Es necesario usar asi la clase color por un error de ambiguedad que tiene visual studio con otra clase color
+using Color = GranColo.BusinessLayer.Entities.Color;
 
 namespace GranColo.GUILayer.Clubes.Equipos
 {
@@ -81,6 +83,7 @@ namespace GranColo.GUILayer.Clubes.Equipos
 
         private void cargarGrilla(IList<Equipo> list)
         {
+            dgw_equipo.Rows.Clear();
             foreach(var item in list)
             {
                 dgw_equipo.Rows.Add(new Object[] { item.IdEquipo.ToString(), item.Nombre.ToString(),
@@ -90,6 +93,7 @@ namespace GranColo.GUILayer.Clubes.Equipos
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
+            
             if (cb_todos.Checked)
             {
                 IList<Equipo> list = equipoService.obtenerTodos();
@@ -103,19 +107,87 @@ namespace GranColo.GUILayer.Clubes.Equipos
             {
                 if (validarCampos())
                 {
-
+                    Equipo equipo = new Equipo();
+                    equipo.Nombre = txt_nombre.Text;
+                    equipo.DT = new DirectorTecnico();
+                    equipo.Color = new Color();
+                    camposOpcionales(equipo, cbo_dt.Text, cbo_color.Text, txt_lema.Text);
+                    IList<Equipo> list = equipoService.obtenerEquiposConFiltros(equipo);
+                    if (list.Count==0)
+                    {
+                        MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    cargarGrilla(list);
                 }
             }
         }
 
+        private void camposOpcionales(Equipo equipo, string dt, string color, string lema)
+        {
+            if (!String.IsNullOrEmpty(dt))
+            {
+                equipo.DT.Nombre = dt;
+            }
+            if (!String.IsNullOrEmpty(color))
+            {
+                equipo.Color.Nombre = color;
+            }
+            if (!String.IsNullOrEmpty(dt))
+            {
+                equipo.Lema = lema;
+            }
+
+        }
+
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-
+            if (dgw_equipo.CurrentRow != null)
+            {
+                if (MessageBox.Show("¿Seguro que desea eliminar el equipo?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Equipo equipo = new Equipo();
+                    equipo.IdEquipo = Int32.Parse(dgw_equipo.CurrentRow.Cells["id_equipo_col"].Value.ToString());
+                    if (equipoService.eliminar(equipo))
+                    {
+                        MessageBox.Show("Registro eliminado con exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        actualizarGrilla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, el registro no se elimino", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Btn_editar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void actualizarGrilla()
+        {
+            IList<Equipo> list = equipoService.obtenerTodos();
+            cargarGrilla(list);
+        }
+
+        private void Btn_agregar_Click(object sender, EventArgs e)
+        {
+            FrmABMEquipo frmABMEquipo = new FrmABMEquipo();
+            AddOwnedForm(frmABMEquipo);
+            frmABMEquipo.ShowDialog();
+            
+
         }
     }
 }
