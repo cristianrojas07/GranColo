@@ -40,5 +40,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return oEquipoDao.remove(equipo);
         }
+
+        public bool modificarEquipo(Equipo equipo)
+        {
+            return oEquipoDao.modify(equipo);
+        }
     }
 }

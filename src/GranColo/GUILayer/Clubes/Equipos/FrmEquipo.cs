@@ -172,7 +172,19 @@ namespace GranColo.GUILayer.Clubes.Equipos
 
         private void Btn_editar_Click(object sender, EventArgs e)
         {
-
+            if (dgw_equipo.CurrentRow!=null)
+            {
+                FrmABMEquipo frmABMEquipo = new FrmABMEquipo();
+                int selected = Int32.Parse(dgw_equipo.CurrentRow.Cells["id_equipo_col"].Value.ToString());
+                frmABMEquipo.determinarOperacion(FrmABMEquipo.FormMode.update, selected);
+                AddOwnedForm(frmABMEquipo);
+                frmABMEquipo.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         public void actualizarGrilla()

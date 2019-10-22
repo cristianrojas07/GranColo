@@ -43,6 +43,22 @@ namespace GranColo.DataLayer.Dao
             return rtados.Rows.Count > 0;
         }
 
+        public bool modify(Equipo equipo)
+        {
+            string sql = " UPDATE Equipo " +
+                " SET nombre = @nombre, idDirectorTecnico=@id_dt, lema=@lema, color=@color " +
+                " WHERE idEquipo = @idEquipo ";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("nombre", equipo.Nombre);
+            parametros.Add("id_dt", equipo.DT.IdDirectorTecnico);
+            parametros.Add("lema", equipo.Lema);
+            parametros.Add("color", equipo.Color.IdColor);
+            parametros.Add("idEquipo", equipo.IdEquipo);
+
+            return DataManager.GetInstance().EjecutarSQL(sql, parametros)==1;
+
+        }
+
         public bool remove(Equipo equipo)
         {
             string sql = " UPDATE Equipo " +
@@ -73,8 +89,15 @@ namespace GranColo.DataLayer.Dao
             string sql = "SELECT e.idEquipo, e.nombre, dt.nombre, e.lema, c.nombre " +
                 " FROM Equipo e JOIN DirectorTecnico dt ON e.idDirectorTecnico = dt.idDirectorTecnico " +
                 " JOIN Color c ON e.color=c.idColor " +
-                " WHERE e.nombre LIKE  '%" + equipo.Nombre +  "%' " +
-                " AND 1=1 ";
+                " WHERE 1=1 ";
+            if (!String.IsNullOrEmpty(equipo.IdEquipo.ToString()))
+            {
+                sql += " AND e.idEquipo =  '" + equipo.IdEquipo + "' "; 
+            }
+            if (!String.IsNullOrEmpty(equipo.Nombre))
+            {
+                sql += " AND e.nombre LIKE  '%" + equipo.Nombre + "%' ";
+            }
             if (!String.IsNullOrEmpty(equipo.DT.Nombre))
             {
                 sql += " AND  dt.nombre = '" + equipo.DT.Nombre + "' ";
