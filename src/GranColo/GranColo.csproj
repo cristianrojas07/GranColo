@@ -95,6 +95,12 @@
     <Compile Include="GUILayer\Clubes\Equipos\FrmEquipo.Designer.cs">
       <DependentUpon>FrmEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Clubes\FrmAsignarJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\FrmAsignarJugador.Designer.cs">
+      <DependentUpon>FrmAsignarJugador.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Clubes\Jugadores\FrmABMJugador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Clubes\Equipos\FrmEquipo.resx">
       <DependentUpon>FrmEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\FrmAsignarJugador.resx">
+      <DependentUpon>FrmAsignarJugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmABMJugador.resx">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>

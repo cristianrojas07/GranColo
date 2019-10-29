@@ -45,6 +45,7 @@
             this.registrarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarJugadoresAEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +107,8 @@
             // 
             this.equiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.jugadoresToolStripMenuItem,
-            this.equipoToolStripMenuItem});
+            this.equipoToolStripMenuItem,
+            this.asignarJugadoresAEquiposToolStripMenuItem});
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
             this.equiposToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.equiposToolStripMenuItem.Text = "Clubes";
@@ -114,14 +116,14 @@
             // jugadoresToolStripMenuItem
             // 
             this.jugadoresToolStripMenuItem.Name = "jugadoresToolStripMenuItem";
-            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.jugadoresToolStripMenuItem.Text = "Jugador";
             this.jugadoresToolStripMenuItem.Click += new System.EventHandler(this.JugadoresToolStripMenuItem_Click);
             // 
             // equipoToolStripMenuItem
             // 
             this.equipoToolStripMenuItem.Name = "equipoToolStripMenuItem";
-            this.equipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.equipoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.equipoToolStripMenuItem.Text = "Equipo";
             this.equipoToolStripMenuItem.Click += new System.EventHandler(this.EquipoToolStripMenuItem_Click);
             // 
@@ -180,6 +182,13 @@
             this.salirToolStripMenuItem2.Text = "Salir";
             this.salirToolStripMenuItem2.Click += new System.EventHandler(this.SalirToolStripMenuItem2_Click);
             // 
+            // asignarJugadoresAEquiposToolStripMenuItem
+            // 
+            this.asignarJugadoresAEquiposToolStripMenuItem.Name = "asignarJugadoresAEquiposToolStripMenuItem";
+            this.asignarJugadoresAEquiposToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.asignarJugadoresAEquiposToolStripMenuItem.Text = "Asignar Jugadores a Equipos";
+            this.asignarJugadoresAEquiposToolStripMenuItem.Click += new System.EventHandler(this.asignarJugadoresAEquiposToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,5 +233,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultarFechasAsignadasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem equipoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarJugadoresAEquiposToolStripMenuItem;
     }
 }

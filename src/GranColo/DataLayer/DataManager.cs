@@ -101,7 +101,7 @@ public class DataManager
             cmd.Connection = dbConnection;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = strSql;
-
+            
             //Agregamos a la colección de parámetros del comando los filtros recibidos
             foreach (var item in prs)
             {
