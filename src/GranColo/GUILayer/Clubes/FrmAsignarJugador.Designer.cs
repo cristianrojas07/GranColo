@@ -35,15 +35,7 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgv_jugadoresS = new System.Windows.Forms.DataGridView();
-            this.col_posiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombreS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_costoS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_jugadores = new System.Windows.Forms.DataGridView();
-            this.col_posicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nud_max = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,6 +52,16 @@
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.col_idJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_posicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_idJugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_posiciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nombreS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_costoS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_jugadoresS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_jugadores)).BeginInit();
@@ -149,6 +151,7 @@
             this.dgv_jugadoresS.AllowUserToDeleteRows = false;
             this.dgv_jugadoresS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_jugadoresS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_idJugadores,
             this.col_posiciones,
             this.col_nombreS,
             this.col_apellidos,
@@ -159,37 +162,13 @@
             this.dgv_jugadoresS.Size = new System.Drawing.Size(234, 332);
             this.dgv_jugadoresS.TabIndex = 44;
             // 
-            // col_posiciones
-            // 
-            this.col_posiciones.HeaderText = "Posición";
-            this.col_posiciones.Name = "col_posiciones";
-            this.col_posiciones.ReadOnly = true;
-            this.col_posiciones.Width = 70;
-            // 
-            // col_nombreS
-            // 
-            this.col_nombreS.HeaderText = "Nombre";
-            this.col_nombreS.Name = "col_nombreS";
-            this.col_nombreS.ReadOnly = true;
-            // 
-            // col_apellidos
-            // 
-            this.col_apellidos.HeaderText = "Apellido";
-            this.col_apellidos.Name = "col_apellidos";
-            this.col_apellidos.ReadOnly = true;
-            // 
-            // col_costoS
-            // 
-            this.col_costoS.HeaderText = "Costo";
-            this.col_costoS.Name = "col_costoS";
-            this.col_costoS.ReadOnly = true;
-            // 
             // dgv_jugadores
             // 
             this.dgv_jugadores.AllowUserToAddRows = false;
             this.dgv_jugadores.AllowUserToDeleteRows = false;
             this.dgv_jugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_jugadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_idJugador,
             this.col_posicion,
             this.col_nombre,
             this.col_apellido,
@@ -199,32 +178,6 @@
             this.dgv_jugadores.ReadOnly = true;
             this.dgv_jugadores.Size = new System.Drawing.Size(230, 332);
             this.dgv_jugadores.TabIndex = 43;
-            // 
-            // col_posicion
-            // 
-            this.col_posicion.HeaderText = "Posición";
-            this.col_posicion.Name = "col_posicion";
-            this.col_posicion.ReadOnly = true;
-            this.col_posicion.Width = 70;
-            // 
-            // col_nombre
-            // 
-            this.col_nombre.HeaderText = "Nombre";
-            this.col_nombre.Name = "col_nombre";
-            this.col_nombre.ReadOnly = true;
-            // 
-            // col_apellido
-            // 
-            this.col_apellido.HeaderText = "Apellido";
-            this.col_apellido.Name = "col_apellido";
-            this.col_apellido.ReadOnly = true;
-            // 
-            // col_costo
-            // 
-            this.col_costo.HeaderText = "Costo";
-            this.col_costo.Name = "col_costo";
-            this.col_costo.ReadOnly = true;
-            this.col_costo.Width = 80;
             // 
             // groupBox1
             // 
@@ -290,7 +243,6 @@
             // 
             // cb_club
             // 
-            this.cb_club.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_club.Enabled = false;
             this.cb_club.FormattingEnabled = true;
             this.cb_club.Location = new System.Drawing.Point(275, 51);
@@ -309,7 +261,6 @@
             // 
             // cb_posicion
             // 
-            this.cb_posicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_posicion.Enabled = false;
             this.cb_posicion.FormattingEnabled = true;
             this.cb_posicion.Location = new System.Drawing.Point(59, 51);
@@ -380,6 +331,7 @@
             this.btn_aceptar.TabIndex = 7;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // btn_cancelar
             // 
@@ -390,6 +342,71 @@
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // col_idJugador
+            // 
+            this.col_idJugador.HeaderText = "Nro";
+            this.col_idJugador.Name = "col_idJugador";
+            this.col_idJugador.ReadOnly = true;
+            this.col_idJugador.Visible = false;
+            // 
+            // col_posicion
+            // 
+            this.col_posicion.HeaderText = "Posición";
+            this.col_posicion.Name = "col_posicion";
+            this.col_posicion.ReadOnly = true;
+            this.col_posicion.Width = 70;
+            // 
+            // col_nombre
+            // 
+            this.col_nombre.HeaderText = "Nombre";
+            this.col_nombre.Name = "col_nombre";
+            this.col_nombre.ReadOnly = true;
+            // 
+            // col_apellido
+            // 
+            this.col_apellido.HeaderText = "Apellido";
+            this.col_apellido.Name = "col_apellido";
+            this.col_apellido.ReadOnly = true;
+            // 
+            // col_costo
+            // 
+            this.col_costo.HeaderText = "Costo";
+            this.col_costo.Name = "col_costo";
+            this.col_costo.ReadOnly = true;
+            this.col_costo.Width = 80;
+            // 
+            // col_idJugadores
+            // 
+            this.col_idJugadores.HeaderText = "Nro";
+            this.col_idJugadores.Name = "col_idJugadores";
+            this.col_idJugadores.ReadOnly = true;
+            this.col_idJugadores.Visible = false;
+            // 
+            // col_posiciones
+            // 
+            this.col_posiciones.HeaderText = "Posición";
+            this.col_posiciones.Name = "col_posiciones";
+            this.col_posiciones.ReadOnly = true;
+            this.col_posiciones.Width = 70;
+            // 
+            // col_nombreS
+            // 
+            this.col_nombreS.HeaderText = "Nombre";
+            this.col_nombreS.Name = "col_nombreS";
+            this.col_nombreS.ReadOnly = true;
+            // 
+            // col_apellidos
+            // 
+            this.col_apellidos.HeaderText = "Apellido";
+            this.col_apellidos.Name = "col_apellidos";
+            this.col_apellidos.ReadOnly = true;
+            // 
+            // col_costoS
+            // 
+            this.col_costoS.HeaderText = "Costo";
+            this.col_costoS.Name = "col_costoS";
+            this.col_costoS.ReadOnly = true;
             // 
             // FrmAsignarJugador
             // 
@@ -425,15 +442,7 @@
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgv_jugadoresS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_posiciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombreS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_costoS;
         private System.Windows.Forms.DataGridView dgv_jugadores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_posicion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_costo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown nud_max;
         private System.Windows.Forms.Label label5;
@@ -451,5 +460,15 @@
         private System.Windows.Forms.CheckBox cb_todos;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_idJugadores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_posiciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombreS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_costoS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_idJugador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_posicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_costo;
     }
 }

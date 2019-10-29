@@ -15,14 +15,21 @@ namespace GranColo.GUILayer.Clubes
     public partial class FrmAsignarJugador : Form
     {
         private readonly JugadorService JugadorService;
+        private readonly EquipoService EquipoService;
+        private readonly PosicionService PosicionService;
+        private readonly ClubService ClubService;
 
         public FrmAsignarJugador()
         {
             InitializeComponent();
-            Cargar_comboBox(cbo_equipo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Equipo"), "nombre", "idEquipo");
-            Cargar_comboBox(cb_posicion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Posicion"), "nombre", "idPosicion");
-            Cargar_comboBox(cb_club, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Club"), "nombre", "idClub");
             JugadorService = new JugadorService();
+            EquipoService = new EquipoService();
+            ClubService = new ClubService();
+            PosicionService = new PosicionService();
+            Cargar_comboBox(cbo_equipo, EquipoService.obtenerTodos(), "nombre", "idEquipo");
+            Cargar_comboBox(cb_posicion, PosicionService.ObtenerTodosPosiciones(), "nombre", "idPosicion");
+            Cargar_comboBox(cb_club, ClubService.ObtenerTodosClubes(), "nombre", "idClub");
+            
         }
 
         private void Cargar_comboBox(ComboBox comboBox, object dataSource, string displayMember, string valueMember)
@@ -80,7 +87,7 @@ namespace GranColo.GUILayer.Clubes
                 IList<Jugador> listadoJugadores = JugadorService.ConsultarJugadoresConFiltros(parametros);
                 foreach (Jugador jug in listadoJugadores)
                 {
-                    dgv_jugadores.Rows.Add(new Object[] { jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
+                    dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
                 }
             }
             else
@@ -89,7 +96,7 @@ namespace GranColo.GUILayer.Clubes
                 IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadores();
                 foreach (Jugador jug in listTodosJugadores)
                 {
-                    dgv_jugadores.Rows.Add(new Object[] { jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
+                    dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
                 }
             }
         }
@@ -111,6 +118,36 @@ namespace GranColo.GUILayer.Clubes
             {
                 dgv_jugadoresS.Rows.Remove(selected);
                 dgv_jugadores.Rows.Add(selected);
+            }
+        }
+
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+            if(cbo_equipo.SelectedIndex != -1)
+            {
+                Equipo equipo = new Equipo();
+                equipo.IdEquipo = (int)cbo_equipo.SelectedValue;
+
+                foreach (DataGridViewRow filaGrilla in dgv_jugadoresS.Rows)
+                {
+                    int jugador = (int)filaGrilla.Cells[0].Value;
+                    equipo.AgregarJugador(jugador);
+                }
+
+                if (EquipoService.registrarJugadores(equipo))
+                {
+                    MessageBox.Show("Jugadores agregados al equipo: " + cbo_equipo.Text + " con exitó.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgv_jugadores.Rows.Clear();
+                    dgv_jugadoresS.Rows.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar los jugadores! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un equipo para agregar los jugadores", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

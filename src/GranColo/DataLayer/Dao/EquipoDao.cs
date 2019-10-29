@@ -43,6 +43,43 @@ namespace GranColo.DataLayer.Dao
             return rtados.Rows.Count > 0;
         }
 
+        internal bool saveJugador(Equipo equipo)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+                
+                foreach (var jugador in equipo.GetJugadores())
+                {
+                    string sql = string.Concat("  INSERT INTO EquipoXJugador (idEquipo, idJugador, estado)   ",
+                                            " VALUES (@id_equipo, @id_jugador, 'S')  ");
+
+
+
+                    var parametros = new Dictionary<string, object>();
+                    parametros.Add("id_equipo", equipo.IdEquipo);
+                    parametros.Add("id_jugador", jugador);
+
+                    dm.EjecutarSQL(sql, parametros);
+                }
+                dm.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+            return true;
+        }
+
         public bool modify(Equipo equipo)
         {
             string sql = " UPDATE Equipo " +

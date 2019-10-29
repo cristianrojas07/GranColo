@@ -45,5 +45,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return oEquipoDao.modify(equipo);
         }
+
+        internal bool registrarJugadores(Equipo equipo)
+        {
+            return oEquipoDao.saveJugador(equipo);
+        }
     }
 }
