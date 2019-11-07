@@ -85,6 +85,10 @@ namespace GranColo.GUILayer.Clubes
 
                 dgv_jugadores.Rows.Clear();
                 IList<Jugador> listadoJugadores = JugadorService.ConsultarJugadoresConFiltros(parametros);
+                if (listadoJugadores.Count==0)
+                {
+                    MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 foreach (Jugador jug in listadoJugadores)
                 {
                     dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
@@ -94,6 +98,10 @@ namespace GranColo.GUILayer.Clubes
             {
                 dgv_jugadores.Rows.Clear();
                 IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadores();
+                if (listTodosJugadores.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 foreach (Jugador jug in listTodosJugadores)
                 {
                     dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
@@ -106,9 +114,37 @@ namespace GranColo.GUILayer.Clubes
             DataGridViewRow selected = dgv_jugadores.CurrentRow;
             if (selected != null)
             {
-                dgv_jugadores.Rows.Remove(selected);
-                dgv_jugadoresS.Rows.Add(selected);
+                if (validarJugadoresAgregar(selected))
+                {
+                    dgv_jugadores.Rows.Remove(selected);
+                    dgv_jugadoresS.Rows.Add(selected);
+                }
+                
             }
+        }
+
+        private bool validarJugadoresAgregar(DataGridViewRow selected)
+        {
+            foreach (DataGridViewRow row in dgv_jugadoresS.Rows)
+            {
+                if (selected.Cells["col_idJugador"].Value.ToString() == row.Cells["col_idJugadores"].Value.ToString())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool validarJugadoresQuitar(DataGridViewRow selected)
+        {
+            foreach (DataGridViewRow row in dgv_jugadores.Rows)
+            {
+                if (selected.Cells["col_idJugadores"].Value.ToString() == row.Cells["col_idJugador"].Value.ToString())
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -116,8 +152,11 @@ namespace GranColo.GUILayer.Clubes
             DataGridViewRow selected = dgv_jugadoresS.CurrentRow;
             if (selected != null)
             {
+                if (validarJugadoresQuitar(selected))
+                {
+                    dgv_jugadores.Rows.Add(selected);
+                }
                 dgv_jugadoresS.Rows.Remove(selected);
-                dgv_jugadores.Rows.Add(selected);
             }
         }
 
