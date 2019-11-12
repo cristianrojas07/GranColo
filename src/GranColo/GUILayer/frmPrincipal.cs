@@ -1,5 +1,6 @@
 ﻿using GranColo.GUILayer.Clubes;
 using GranColo.GUILayer.Clubes.Equipos;
+using GranColo.GUILayer.Clubes.Jugadores;
 using GranColo.GUILayer.Equipos.Jugadores;
 using GranColo.GUILayer.Fixture;
 using System;
@@ -139,6 +140,18 @@ namespace GranColo.GUILayer
         {
             FrmAsignarJugador frmAsignarJugador = new FrmAsignarJugador();
             frmAsignarJugador.ShowDialog();
+        }
+
+        private void puntajeDeJugadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPuntajeJugador frmPuntajeJugador = new FrmPuntajeJugador();
+            frmPuntajeJugador.ShowDialog();
+        }
+
+        private void consultarPuntajeJugadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmABMPuntajeJugadores frmABMPuntajeJugadores = new FrmABMPuntajeJugadores();
+            frmABMPuntajeJugadores.ShowDialog();
         }
     }
 }

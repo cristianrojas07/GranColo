@@ -18,6 +18,39 @@ namespace GranColo.BusinessLayer.Entities
         public TipoDocumento TipoDocumento { get; set; }
         public decimal Costo { get; set; }
         public string Estado { get; set; }
+        public decimal Puntaje { get; set; }
+
+        public decimal JugadorPuntaje
+        {
+            get
+            {
+                return Puntaje;
+            }
+        }
+
+        public decimal JugadorCosto
+        {
+            get
+            {
+                return Costo;
+            }
+        }
+
+        public string JugadorNombre
+        {
+            get
+            {
+                return Nombre;
+            }
+        }
+
+        public string JugadorApellido
+        {
+            get
+            {
+                return Apellido;
+            }
+        }
 
         public string ClubNombre
         {

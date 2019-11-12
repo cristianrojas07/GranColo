@@ -50,6 +50,19 @@ namespace GranColo.DataLayer.Dao
             return (DataManager.GetInstance().EjecutarSQL(sql) == 1);
         }
 
+        internal object getFechaByTorneo(int idTorneo)
+        {
+            
+            List<Fecha> list = new List<Fecha>();
+            string sql = " SELECT * FROM Fecha WHERE nroFecha IN (SELECT nroFecha FROM FechaXTorneo WHERE estado != 'N' AND idTorneo = "+ idTorneo +")";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+        }
+
         internal IList<Fecha> getAllFechas()
         {
             List<Fecha> list = new List<Fecha>();

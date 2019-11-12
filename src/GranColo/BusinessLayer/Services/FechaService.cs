@@ -46,5 +46,10 @@ namespace GranColo.BusinessLayer.Services
         {
             return fechaDao.getRepeat(oFecha);
         }
+
+        internal object obtenerFechaPorTorneo(int idTorneo)
+        {
+            return fechaDao.getFechaByTorneo(idTorneo);
+        }
     }
 }

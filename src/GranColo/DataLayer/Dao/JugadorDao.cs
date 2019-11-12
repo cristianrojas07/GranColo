@@ -47,6 +47,230 @@ namespace GranColo.DataLayer.Dao
             return (DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1);
         }
 
+        internal bool updatePuntaje(Jugador jugadorSeleccionado, int nroFechaSeleccionado, int idTorneoSeleccionado)
+        {
+            string sql = string.Concat("UPDATE JugadorXFechaXTorneo ",
+                                       "SET puntaje=@puntaje ",
+                                       "WHERE idJugador=@idJugador ",
+                                       "AND nroFecha=@nroFecha ",
+                                       "AND idTorneo=@idTorneo");
+
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("puntaje", jugadorSeleccionado.Puntaje);
+            parametros.Add("idJugador", jugadorSeleccionado.IdJugador);
+            parametros.Add("nroFecha", nroFechaSeleccionado);
+            parametros.Add("idTorneo", idTorneoSeleccionado);
+
+            return (DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1);
+        }
+
+        internal bool deletePuntajeJugador(Jugador jugador, int nroFecha, int idTorneo)
+        {
+            string sql = " DELETE FROM JugadorXFechaXTorneo " +
+                " WHERE idJugador=@idJugador AND nroFecha=@nroFecha AND idTorneo=@idTorneo";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("idJugador", jugador.IdJugador);
+            parametros.Add("nroFecha", nroFecha);
+            parametros.Add("idTorneo", idTorneo);
+            return (DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1);
+        }
+
+        internal IList<Jugador> GetJugadorConPuntaje(Dictionary<string, object> parametros)
+        {
+            List<Jugador> listadoJugadores = new List<Jugador>();
+            
+            var strSql = String.Concat("SELECT j.idJugador, j.nombre, j.apellido, c.idClub, c.nombre, p.idPosicion, p.nombre, j.costo, jxf.puntaje  ",
+                "FROM JugadorXFechaXTorneo jxf JOIN Jugador j ON jxf.idJugador = j.idJugador ",
+                "JOIN Posicion p ON j.idPosicion = p.idPosicion ",
+                "JOIN Club c ON j.idClub = c.idClub ",
+                "WHERE j.estado = 'S' AND (jxf.nroFecha=@nroFecha) AND (jxf.idTorneo=@idTorneo) AND 1=1 ");
+            if (parametros.ContainsKey("costoDesde") && parametros.ContainsKey("costoHasta"))
+                strSql += " AND (j.costo>=@costoDesde AND j.costo<=@costoHasta) ";
+            if (parametros.ContainsKey("nombre"))
+                strSql += " AND (j.nombre LIKE @nombre) ";
+            if (parametros.ContainsKey("apellido"))
+                strSql += " AND (j.apellido LIKE @apellido) ";
+            if (parametros.ContainsKey("idPosicion"))
+                strSql += " AND (p.idPosicion=@idPosicion) ";
+            if (parametros.ContainsKey("idClub"))
+                strSql += " AND (c.idClub=@idClub)  ";
+            var resultadoConsulta = (DataRowCollection)DataManager.GetInstance().ConsultaSQLConParametros(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultadoConsulta)
+            {
+                Jugador jugador = new Jugador();
+                Club club = new Club();
+                Posicion posicion = new Posicion();
+                jugador.IdJugador = Int32.Parse(row[0].ToString());
+                jugador.Nombre = row[1].ToString();
+                jugador.Apellido = row[2].ToString();
+                club.IdClub = Int32.Parse(row[3].ToString());
+                club.Nombre = row[4].ToString();
+                jugador.Club = club;
+                posicion.IdPosicion = Int32.Parse(row[5].ToString());
+                posicion.Nombre = row[6].ToString();
+                jugador.Posicion = posicion;
+                jugador.Costo = Int32.Parse(row[7].ToString());
+                jugador.Puntaje = Int32.Parse(row[8].ToString());
+                listadoJugadores.Add(jugador);
+            }
+
+            return listadoJugadores;
+        }
+
+        internal IList<Jugador> getAllJugadorConPuntaje(Dictionary<string, object> parametros)
+        {
+            List<Jugador> listadoJugadores = new List<Jugador>();
+
+            var strSql = String.Concat("SELECT j.idJugador, j.nombre, j.apellido, c.idClub, c.nombre, p.idPosicion, p.nombre, j.costo, jxf.puntaje  ",
+                "FROM JugadorXFechaXTorneo jxf JOIN Jugador j ON jxf.idJugador = j.idJugador ",
+                "JOIN Posicion p ON j.idPosicion = p.idPosicion ",
+                "JOIN Club c ON j.idClub = c.idClub ",
+                "WHERE j.estado = 'S' AND (jxf.nroFecha=@nroFecha) AND (jxf.idTorneo=@idTorneo) AND 1=1 ");
+            var resultadoConsulta = (DataRowCollection)DataManager.GetInstance().ConsultaSQLConParametros(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultadoConsulta)
+            {
+                Jugador jugador = new Jugador();
+                Club club = new Club();
+                Posicion posicion = new Posicion();
+                jugador.IdJugador = Int32.Parse(row[0].ToString());
+                jugador.Nombre = row[1].ToString();
+                jugador.Apellido = row[2].ToString();
+                club.IdClub = Int32.Parse(row[3].ToString());
+                club.Nombre = row[4].ToString();
+                jugador.Club = club;
+                posicion.IdPosicion = Int32.Parse(row[5].ToString());
+                posicion.Nombre = row[6].ToString();
+                jugador.Posicion = posicion;
+                jugador.Costo = Int32.Parse(row[7].ToString());
+                jugador.Puntaje = Int32.Parse(row[8].ToString());
+                listadoJugadores.Add(jugador);
+            }
+
+            return listadoJugadores;
+        }
+
+        internal IList<Jugador> getAllJugadorSinPuntaje(Dictionary<string, object> parametros)
+        {
+            List<Jugador> list = new List<Jugador>();
+            var sql = String.Concat("SELECT j1.idJugador, j1.nombre, j1.apellido, c1.idClub, c1.nombre, p.idPosicion, p.nombre, j1.costo ",
+                "FROM Jugador j1 JOIN Club c1 ON j1.idClub = c1.idClub ",
+                "JOIN Posicion p ON p.idPosicion = j1.idPosicion ",
+                "WHERE j1.idJugador NOT IN(SELECT j.idJugador ",
+                "FROM Jugador j JOIN Club c ON j.idClub = c.idClub ",
+                "JOIN JugadorXFechaXTorneo jxt ON j.idJugador = jxt.idJugador ",
+                "JOIN Fecha f ON f.nroFecha = jxt.nroFecha ",
+                "JOIN Torneo t ON t.idTorneo = jxt.idTorneo ",
+                "WHERE j.estado = 'S' AND (f.nroFecha=@nroFecha) AND (t.idTorneo=@idTorneo))");
+            var rtados = (DataRowCollection)DataManager.GetInstance().ConsultaSQLConParametros(sql, parametros).Rows;
+            foreach (DataRow row in rtados)
+            {
+                Jugador jugador = new Jugador();
+                Club club = new Club();
+                Posicion posicion = new Posicion();
+                jugador.IdJugador = Int32.Parse(row[0].ToString());
+                jugador.Nombre = row[1].ToString();
+                jugador.Apellido = row[2].ToString();
+                club.IdClub = Int32.Parse(row[3].ToString());
+                club.Nombre = row[4].ToString();
+                jugador.Club = club;
+                posicion.IdPosicion = Int32.Parse(row[5].ToString());
+                posicion.Nombre = row[6].ToString();
+                jugador.Posicion = posicion;
+                jugador.Costo = Int32.Parse(row[7].ToString());
+                list.Add(jugador);
+            }
+            return list;
+        }
+
+        internal IList<Jugador> GetJugadorSinPuntaje(Dictionary<string, object> parametros)
+        {
+            List<Jugador> listadoJugadores = new List<Jugador>();
+
+            var strSql = String.Concat("SELECT j1.idJugador, j1.nombre, j1.apellido, c1.idClub, c1.nombre, p.idPosicion, p.nombre, j1.costo ",
+                "FROM Jugador j1 JOIN Club c1 ON j1.idClub = c1.idClub ",
+                "JOIN Posicion p ON p.idPosicion = j1.idPosicion ",
+                "WHERE j1.idJugador NOT IN(SELECT j.idJugador ",
+                "FROM Jugador j JOIN Club c ON j.idClub = c.idClub ",
+                "JOIN JugadorXFechaXTorneo jxt ON j.idJugador = jxt.idJugador ",
+                "JOIN Fecha f ON f.nroFecha = jxt.nroFecha ",
+                "JOIN Torneo t ON t.idTorneo = jxt.idTorneo ",
+                "WHERE j.estado = 'S' AND (f.nroFecha=@nroFecha) AND (t.idTorneo=@idTorneo)) AND 1=1 ");
+            if (parametros.ContainsKey("costoDesde") && parametros.ContainsKey("costoHasta"))
+                strSql += " AND (j1.costo>=@costoDesde AND j1.costo<=@costoHasta) ";
+            if (parametros.ContainsKey("nombre"))
+                strSql += " AND (j1.nombre LIKE @nombre) ";
+            if (parametros.ContainsKey("apellido"))
+                strSql += " AND (j1.apellido LIKE @apellido) ";
+            if (parametros.ContainsKey("idPosicion"))
+                strSql += " AND (p.idPosicion=@idPosicion) ";
+            if (parametros.ContainsKey("idClub"))
+                strSql += " AND (c1.idClub=@idClub)  ";
+            var resultadoConsulta = (DataRowCollection)DataManager.GetInstance().ConsultaSQLConParametros(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultadoConsulta)
+            {
+                Jugador jugador = new Jugador();
+                Club club = new Club();
+                Posicion posicion = new Posicion();
+                jugador.IdJugador = Int32.Parse(row[0].ToString());
+                jugador.Nombre = row[1].ToString();
+                jugador.Apellido = row[2].ToString();
+                club.IdClub = Int32.Parse(row[3].ToString());
+                club.Nombre = row[4].ToString();
+                jugador.Club = club;
+                posicion.IdPosicion = Int32.Parse(row[5].ToString());
+                posicion.Nombre = row[6].ToString();
+                jugador.Posicion = posicion;
+                jugador.Costo = Int32.Parse(row[7].ToString());
+                listadoJugadores.Add(jugador);
+            }
+
+            return listadoJugadores;
+        }
+
+        internal bool insertPuntajeJugador(List<Jugador> listJugadores, Dictionary<string, object> parametros)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+                foreach (var itemJugador in listJugadores)
+                {
+                    string sql = string.Concat("INSERT INTO JugadorXFechaXTorneo ",
+                                            "           (idJugador  ",
+                                            "           ,nroFecha   ",
+                                            "           ,idTorneo         ",
+                                            "           ,puntaje)      ",
+                                            "     VALUES                 ",
+                                            "           (@idJugador   ",
+                                            "           ,@nroFecha   ",
+                                            "           ,@idTorneo          ",
+                                            "           ,@puntaje)       ");
+
+                    parametros.Add("idJugador", itemJugador.IdJugador);
+                    parametros.Add("puntaje", itemJugador.Puntaje);
+                    dm.EjecutarSQL(sql, parametros);
+                }
+
+                dm.Commit();
+            }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+            return true;
+        }
+
         internal IList<Jugador> getJugadorById(int selected)
         {
             List<Jugador> list = new List<Jugador>();

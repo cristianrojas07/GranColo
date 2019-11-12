@@ -33,6 +33,11 @@ namespace GranColo.BusinessLayer.Services
             return JugadorDao.getAllJugador();
         }
 
+        internal IList<Jugador> ObtenerTodosJugadoresSinPuntaje(Dictionary<string, object> parametros)
+        {
+            return JugadorDao.getAllJugadorSinPuntaje(parametros);
+        }
+
         internal bool ObtenerRepetidos(Jugador oJugador)
         {
             return JugadorDao.getRepeat(oJugador);
@@ -43,9 +48,39 @@ namespace GranColo.BusinessLayer.Services
             return JugadorDao.GetJugadorByFilters(parametros);
         }
 
+        internal bool actualizarPuntaje(Jugador jugadorSeleccionado, int nroFechaSeleccionado, int idTorneoSeleccionado)
+        {
+            return JugadorDao.updatePuntaje(jugadorSeleccionado, nroFechaSeleccionado, idTorneoSeleccionado);
+        }
+
+        internal IList<Jugador> ConsultarJugadoresSinPuntaje(Dictionary<string, object> parametros)
+        {
+            return JugadorDao.GetJugadorSinPuntaje(parametros);
+        }
+
         internal IList<Jugador> ObtenerJugadorPorId()
         {
             return JugadorDao.getJugadorById(Selected);
+        }
+
+        internal bool insertarPuntajeJugador(List<Jugador> listJugadores, Dictionary<string, object> parametros)
+        {
+            return JugadorDao.insertPuntajeJugador(listJugadores, parametros);
+        }
+
+        internal IList<Jugador> ConsultarJugadoresConPuntaje(Dictionary<string, object> parametros)
+        {
+            return JugadorDao.GetJugadorConPuntaje(parametros);
+        }
+
+        internal IList<Jugador> ObtenerTodosJugadoresConPuntaje(Dictionary<string, object> parametros)
+        {
+            return JugadorDao.getAllJugadorConPuntaje(parametros);
+        }
+
+        internal bool EliminarPuntajeJugador(Jugador jugador, int nroFecha, int idTorneo)
+        {
+            return JugadorDao.deletePuntajeJugador(jugador, nroFecha, idTorneo);
         }
     }
 }

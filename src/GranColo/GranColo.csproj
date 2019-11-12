@@ -107,11 +107,29 @@
     <Compile Include="GUILayer\Clubes\Jugadores\FrmABMJugador.Designer.cs">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmABMPuntajeJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmABMPuntajeJugadores.Designer.cs">
+      <DependentUpon>FrmABMPuntajeJugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmEditarPuntaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmEditarPuntaje.Designer.cs">
+      <DependentUpon>FrmEditarPuntaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Clubes\Jugadores\FrmJugador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Clubes\Jugadores\FrmJugador.Designer.cs">
       <DependentUpon>FrmJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmPuntajeJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\Jugadores\FrmPuntajeJugador.Designer.cs">
+      <DependentUpon>FrmPuntajeJugador.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Fixture\FrmConsultarAsignarFecha.cs">
       <SubType>Form</SubType>
@@ -182,8 +200,17 @@
     <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmABMJugador.resx">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmABMPuntajeJugadores.resx">
+      <DependentUpon>FrmABMPuntajeJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmEditarPuntaje.resx">
+      <DependentUpon>FrmEditarPuntaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmJugador.resx">
       <DependentUpon>FrmJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmPuntajeJugador.resx">
+      <DependentUpon>FrmPuntajeJugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmABMFecha.resx">
       <DependentUpon>FrmABMFecha.cs</DependentUpon>

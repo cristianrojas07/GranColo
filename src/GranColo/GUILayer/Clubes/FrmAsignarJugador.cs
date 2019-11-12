@@ -29,7 +29,6 @@ namespace GranColo.GUILayer.Clubes
             Cargar_comboBox(cbo_equipo, EquipoService.obtenerTodos(), "nombre", "idEquipo");
             Cargar_comboBox(cb_posicion, PosicionService.ObtenerTodosPosiciones(), "nombre", "idPosicion");
             Cargar_comboBox(cb_club, ClubService.ObtenerTodosClubes(), "nombre", "idClub");
-            
         }
 
         private void Cargar_comboBox(ComboBox comboBox, object dataSource, string displayMember, string valueMember)
