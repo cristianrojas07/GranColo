@@ -3,6 +3,7 @@ using GranColo.GUILayer.Clubes.Equipos;
 using GranColo.GUILayer.Clubes.Jugadores;
 using GranColo.GUILayer.Equipos.Jugadores;
 using GranColo.GUILayer.Fixture;
+using GranColo.GUILayer.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -152,6 +153,12 @@ namespace GranColo.GUILayer
         {
             FrmABMPuntajeJugadores frmABMPuntajeJugadores = new FrmABMPuntajeJugadores();
             frmABMPuntajeJugadores.ShowDialog();
+        }
+
+        private void generarReportePuntosJugadorEnTorneoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportePuntosJugador frmReportePuntosJugador = new FrmReportePuntosJugador();
+            frmReportePuntosJugador.ShowDialog();
         }
     }
 }

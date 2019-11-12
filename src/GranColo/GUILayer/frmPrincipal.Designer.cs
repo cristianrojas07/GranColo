@@ -39,15 +39,16 @@
             this.equipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarJugadoresAEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntajeDeJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarPuntajeJugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCercaDeGranColoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteTecnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPuntajeJugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,10 +139,19 @@
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            // 
+            // generarReportePuntosJugadorEnTorneoToolStripMenuItem
+            // 
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Name = "generarReportePuntosJugadorEnTorneoToolStripMenuItem";
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Text = "Reporte puntos Jugador en Torneo";
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Click += new System.EventHandler(this.generarReportePuntosJugadorEnTorneoToolStripMenuItem_Click);
             // 
             // estadisticasToolStripMenuItem
             // 
@@ -158,6 +168,13 @@
             this.puntajeDeJugadorToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.puntajeDeJugadorToolStripMenuItem.Text = "Puntuar Jugadores";
             this.puntajeDeJugadorToolStripMenuItem.Click += new System.EventHandler(this.puntajeDeJugadorToolStripMenuItem_Click);
+            // 
+            // consultarPuntajeJugadoresToolStripMenuItem
+            // 
+            this.consultarPuntajeJugadoresToolStripMenuItem.Name = "consultarPuntajeJugadoresToolStripMenuItem";
+            this.consultarPuntajeJugadoresToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.consultarPuntajeJugadoresToolStripMenuItem.Text = "Consultar Puntaje Jugadores";
+            this.consultarPuntajeJugadoresToolStripMenuItem.Click += new System.EventHandler(this.consultarPuntajeJugadoresToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -200,13 +217,6 @@
             this.salirToolStripMenuItem2.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem2.Text = "Salir";
             this.salirToolStripMenuItem2.Click += new System.EventHandler(this.SalirToolStripMenuItem2_Click);
-            // 
-            // consultarPuntajeJugadoresToolStripMenuItem
-            // 
-            this.consultarPuntajeJugadoresToolStripMenuItem.Name = "consultarPuntajeJugadoresToolStripMenuItem";
-            this.consultarPuntajeJugadoresToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.consultarPuntajeJugadoresToolStripMenuItem.Text = "Consultar Puntaje Jugadores";
-            this.consultarPuntajeJugadoresToolStripMenuItem.Click += new System.EventHandler(this.consultarPuntajeJugadoresToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -255,5 +265,6 @@
         private System.Windows.Forms.ToolStripMenuItem asignarJugadoresAEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puntajeDeJugadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPuntajeJugadoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generarReportePuntosJugadorEnTorneoToolStripMenuItem;
     }
 }
