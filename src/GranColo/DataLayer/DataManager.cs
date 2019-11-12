@@ -194,11 +194,12 @@ public class DataManager
 
     public DataTable GenerarReporte(int idTorneo, int orden)
     {
-        string strSql = "SELECT(j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje " +
+        string strSql = "SELECT(j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje, c.nombre as club" +
                         " FROM JugadorXFechaXTorneo jxf JOIN Jugador j ON jxf.idJugador = j.idJugador " +
                         " JOIN Torneo t ON jxf.idTorneo = t.idTorneo " +
+                        " JOIN Club c ON c.idClub = j.idClub " +
                         " WHERE t.idTorneo=@idTorneo " +
-                        " GROUP BY j.nombre + ' ' + j.apellido, t.nombre ";
+                        " GROUP BY j.nombre + ' ' + j.apellido, t.nombre, c.nombre ";
 
         if (orden == 0) { strSql += " ORDER BY 3 ASC "; }
         if (orden == 1) { strSql += " ORDER BY 3 DESC "; }
