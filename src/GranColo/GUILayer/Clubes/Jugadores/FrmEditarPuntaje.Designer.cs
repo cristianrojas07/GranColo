@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nud_puntaje = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nud_puntaje = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_puntaje)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Puntaje";
+            // 
+            // nud_puntaje
+            // 
+            this.nud_puntaje.Location = new System.Drawing.Point(58, 24);
+            this.nud_puntaje.Name = "nud_puntaje";
+            this.nud_puntaje.Size = new System.Drawing.Size(133, 20);
+            this.nud_puntaje.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Puntaje:";
             // 
             // btn_aceptar
             // 
@@ -68,22 +84,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Puntaje:";
-            // 
-            // nud_puntaje
-            // 
-            this.nud_puntaje.Location = new System.Drawing.Point(58, 24);
-            this.nud_puntaje.Name = "nud_puntaje";
-            this.nud_puntaje.Size = new System.Drawing.Size(133, 20);
-            this.nud_puntaje.TabIndex = 2;
-            // 
             // FrmEditarPuntaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +93,7 @@
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmEditarPuntaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gran Colo";

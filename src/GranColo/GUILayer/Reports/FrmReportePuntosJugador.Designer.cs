@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dsPuntaje1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPuntaje1 = new GranColo.GUILayer.Reports.DataSets.DSPuntaje();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_torneo = new System.Windows.Forms.ComboBox();
@@ -37,11 +39,19 @@
             this.rpv_puntos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.cbo_orden = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dsPuntaje1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsPuntaje1 = new GranColo.GUILayer.Reports.DataSets.DSPuntaje();
             ((System.ComponentModel.ISupportInitialize)(this.dsPuntaje1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPuntaje1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dsPuntaje1BindingSource
+            // 
+            this.dsPuntaje1BindingSource.DataSource = this.dsPuntaje1;
+            this.dsPuntaje1BindingSource.Position = 0;
+            // 
+            // dsPuntaje1
+            // 
+            this.dsPuntaje1.DataSetName = "DSPuntaje";
+            this.dsPuntaje1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -87,7 +97,7 @@
             this.rpv_puntos.Location = new System.Drawing.Point(17, 33);
             this.rpv_puntos.Name = "rpv_puntos";
             this.rpv_puntos.ServerReport.BearerToken = null;
-            this.rpv_puntos.Size = new System.Drawing.Size(546, 502);
+            this.rpv_puntos.Size = new System.Drawing.Size(599, 559);
             this.rpv_puntos.TabIndex = 4;
             // 
             // cbo_orden
@@ -108,21 +118,11 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Orden:";
             // 
-            // dsPuntaje1BindingSource
-            // 
-            this.dsPuntaje1BindingSource.DataSource = this.dsPuntaje1;
-            this.dsPuntaje1BindingSource.Position = 0;
-            // 
-            // dsPuntaje1
-            // 
-            this.dsPuntaje1.DataSetName = "DSPuntaje";
-            this.dsPuntaje1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // FrmReportePuntosJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 547);
+            this.ClientSize = new System.Drawing.Size(628, 604);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbo_orden);
             this.Controls.Add(this.rpv_puntos);
@@ -130,6 +130,7 @@
             this.Controls.Add(this.cbo_torneo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmReportePuntosJugador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";

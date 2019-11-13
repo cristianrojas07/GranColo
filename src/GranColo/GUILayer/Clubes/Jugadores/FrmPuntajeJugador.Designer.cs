@@ -387,6 +387,7 @@
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.btn_salir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmPuntajeJugador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";
