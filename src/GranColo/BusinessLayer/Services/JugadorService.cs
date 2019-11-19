@@ -63,9 +63,9 @@ namespace GranColo.BusinessLayer.Services
             return JugadorDao.getJugadorById(Selected);
         }
 
-        internal bool insertarPuntajeJugador(List<Jugador> listJugadores, Dictionary<string, object> parametros)
+        internal bool insertarPuntajeJugador(List<Jugador> listJugadores, int idFecha, int idTorneo)
         {
-            return JugadorDao.insertPuntajeJugador(listJugadores, parametros);
+            return JugadorDao.insertPuntajeJugador(listJugadores, idFecha, idTorneo);
         }
 
         internal IList<Jugador> ConsultarJugadoresConPuntaje(Dictionary<string, object> parametros)

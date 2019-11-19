@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dsPuntaje1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPuntaje1 = new GranColo.GUILayer.Reports.DataSets.DSPuntaje();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -80,7 +79,7 @@
             // 
             // btn_generar
             // 
-            this.btn_generar.Location = new System.Drawing.Point(415, 4);
+            this.btn_generar.Location = new System.Drawing.Point(541, 4);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Size = new System.Drawing.Size(75, 23);
             this.btn_generar.TabIndex = 3;
@@ -90,9 +89,6 @@
             // 
             // rpv_puntos
             // 
-            reportDataSource1.Name = "puntosJugadores";
-            reportDataSource1.Value = this.dsPuntaje1BindingSource;
-            this.rpv_puntos.LocalReport.DataSources.Add(reportDataSource1);
             this.rpv_puntos.LocalReport.ReportEmbeddedResource = "GranColo.GUILayer.Reports.Diseño.rpt_puntaje.rdlc";
             this.rpv_puntos.Location = new System.Drawing.Point(17, 33);
             this.rpv_puntos.Name = "rpv_puntos";

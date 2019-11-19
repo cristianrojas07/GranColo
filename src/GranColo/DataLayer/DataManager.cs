@@ -47,7 +47,9 @@ public class DataManager
         if (dbConnection.State != ConnectionState.Open)
             dbConnection.Open();
     }
+
     
+
     public void Close()
     {
         if (dbConnection.State != ConnectionState.Closed)
@@ -200,6 +202,37 @@ public class DataManager
                         " JOIN Club c ON c.idClub = j.idClub " +
                         " WHERE t.idTorneo=@idTorneo " +
                         " GROUP BY j.nombre + ' ' + j.apellido, t.nombre, c.nombre ";
+
+        if (orden == 0) { strSql += " ORDER BY 3 ASC "; }
+        if (orden == 1) { strSql += " ORDER BY 3 DESC "; }
+        SqlConnection cnn = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        DataTable tabla = new DataTable();
+
+        try
+        {
+            cmd.Connection = dbConnection;
+            cmd.Transaction = dbTransaction;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = strSql;
+            cmd.Parameters.AddWithValue("@idTorneo", idTorneo);
+            tabla.Load(cmd.ExecuteReader());
+            return tabla;
+        }
+        catch (SqlException ex)
+        {
+            throw (ex);
+        }
+    }
+    public DataTable GenerarReporteEquipoXJugador(int idTorneo, int orden)
+    {
+        string strSql = "SELECT(j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje, e.nombre as equipo" +
+            " FROM JugadorXFechaXTorneo jxf JOIN Jugador j ON jxf.idJugador=j.idJugador " +
+            " JOIN Torneo t ON jxf.idTorneo = t.idTorneo " +
+            " JOIN EquipoXJugador exj ON exj.idJugador=jxf.idJugador " +
+            " JOIN Equipo e ON exj.idEquipo=e.idEquipo " +
+            " WHERE t.idTorneo=@idTorneo " +
+            " GROUP BY j.nombre + ' ' + j.apellido, t.nombre, e.nombre";
 
         if (orden == 0) { strSql += " ORDER BY 3 ASC "; }
         if (orden == 1) { strSql += " ORDER BY 3 DESC "; }

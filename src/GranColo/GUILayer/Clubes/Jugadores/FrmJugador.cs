@@ -69,10 +69,22 @@ namespace GranColo.GUILayer.Equipos.Jugadores
                     Dictionary<string, object> parametros = new Dictionary<string, object>();
                     parametros.Add("costoDesde", nud_min.Value);
                     parametros.Add("costoHasta", nud_max.Value);
-                    parametros.Add("nombre", "%" + txt_nombre.Text + "%");
-                    parametros.Add("apellido", "%" + txt_apellido.Text + "%");
-                    parametros.Add("idPosicion", cb_posicion.SelectedValue.ToString());
-                    parametros.Add("idClub", cb_club.SelectedValue.ToString());
+                    if (!String.IsNullOrEmpty(txt_nombre.Text))
+                    {
+                        parametros.Add("nombre", "%" + txt_nombre.Text + "%");
+                    }
+                    if (!String.IsNullOrEmpty(txt_nombre.Text))
+                    {
+                        parametros.Add("apellido", "%" + txt_apellido.Text + "%");
+                    }
+                    if (cb_posicion.SelectedIndex != -1)
+                    {
+                        parametros.Add("idPosicion", cb_posicion.SelectedValue.ToString());
+                    }
+                    if (cb_club.SelectedIndex != -1)
+                    {
+                        parametros.Add("idClub", cb_club.SelectedValue.ToString());
+                    }
 
                     IList<Jugador> listadoJugadores = JugadorService.ConsultarJugadoresConFiltros(parametros);
                     dgvJugadores.DataSource = listadoJugadores;
@@ -96,12 +108,25 @@ namespace GranColo.GUILayer.Equipos.Jugadores
 
         private bool ValidarCampos()
         {
-            if (ValidarTextBoxVacio(txt_nombre, "Se debe ingresar un nombre") &&
+            if (String.IsNullOrEmpty(nud_min.Value.ToString()))
+            {
+                MessageBox.Show("Los rangos del costo son campos obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (String.IsNullOrEmpty(nud_max.Value.ToString()))
+            {
+                MessageBox.Show("Los rangos del costo son campos obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
+
+            /*if (ValidarTextBoxVacio(txt_nombre, "Se debe ingresar un nombre") &&
                 ValidarTextBoxVacio(txt_apellido, "Se debe ingresar un apellido") &&
                 ValidarComboBoxVacio(cb_club, "Se debe elegir un club") &&
                 ValidarComboBoxVacio(cb_posicion, "Se debe elegir una posicion para el jugador"))
                 return true;
-            return false;
+            return false;*/
         }
 
         private bool ValidarTextBoxVacio(TextBox textBox, String mensaje)

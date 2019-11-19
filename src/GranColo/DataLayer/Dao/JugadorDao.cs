@@ -230,7 +230,7 @@ namespace GranColo.DataLayer.Dao
             return listadoJugadores;
         }
 
-        internal bool insertPuntajeJugador(List<Jugador> listJugadores, Dictionary<string, object> parametros)
+        internal bool insertPuntajeJugador(List<Jugador> listJugadores, int idFecha, int idTorneo)
         {
             DataManager dm = new DataManager();
             try
@@ -251,6 +251,9 @@ namespace GranColo.DataLayer.Dao
                                             "           ,@idTorneo          ",
                                             "           ,@puntaje)       ");
 
+                    Dictionary<string, object> parametros = new Dictionary<string, object>();
+                    parametros.Add("nroFecha", idFecha);
+                    parametros.Add("idTorneo", idTorneo);
                     parametros.Add("idJugador", itemJugador.IdJugador);
                     parametros.Add("puntaje", itemJugador.Puntaje);
                     dm.EjecutarSQL(sql, parametros);

@@ -39,12 +39,12 @@
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.2.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -208,11 +208,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPuntaje.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reports\DataSets\DSPuntajeXEquipoXTorneo.cs">
+      <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reports\DataSets\DSPuntajeXEquipoXTorneo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reports\FrmReportePuntosJugador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Reports\FrmReportePuntosJugador.Designer.cs">
       <DependentUpon>FrmReportePuntosJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reports\FrmReportePuntosJugadorXEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reports\FrmReportePuntosJugadorXEquipo.Designer.cs">
+      <DependentUpon>FrmReportePuntosJugadorXEquipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -268,8 +282,12 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntaje.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntajeXEquipoXTorneo.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\FrmReportePuntosJugador.resx">
       <DependentUpon>FrmReportePuntosJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reports\FrmReportePuntosJugadorXEquipo.resx">
+      <DependentUpon>FrmReportePuntosJugadorXEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -291,6 +309,17 @@
     </None>
     <None Include="GUILayer\Reports\DataSets\DSPuntaje.xss">
       <DependentUpon>DSPuntaje.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSPuntajeXEquipoXTorneo.xsc">
+      <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSPuntajeXEquipoXTorneo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPuntajeXEquipoXTorneo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSPuntajeXEquipoXTorneo.xss">
+      <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

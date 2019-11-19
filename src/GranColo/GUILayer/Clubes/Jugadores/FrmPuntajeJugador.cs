@@ -65,9 +65,6 @@ namespace GranColo.GUILayer.Clubes.Jugadores
             {
                 int idTorneo = (int)cbo_torneo.SelectedValue;
                 int idFecha = (int)cbo_fecha.SelectedValue;
-                Dictionary<string, object> parametros = new Dictionary<string, object>();
-                parametros.Add("idTorneo", idTorneo);
-                parametros.Add("nroFecha", idFecha);
                 List<Jugador> listJugadores = new List<Jugador>();
                 if (dgv_jugadores.Rows.Count != 0)
                 {
@@ -83,7 +80,7 @@ namespace GranColo.GUILayer.Clubes.Jugadores
                                 listJugadores.Add(jugador);
                             }
                         }
-                        if (JugadorService.insertarPuntajeJugador(listJugadores, parametros))
+                        if (JugadorService.insertarPuntajeJugador(listJugadores, idFecha, idTorneo))
                         {
                             MessageBox.Show("Puntajes agregados con éxito!.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ReiniciarFormPuntaje();

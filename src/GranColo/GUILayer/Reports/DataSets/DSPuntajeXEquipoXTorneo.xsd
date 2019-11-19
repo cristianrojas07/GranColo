@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSPuntajeXEquipoXTorneo" targetNamespace="http://tempuri.org/DSPuntajeXEquipoXTorneo.xsd" xmlns:mstns="http://tempuri.org/DSPuntajeXEquipoXTorneo.xsd" xmlns="http://tempuri.org/DSPuntajeXEquipoXTorneo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSPuntajeXEquipoXTorneo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSPuntajeXEquipoXTorneo" msprop:Generator_UserDSName="DSPuntajeXEquipoXTorneo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTReportePuntajeXEquipoXTorneo" msprop:Generator_TableClassName="DTReportePuntajeXEquipoXTorneoDataTable" msprop:Generator_TableVarName="tableDTReportePuntajeXEquipoXTorneo" msprop:Generator_RowChangedName="DTReportePuntajeXEquipoXTorneoRowChanged" msprop:Generator_TablePropName="DTReportePuntajeXEquipoXTorneo" msprop:Generator_RowDeletingName="DTReportePuntajeXEquipoXTorneoRowDeleting" msprop:Generator_RowChangingName="DTReportePuntajeXEquipoXTorneoRowChanging" msprop:Generator_RowEvHandlerName="DTReportePuntajeXEquipoXTorneoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTReportePuntajeXEquipoXTorneoRowDeleted" msprop:Generator_RowClassName="DTReportePuntajeXEquipoXTorneoRow" msprop:Generator_UserTableName="DTReportePuntajeXEquipoXTorneo" msprop:Generator_RowEvArgName="DTReportePuntajeXEquipoXTorneoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jugador" msprop:Generator_ColumnVarNameInTable="columnjugador" msprop:Generator_ColumnPropNameInRow="jugador" msprop:Generator_ColumnPropNameInTable="jugadorColumn" msprop:Generator_UserColumnName="jugador" type="xs:string" minOccurs="0" />
+              <xs:element name="torneo" msprop:Generator_ColumnVarNameInTable="columntorneo" msprop:Generator_ColumnPropNameInRow="torneo" msprop:Generator_ColumnPropNameInTable="torneoColumn" msprop:Generator_UserColumnName="torneo" type="xs:string" minOccurs="0" />
+              <xs:element name="equipo" msprop:Generator_ColumnVarNameInTable="columnequipo" msprop:Generator_ColumnPropNameInRow="equipo" msprop:Generator_ColumnPropNameInTable="equipoColumn" msprop:Generator_UserColumnName="equipo" type="xs:string" minOccurs="0" />
+              <xs:element name="puntaje" msprop:Generator_ColumnVarNameInTable="columnpuntaje" msprop:Generator_ColumnPropNameInRow="puntaje" msprop:Generator_ColumnPropNameInTable="puntajeColumn" msprop:Generator_UserColumnName="puntaje" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

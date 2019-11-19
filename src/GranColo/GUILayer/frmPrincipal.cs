@@ -160,5 +160,11 @@ namespace GranColo.GUILayer
             FrmReportePuntosJugador frmReportePuntosJugador = new FrmReportePuntosJugador();
             frmReportePuntosJugador.ShowDialog();
         }
+
+        private void ReportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportePuntosJugadorXEquipo frmReportePuntosJugadorXEquipo = new FrmReportePuntosJugadorXEquipo();
+            frmReportePuntosJugadorXEquipo.ShowDialog();
+        }
     }
 }

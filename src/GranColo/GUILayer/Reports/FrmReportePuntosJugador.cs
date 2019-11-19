@@ -56,5 +56,7 @@ namespace GranColo.GUILayer.Reports
                 MessageBox.Show("Elija un torneo para generar el informe!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        
     }
 }
