@@ -12,13 +12,13 @@
   <xs:element name="DSPuntaje" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSPuntaje" msprop:Generator_UserDSName="DSPuntaje">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DTReporte" msprop:Generator_TableClassName="DTReporteDataTable" msprop:Generator_TableVarName="tableDTReporte" msprop:Generator_RowChangedName="DTReporteRowChanged" msprop:Generator_TablePropName="DTReporte" msprop:Generator_RowDeletingName="DTReporteRowDeleting" msprop:Generator_RowChangingName="DTReporteRowChanging" msprop:Generator_RowEvHandlerName="DTReporteRowChangeEventHandler" msprop:Generator_RowDeletedName="DTReporteRowDeleted" msprop:Generator_RowClassName="DTReporteRow" msprop:Generator_UserTableName="DTReporte" msprop:Generator_RowEvArgName="DTReporteRowChangeEvent">
+        <xs:element name="DTReporte" msprop:Generator_TableClassName="DTReporteDataTable" msprop:Generator_TableVarName="tableDTReporte" msprop:Generator_TablePropName="DTReporte" msprop:Generator_RowDeletingName="DTReporteRowDeleting" msprop:Generator_RowChangingName="DTReporteRowChanging" msprop:Generator_RowEvHandlerName="DTReporteRowChangeEventHandler" msprop:Generator_RowDeletedName="DTReporteRowDeleted" msprop:Generator_UserTableName="DTReporte" msprop:Generator_RowChangedName="DTReporteRowChanged" msprop:Generator_RowEvArgName="DTReporteRowChangeEvent" msprop:Generator_RowClassName="DTReporteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jugador" msprop:Generator_ColumnVarNameInTable="columnjugador" msprop:Generator_ColumnPropNameInRow="jugador" msprop:Generator_ColumnPropNameInTable="jugadorColumn" msprop:Generator_UserColumnName="jugador" type="xs:string" minOccurs="0" />
               <xs:element name="torneo" msprop:Generator_ColumnVarNameInTable="columntorneo" msprop:Generator_ColumnPropNameInRow="torneo" msprop:Generator_ColumnPropNameInTable="torneoColumn" msprop:Generator_UserColumnName="torneo" type="xs:string" minOccurs="0" />
               <xs:element name="puntaje" msprop:Generator_ColumnVarNameInTable="columnpuntaje" msprop:Generator_ColumnPropNameInRow="puntaje" msprop:Generator_ColumnPropNameInTable="puntajeColumn" msprop:Generator_UserColumnName="puntaje" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+              <xs:element name="club" msprop:Generator_ColumnVarNameInTable="columnclub" msprop:Generator_ColumnPropNameInRow="club" msprop:Generator_ColumnPropNameInTable="clubColumn" msprop:Generator_UserColumnName="club" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

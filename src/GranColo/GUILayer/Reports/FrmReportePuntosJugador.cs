@@ -21,12 +21,6 @@ namespace GranColo.GUILayer.Reports
             InitializeComponent();
             torneoService = new TorneoService();
             LlenarCombo(cbo_torneo, torneoService.obtenerTodosTorneos(), "Nombre", "IdTorneo");
-            List<string> listaOrden = new List<string>();
-            listaOrden.Add("Ascendente");
-            listaOrden.Add("Descendente");
-            listaOrden.Add("Sin Orden");
-            cbo_orden.DataSource = listaOrden;
-            cbo_orden.SelectedIndex = 0;
         }
 
         private void FrmReportePuntosJugador_Load(object sender, EventArgs e)
@@ -48,7 +42,7 @@ namespace GranColo.GUILayer.Reports
             {
                 rpv_puntos.LocalReport.SetParameters(new ReportParameter[]{ new ReportParameter("nombreTorneo", cbo_torneo.Text) });
                 rpv_puntos.LocalReport.DataSources.Clear();
-                rpv_puntos.LocalReport.DataSources.Add(new ReportDataSource("puntosJugadores", DataManager.GetInstance().GenerarReporte((int)cbo_torneo.SelectedValue, cbo_orden.SelectedIndex)));
+                rpv_puntos.LocalReport.DataSources.Add(new ReportDataSource("puntosJugadores", DataManager.GetInstance().GenerarReporte((int)cbo_torneo.SelectedValue)));
                 rpv_puntos.RefreshReport();
             }
             else

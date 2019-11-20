@@ -24,19 +24,7 @@ namespace GranColo.GUILayer.Reports
         private void FrmReportePuntosJugadorXEquipo_Load(object sender, EventArgs e)
         {
             llenarCombo(cbo_torneos, torneoService.obtenerTodosTorneos(), "Nombre", "idTorneo");
-            crearOrdenes();
             this.rwReporte.RefreshReport();
-            this.rwReporte.RefreshReport();
-        }
-
-        private void crearOrdenes()
-        {
-            List<string> listaOrden = new List<string>();
-            listaOrden.Add("Ascendente");
-            listaOrden.Add("Descendente");
-            listaOrden.Add("Sin Orden");
-            cbo_ordenes.DataSource = listaOrden;
-            cbo_ordenes.SelectedIndex = 0;
         }
 
         private void llenarCombo(ComboBox cbo, object source, string member, string value)
@@ -53,7 +41,7 @@ namespace GranColo.GUILayer.Reports
             {
                 rwReporte.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter("nombreTorneo", cbo_torneos.Text) });
                 rwReporte.LocalReport.DataSources.Clear();
-                rwReporte.LocalReport.DataSources.Add(new ReportDataSource("DSReporte2", DataManager.GetInstance().GenerarReporteEquipoXJugador((int)cbo_torneos.SelectedValue, cbo_ordenes.SelectedIndex)));
+                rwReporte.LocalReport.DataSources.Add(new ReportDataSource("DSReporte2", DataManager.GetInstance().GenerarReporteEquipoXJugador((int)cbo_torneos.SelectedValue)));
                 rwReporte.RefreshReport();
             }
             else

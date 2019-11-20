@@ -285,7 +285,7 @@ namespace GranColo.GUILayer.Reports.DataSets {
             
             private global::System.Data.DataColumn columnpuntaje;
             
-            private global::System.Data.DataColumn columnDataColumn1;
+            private global::System.Data.DataColumn columnclub;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -346,9 +346,9 @@ namespace GranColo.GUILayer.Reports.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DataColumn1Column {
+            public global::System.Data.DataColumn clubColumn {
                 get {
-                    return this.columnDataColumn1;
+                    return this.columnclub;
                 }
             }
             
@@ -389,13 +389,13 @@ namespace GranColo.GUILayer.Reports.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DTReporteRow AddDTReporteRow(string jugador, string torneo, string puntaje, string DataColumn1) {
+            public DTReporteRow AddDTReporteRow(string jugador, string torneo, string puntaje, string club) {
                 DTReporteRow rowDTReporteRow = ((DTReporteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         jugador,
                         torneo,
                         puntaje,
-                        DataColumn1};
+                        club};
                 rowDTReporteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDTReporteRow);
                 return rowDTReporteRow;
@@ -421,7 +421,7 @@ namespace GranColo.GUILayer.Reports.DataSets {
                 this.columnjugador = base.Columns["jugador"];
                 this.columntorneo = base.Columns["torneo"];
                 this.columnpuntaje = base.Columns["puntaje"];
-                this.columnDataColumn1 = base.Columns["DataColumn1"];
+                this.columnclub = base.Columns["club"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -433,8 +433,8 @@ namespace GranColo.GUILayer.Reports.DataSets {
                 base.Columns.Add(this.columntorneo);
                 this.columnpuntaje = new global::System.Data.DataColumn("puntaje", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpuntaje);
-                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn1);
+                this.columnclub = new global::System.Data.DataColumn("club", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclub);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -625,17 +625,17 @@ namespace GranColo.GUILayer.Reports.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DataColumn1 {
+            public string club {
                 get {
                     try {
-                        return ((string)(this[this.tableDTReporte.DataColumn1Column]));
+                        return ((string)(this[this.tableDTReporte.clubColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn1\' de la tabla \'DTReporte\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'club\' de la tabla \'DTReporte\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDTReporte.DataColumn1Column] = value;
+                    this[this.tableDTReporte.clubColumn] = value;
                 }
             }
             
@@ -677,14 +677,14 @@ namespace GranColo.GUILayer.Reports.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDataColumn1Null() {
-                return this.IsNull(this.tableDTReporte.DataColumn1Column);
+            public bool IsclubNull() {
+                return this.IsNull(this.tableDTReporte.clubColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDataColumn1Null() {
-                this[this.tableDTReporte.DataColumn1Column] = global::System.Convert.DBNull;
+            public void SetclubNull() {
+                this[this.tableDTReporte.clubColumn] = global::System.Convert.DBNull;
             }
         }
         

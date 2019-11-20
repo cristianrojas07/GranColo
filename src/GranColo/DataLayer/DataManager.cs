@@ -194,17 +194,15 @@ public class DataManager
         }
     }
 
-    public DataTable GenerarReporte(int idTorneo, int orden)
+    public DataTable GenerarReporte(int idTorneo)
     {
-        string strSql = "SELECT(j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje, c.nombre as club" +
+        string strSql = "SELECT (j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje, c.nombre as club" +
                         " FROM JugadorXFechaXTorneo jxf JOIN Jugador j ON jxf.idJugador = j.idJugador " +
                         " JOIN Torneo t ON jxf.idTorneo = t.idTorneo " +
                         " JOIN Club c ON c.idClub = j.idClub " +
                         " WHERE t.idTorneo=@idTorneo " +
                         " GROUP BY j.nombre + ' ' + j.apellido, t.nombre, c.nombre ";
 
-        if (orden == 0) { strSql += " ORDER BY 3 ASC "; }
-        if (orden == 1) { strSql += " ORDER BY 3 DESC "; }
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         DataTable tabla = new DataTable();
@@ -224,9 +222,9 @@ public class DataManager
             throw (ex);
         }
     }
-    public DataTable GenerarReporteEquipoXJugador(int idTorneo, int orden)
+    public DataTable GenerarReporteEquipoXJugador(int idTorneo)
     {
-        string strSql = "SELECT(j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje, e.nombre as equipo" +
+        string strSql = "SELECT (j.nombre + ' ' + j.apellido) as jugador, t.nombre as torneo, Sum(puntaje) as puntaje, e.nombre as equipo" +
             " FROM JugadorXFechaXTorneo jxf JOIN Jugador j ON jxf.idJugador=j.idJugador " +
             " JOIN Torneo t ON jxf.idTorneo = t.idTorneo " +
             " JOIN EquipoXJugador exj ON exj.idJugador=jxf.idJugador " +
@@ -234,8 +232,6 @@ public class DataManager
             " WHERE t.idTorneo=@idTorneo " +
             " GROUP BY j.nombre + ' ' + j.apellido, t.nombre, e.nombre";
 
-        if (orden == 0) { strSql += " ORDER BY 3 ASC "; }
-        if (orden == 1) { strSql += " ORDER BY 3 DESC "; }
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         DataTable tabla = new DataTable();

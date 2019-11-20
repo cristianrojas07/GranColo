@@ -29,61 +29,65 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dSListadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.rpv_listado = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dSListado = new GranColo.GUILayer.Reports.DataSets.DSListado();
-            this.dtListadoTableAdapter1 = new GranColo.GUILayer.Reports.DataSets.DSListadoTableAdapters.DTListadoTableAdapter();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.dSListadoBindingSource)).BeginInit();
+            this.dTListadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dTListadoTableAdapter = new GranColo.GUILayer.Reports.DataSets.DSListadoTableAdapters.DTListadoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dSListado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dTListadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dSListadoBindingSource
+            // rpv_listado
             // 
-            this.dSListadoBindingSource.DataSource = this.dSListado;
-            this.dSListadoBindingSource.Position = 0;
+            this.rpv_listado.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DSListado";
+            reportDataSource2.Value = this.dTListadoBindingSource;
+            this.rpv_listado.LocalReport.DataSources.Add(reportDataSource2);
+            this.rpv_listado.LocalReport.ReportEmbeddedResource = "GranColo.GUILayer.Reports.Diseño.rpt_Listado.rdlc";
+            this.rpv_listado.Location = new System.Drawing.Point(0, 0);
+            this.rpv_listado.Name = "rpv_listado";
+            this.rpv_listado.ServerReport.BearerToken = null;
+            this.rpv_listado.Size = new System.Drawing.Size(628, 604);
+            this.rpv_listado.TabIndex = 0;
             // 
             // dSListado
             // 
             this.dSListado.DataSetName = "DSListado";
             this.dSListado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dtListadoTableAdapter1
+            // dTListadoBindingSource
             // 
-            this.dtListadoTableAdapter1.ClearBeforeFill = true;
+            this.dTListadoBindingSource.DataMember = "DTListado";
+            this.dTListadoBindingSource.DataSource = this.dSListado;
             // 
-            // reportViewer1
+            // dTListadoTableAdapter
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DSListado";
-            reportDataSource1.Value = this.dSListadoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GranColo.GUILayer.Reports.Diseño.rpt_Listado.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
+            this.dTListadoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reportViewer1);
+            this.ClientSize = new System.Drawing.Size(628, 604);
+            this.Controls.Add(this.rpv_listado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmListado";
-            this.Text = "FrmListado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "GranColo";
             this.Load += new System.EventHandler(this.FrmListado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSListadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dTListadoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource dSListadoBindingSource;
+
+        private Microsoft.Reporting.WinForms.ReportViewer rpv_listado;
         private DataSets.DSListado dSListado;
-        private DataSets.DSListadoTableAdapters.DTListadoTableAdapter dtListadoTableAdapter1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource dTListadoBindingSource;
+        private DataSets.DSListadoTableAdapters.DTListadoTableAdapter dTListadoTableAdapter;
     }
 }

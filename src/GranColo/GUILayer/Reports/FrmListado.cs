@@ -19,8 +19,9 @@ namespace GranColo.GUILayer.Reports
 
         private void FrmListado_Load(object sender, EventArgs e)
         {
-            this.dtListadoTableAdapter1.Fill(this.dSListado.DTListado);
-            this.reportViewer1.RefreshReport();
+            // TODO: esta línea de código carga datos en la tabla 'dSListado.DTListado' Puede moverla o quitarla según sea necesario.
+            this.dTListadoTableAdapter.Fill(this.dSListado.DTListado);
+            this.rpv_listado.RefreshReport();
         }
 
 

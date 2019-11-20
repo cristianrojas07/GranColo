@@ -36,8 +36,6 @@
             this.cbo_torneo = new System.Windows.Forms.ComboBox();
             this.btn_generar = new System.Windows.Forms.Button();
             this.rpv_puntos = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.cbo_orden = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dsPuntaje1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPuntaje1)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +77,7 @@
             // 
             // btn_generar
             // 
-            this.btn_generar.Location = new System.Drawing.Point(541, 4);
+            this.btn_generar.Location = new System.Drawing.Point(191, 5);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Size = new System.Drawing.Size(75, 23);
             this.btn_generar.TabIndex = 3;
@@ -96,31 +94,11 @@
             this.rpv_puntos.Size = new System.Drawing.Size(599, 559);
             this.rpv_puntos.TabIndex = 4;
             // 
-            // cbo_orden
-            // 
-            this.cbo_orden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_orden.FormattingEnabled = true;
-            this.cbo_orden.Location = new System.Drawing.Point(269, 6);
-            this.cbo_orden.Name = "cbo_orden";
-            this.cbo_orden.Size = new System.Drawing.Size(121, 21);
-            this.cbo_orden.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Orden:";
-            // 
             // FrmReportePuntosJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 604);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbo_orden);
             this.Controls.Add(this.rpv_puntos);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.cbo_torneo);
@@ -147,7 +125,5 @@
         private DataSets.DSPuntaje dsPuntaje1;
         private System.Windows.Forms.BindingSource dsPuntaje1BindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer rpv_puntos;
-        private System.Windows.Forms.ComboBox cbo_orden;
-        private System.Windows.Forms.Label label2;
     }
 }
