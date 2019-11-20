@@ -199,6 +199,11 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reports\DataSets\DSEstadistico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEstadistico.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reports\DataSets\DSListado.cs">
       <DependentUpon>DSListado.xsd</DependentUpon>
     </Compile>
@@ -223,6 +228,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reports\FrmEstadistico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reports\FrmEstadistico.Designer.cs">
+      <DependentUpon>FrmEstadistico.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reports\FrmListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +254,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="GUILayer\Clubes\Equipos\FrmABMEquipo.resx">
       <DependentUpon>FrmABMEquipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,9 +306,13 @@
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_Estadistico.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_Listado.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntaje.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntajeXEquipoXTorneo.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reports\FrmEstadistico.resx">
+      <DependentUpon>FrmEstadistico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reports\FrmListado.resx">
       <DependentUpon>FrmListado.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +332,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="GUILayer\Reports\DataSets\DSEstadistico.xsc">
+      <DependentUpon>DSEstadistico.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSEstadistico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEstadistico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSEstadistico.xss">
+      <DependentUpon>DSEstadistico.xsd</DependentUpon>
+    </None>
     <None Include="GUILayer\Reports\DataSets\DSListado.xsc">
       <DependentUpon>DSListado.xsd</DependentUpon>
     </None>
@@ -365,6 +392,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\grancolo.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

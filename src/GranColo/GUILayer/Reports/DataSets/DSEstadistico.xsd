@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEstadistico" targetNamespace="http://tempuri.org/DSEstadistico.xsd" xmlns:mstns="http://tempuri.org/DSEstadistico.xsd" xmlns="http://tempuri.org/DSEstadistico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEstadistico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEstadistico" msprop:Generator_UserDSName="DSEstadistico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTEstadistico" msprop:Generator_TableClassName="DTEstadisticoDataTable" msprop:Generator_TableVarName="tableDTEstadistico" msprop:Generator_TablePropName="DTEstadistico" msprop:Generator_RowDeletingName="DTEstadisticoRowDeleting" msprop:Generator_RowChangingName="DTEstadisticoRowChanging" msprop:Generator_RowEvHandlerName="DTEstadisticoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTEstadisticoRowDeleted" msprop:Generator_UserTableName="DTEstadistico" msprop:Generator_RowChangedName="DTEstadisticoRowChanged" msprop:Generator_RowEvArgName="DTEstadisticoRowChangeEvent" msprop:Generator_RowClassName="DTEstadisticoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jugador" msprop:Generator_ColumnVarNameInTable="columnjugador" msprop:Generator_ColumnPropNameInRow="jugador" msprop:Generator_ColumnPropNameInTable="jugadorColumn" msprop:Generator_UserColumnName="jugador" type="xs:string" minOccurs="0" />
+              <xs:element name="porcentajeParticipacion" msprop:Generator_ColumnVarNameInTable="columnporcentajeParticipacion" msprop:Generator_ColumnPropNameInRow="porcentajeParticipacion" msprop:Generator_ColumnPropNameInTable="porcentajeParticipacionColumn" msprop:Generator_UserColumnName="porcentajeParticipacion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

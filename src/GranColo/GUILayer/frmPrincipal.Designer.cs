@@ -41,6 +41,8 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarReportePuntosJugadorEnTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntajeDeJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPuntajeJugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +52,6 @@
             this.registrarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,7 +145,8 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarReportePuntosJugadorEnTorneoToolStripMenuItem,
             this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem,
-            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem});
+            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem,
+            this.estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -153,16 +155,30 @@
             // generarReportePuntosJugadorEnTorneoToolStripMenuItem
             // 
             this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Name = "generarReportePuntosJugadorEnTorneoToolStripMenuItem";
-            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Size = new System.Drawing.Size(350, 22);
+            this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Size = new System.Drawing.Size(428, 22);
             this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Text = "Reporte puntos Jugador por Club en Torneo";
             this.generarReportePuntosJugadorEnTorneoToolStripMenuItem.Click += new System.EventHandler(this.generarReportePuntosJugadorEnTorneoToolStripMenuItem_Click);
             // 
             // reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem
             // 
             this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem.Name = "reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem";
-            this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem.Size = new System.Drawing.Size(350, 22);
+            this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem.Size = new System.Drawing.Size(428, 22);
             this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem.Text = "Reporte puntos Jugador por Equipo en Torneo";
             this.reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem.Click += new System.EventHandler(this.ReportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem_Click);
+            // 
+            // listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem
+            // 
+            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Name = "listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem";
+            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Size = new System.Drawing.Size(428, 22);
+            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Text = "Listado de puntos de Jugadores por Fecha de Torneo";
+            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Click += new System.EventHandler(this.ListadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem_Click);
+            // 
+            // estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem
+            // 
+            this.estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem.Name = "estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem";
+            this.estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem.Size = new System.Drawing.Size(428, 22);
+            this.estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem.Text = "Estadisticto de top 5 jugadores con mayor participación en equipos";
+            this.estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem.Click += new System.EventHandler(this.EstadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem_Click);
             // 
             // estadisticasToolStripMenuItem
             // 
@@ -229,13 +245,6 @@
             this.salirToolStripMenuItem2.Text = "Salir";
             this.salirToolStripMenuItem2.Click += new System.EventHandler(this.SalirToolStripMenuItem2_Click);
             // 
-            // listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem
-            // 
-            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Name = "listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem";
-            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Size = new System.Drawing.Size(350, 22);
-            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Text = "Listado de puntos de Jugadores por Fecha de Torneo";
-            this.listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem.Click += new System.EventHandler(this.ListadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,5 +295,6 @@
         private System.Windows.Forms.ToolStripMenuItem generarReportePuntosJugadorEnTorneoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem;
     }
 }

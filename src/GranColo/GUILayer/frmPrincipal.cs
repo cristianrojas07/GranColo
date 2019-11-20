@@ -172,5 +172,11 @@ namespace GranColo.GUILayer
             FrmListado frmListado = new FrmListado();
             frmListado.ShowDialog();
         }
+
+        private void EstadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstadistico frmEstadistico = new FrmEstadistico();
+            frmEstadistico.ShowDialog();
+        }
     }
 }

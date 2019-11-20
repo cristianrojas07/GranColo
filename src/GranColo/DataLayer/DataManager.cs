@@ -251,4 +251,33 @@ public class DataManager
             throw (ex);
         }
     }
+
+    public DataTable GenerarEstadistico()
+    {
+        string sql = "SELECT TOP(5) (j.nombre + ' ' + j.apellido) as jugador, " +
+            " (COUNT(j.idJugador) * 100) / CantTotalEquipos as PorcentajeParticipacion " +
+            " FROM(SELECT COUNT(e.idEquipo) as CantTotalEquipos FROM Equipo e) " +
+            " CantTotalEquipos, EquipoXJugador exj JOIN Equipo e ON exj.idEquipo = e.idEquipo " +
+            " JOIN Jugador j on exj.idJugador = j.idJugador " +
+            " GROUP BY(j.nombre +' ' + j.apellido), CantTotalEquipos " +
+            " ORDER BY PorcentajeParticipacion DESC ";
+
+        SqlConnection cnn = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        DataTable tabla = new DataTable();
+
+        try
+        {
+            cmd.Connection = dbConnection;
+            cmd.Transaction = dbTransaction;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sql;
+            tabla.Load(cmd.ExecuteReader());
+            return tabla;
+        }
+        catch (SqlException ex)
+        {
+            throw (ex);
+        }
+    }
 }
