@@ -200,6 +200,14 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reports\DataSets\DSListado.cs">
+      <DependentUpon>DSListado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reports\DataSets\DSListado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSListado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reports\DataSets\DSPuntaje.cs">
       <DependentUpon>DSPuntaje.xsd</DependentUpon>
     </Compile>
@@ -215,6 +223,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reports\FrmListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reports\FrmListado.Designer.cs">
+      <DependentUpon>FrmListado.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reports\FrmReportePuntosJugador.cs">
       <SubType>Form</SubType>
@@ -281,8 +295,12 @@
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_Listado.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntaje.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntajeXEquipoXTorneo.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reports\FrmListado.resx">
+      <DependentUpon>FrmListado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reports\FrmReportePuntosJugador.resx">
       <DependentUpon>FrmReportePuntosJugador.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +317,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="GUILayer\Reports\DataSets\DSListado.xsc">
+      <DependentUpon>DSListado.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSListado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reports\DataSets\DSListado.xss">
+      <DependentUpon>DSListado.xsd</DependentUpon>
+    </None>
     <None Include="GUILayer\Reports\DataSets\DSPuntaje.xsc">
       <DependentUpon>DSPuntaje.xsd</DependentUpon>
     </None>

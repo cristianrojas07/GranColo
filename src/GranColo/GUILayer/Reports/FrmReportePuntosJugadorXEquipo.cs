@@ -53,7 +53,7 @@ namespace GranColo.GUILayer.Reports
             {
                 rwReporte.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter("nombreTorneo", cbo_torneos.Text) });
                 rwReporte.LocalReport.DataSources.Clear();
-                rwReporte.LocalReport.DataSources.Add(new ReportDataSource("puntosJugadores", DataManager.GetInstance().GenerarReporte((int)cbo_torneos.SelectedValue, cbo_ordenes.SelectedIndex)));
+                rwReporte.LocalReport.DataSources.Add(new ReportDataSource("DSReporte2", DataManager.GetInstance().GenerarReporteEquipoXJugador((int)cbo_torneos.SelectedValue, cbo_ordenes.SelectedIndex)));
                 rwReporte.RefreshReport();
             }
             else

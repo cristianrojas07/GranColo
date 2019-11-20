@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSListado" targetNamespace="http://tempuri.org/DSListado.xsd" xmlns:mstns="http://tempuri.org/DSListado.xsd" xmlns="http://tempuri.org/DSListado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_gran_coloConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_gran_coloConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GranColo.Properties.Settings.GlobalReference.Default.db_gran_coloConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTListadoTableAdapter" GeneratorDataComponentClassName="DTListadoTableAdapter" Name="DTListado" UserDataComponentName="DTListadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_gran_coloConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        t.nombre AS torneo, f.nombre AS fecha, j.nombre + ' ' + j.apellido AS jugador, jxf.puntaje
+FROM            JugadorXFechaXTorneo AS jxf INNER JOIN
+                         Fecha AS f ON jxf.nroFecha = f.nroFecha INNER JOIN
+                         Torneo AS t ON jxf.idTorneo = t.idTorneo INNER JOIN
+                         Jugador AS j ON jxf.idJugador = j.idJugador
+GROUP BY t.nombre, f.nombre, j.nombre + ' ' + j.apellido, jxf.puntaje
+ORDER BY torneo, fecha</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="torneo" DataSetColumn="torneo" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="jugador" DataSetColumn="jugador" />
+              <Mapping SourceColumn="puntaje" DataSetColumn="puntaje" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSListado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSListado" msprop:Generator_UserDSName="DSListado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTListado" msprop:Generator_TableClassName="DTListadoDataTable" msprop:Generator_TableVarName="tableDTListado" msprop:Generator_RowChangedName="DTListadoRowChanged" msprop:Generator_TablePropName="DTListado" msprop:Generator_RowDeletingName="DTListadoRowDeleting" msprop:Generator_RowChangingName="DTListadoRowChanging" msprop:Generator_RowEvHandlerName="DTListadoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTListadoRowDeleted" msprop:Generator_RowClassName="DTListadoRow" msprop:Generator_UserTableName="DTListado" msprop:Generator_RowEvArgName="DTListadoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="torneo" msprop:Generator_ColumnVarNameInTable="columntorneo" msprop:Generator_ColumnPropNameInRow="torneo" msprop:Generator_ColumnPropNameInTable="torneoColumn" msprop:Generator_UserColumnName="torneo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="jugador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnjugador" msprop:Generator_ColumnPropNameInRow="jugador" msprop:Generator_ColumnPropNameInTable="jugadorColumn" msprop:Generator_UserColumnName="jugador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="puntaje" msprop:Generator_ColumnVarNameInTable="columnpuntaje" msprop:Generator_ColumnPropNameInRow="puntaje" msprop:Generator_ColumnPropNameInTable="puntajeColumn" msprop:Generator_UserColumnName="puntaje" type="xs:float" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
