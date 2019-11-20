@@ -23,6 +23,6 @@ namespace GranColo.GUILayer.Reports
             this.reportViewer1.RefreshReport();
         }
 
-        
+
     }
 }
