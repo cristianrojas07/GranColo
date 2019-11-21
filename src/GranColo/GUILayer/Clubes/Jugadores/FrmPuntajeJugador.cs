@@ -7,11 +7,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GranColo.GUILayer.Clubes.Jugadores
 {
+    
     public partial class FrmPuntajeJugador : Form
     {
         readonly TorneoService TorneoService;
@@ -19,6 +21,7 @@ namespace GranColo.GUILayer.Clubes.Jugadores
         readonly ClubService ClubService;
         readonly JugadorService JugadorService;
         readonly PosicionService PosicionService;
+        static object CurValue;
 
         public FrmPuntajeJugador()
         {
@@ -225,6 +228,38 @@ namespace GranColo.GUILayer.Clubes.Jugadores
         private void FrmPuntajeJugador_Load(object sender, EventArgs e)
         {
             cbo_fecha.Enabled = false;
+        }
+
+        private void dgv_jugadores_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            object puntaje = dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value;
+            if(puntaje != null)
+            {
+                string StringPuntaje = dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value.ToString();
+                if (Regex.IsMatch(StringPuntaje, @"^\d+$")){
+                    int EnteroPuntaje = Int32.Parse(dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value.ToString());
+                    
+                    if (EnteroPuntaje < 0 || EnteroPuntaje > 10)
+                    {
+                        dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value = CurValue;
+                        MessageBox.Show("El puntaje debe ser entre 0 y 10.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value = EnteroPuntaje;
+                    }
+                }
+                else
+                {
+                    dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value = CurValue;
+                    MessageBox.Show("Solo se permiten numeros enteros!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void dgv_jugadores_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            CurValue = dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value;
         }
     }
 }

@@ -151,6 +151,8 @@
             this.dgv_jugadores.Name = "dgv_jugadores";
             this.dgv_jugadores.Size = new System.Drawing.Size(420, 281);
             this.dgv_jugadores.TabIndex = 9;
+            this.dgv_jugadores.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_jugadores_CellBeginEdit);
+            this.dgv_jugadores.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_jugadores_CellEndEdit);
             // 
             // col_id
             // 
