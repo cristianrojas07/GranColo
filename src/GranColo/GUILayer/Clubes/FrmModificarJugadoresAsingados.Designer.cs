@@ -64,6 +64,7 @@
             // 
             // cbo_jugadores
             // 
+            this.cbo_jugadores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_jugadores.FormattingEnabled = true;
             this.cbo_jugadores.Location = new System.Drawing.Point(66, 48);
             this.cbo_jugadores.Name = "cbo_jugadores";
@@ -102,6 +103,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbo_equipos);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmModificarJugadoresAsingados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

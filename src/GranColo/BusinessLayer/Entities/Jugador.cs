@@ -80,5 +80,12 @@ namespace GranColo.BusinessLayer.Entities
                 return TipoDocumento.Nombre;
             }
         }
+        public string Nombre_Apellido
+        {
+            get
+            {
+                return Nombre + " " + Apellido;
+            }
+        }
     }
 }

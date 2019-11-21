@@ -211,10 +211,10 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Reports\DataSets\DSEstadistico.Designer.cs">
+    <Compile Include="GUILayer\Reports\DataSets\DSEstadisticoTwo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSEstadistico.xsd</DependentUpon>
+      <DependentUpon>DSEstadisticoTwo.xsd</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reports\DataSets\DSListado.cs">
       <DependentUpon>DSListado.xsd</DependentUpon>
@@ -240,11 +240,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPuntajeXEquipoXTorneo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Reports\FrmEstadistico.cs">
+    <Compile Include="GUILayer\Reports\FrmEstadisticoTwo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\Reports\FrmEstadistico.Designer.cs">
-      <DependentUpon>FrmEstadistico.cs</DependentUpon>
+    <Compile Include="GUILayer\Reports\FrmEstadisticoTwo.Designer.cs">
+      <DependentUpon>FrmEstadisticoTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reports\FrmListado.cs">
       <SubType>Form</SubType>
@@ -324,12 +324,12 @@
     <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_Estadistico.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_EstadisticoTwo.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_Listado.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntaje.rdlc" />
     <EmbeddedResource Include="GUILayer\Reports\Diseño\rpt_puntajeXEquipoXTorneo.rdlc" />
-    <EmbeddedResource Include="GUILayer\Reports\FrmEstadistico.resx">
-      <DependentUpon>FrmEstadistico.cs</DependentUpon>
+    <EmbeddedResource Include="GUILayer\Reports\FrmEstadisticoTwo.resx">
+      <DependentUpon>FrmEstadisticoTwo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reports\FrmListado.resx">
       <DependentUpon>FrmListado.cs</DependentUpon>
@@ -350,16 +350,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="GUILayer\Reports\DataSets\DSEstadistico.xsc">
-      <DependentUpon>DSEstadistico.xsd</DependentUpon>
+    <None Include="GUILayer\Reports\DataSets\DSEstadisticoTwo.xsc">
+      <DependentUpon>DSEstadisticoTwo.xsd</DependentUpon>
     </None>
-    <None Include="GUILayer\Reports\DataSets\DSEstadistico.xsd">
+    <None Include="GUILayer\Reports\DataSets\DSEstadisticoTwo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSEstadistico.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSEstadisticoTwo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="GUILayer\Reports\DataSets\DSEstadistico.xss">
-      <DependentUpon>DSEstadistico.xsd</DependentUpon>
+    <None Include="GUILayer\Reports\DataSets\DSEstadisticoTwo.xss">
+      <DependentUpon>DSEstadisticoTwo.xsd</DependentUpon>
     </None>
     <None Include="GUILayer\Reports\DataSets\DSListado.xsc">
       <DependentUpon>DSListado.xsd</DependentUpon>

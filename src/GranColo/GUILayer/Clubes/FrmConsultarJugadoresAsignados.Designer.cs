@@ -31,15 +31,15 @@
             this.lbl_equipo = new System.Windows.Forms.Label();
             this.cbo_equipos = new System.Windows.Forms.ComboBox();
             this.dgv_equipo_jugadores = new System.Windows.Forms.DataGridView();
+            this.id_equipo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_equipo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_jug_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_jug_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.cb_todos = new System.Windows.Forms.CheckBox();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.id_equipo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_equipo_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_jug_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_jug_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_equipo_jugadores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,33 @@
             this.dgv_equipo_jugadores.ReadOnly = true;
             this.dgv_equipo_jugadores.Size = new System.Drawing.Size(330, 375);
             this.dgv_equipo_jugadores.TabIndex = 2;
+            // 
+            // id_equipo_col
+            // 
+            this.id_equipo_col.HeaderText = "Nro. Equipo";
+            this.id_equipo_col.Name = "id_equipo_col";
+            this.id_equipo_col.ReadOnly = true;
+            this.id_equipo_col.Visible = false;
+            // 
+            // nombre_equipo_col
+            // 
+            this.nombre_equipo_col.HeaderText = "Equipo";
+            this.nombre_equipo_col.Name = "nombre_equipo_col";
+            this.nombre_equipo_col.ReadOnly = true;
+            // 
+            // id_jug_col
+            // 
+            this.id_jug_col.HeaderText = "Nro. Jugador";
+            this.id_jug_col.Name = "id_jug_col";
+            this.id_jug_col.ReadOnly = true;
+            this.id_jug_col.Visible = false;
+            // 
+            // nombre_jug_col
+            // 
+            this.nombre_jug_col.HeaderText = "Jugador";
+            this.nombre_jug_col.Name = "nombre_jug_col";
+            this.nombre_jug_col.ReadOnly = true;
+            this.nombre_jug_col.Width = 175;
             // 
             // btn_modificar
             // 
@@ -127,33 +154,6 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
-            // id_equipo_col
-            // 
-            this.id_equipo_col.HeaderText = "Nro. Equipo";
-            this.id_equipo_col.Name = "id_equipo_col";
-            this.id_equipo_col.ReadOnly = true;
-            this.id_equipo_col.Visible = false;
-            // 
-            // nombre_equipo_col
-            // 
-            this.nombre_equipo_col.HeaderText = "Equipo";
-            this.nombre_equipo_col.Name = "nombre_equipo_col";
-            this.nombre_equipo_col.ReadOnly = true;
-            // 
-            // id_jug_col
-            // 
-            this.id_jug_col.HeaderText = "Nro. Jugador";
-            this.id_jug_col.Name = "id_jug_col";
-            this.id_jug_col.ReadOnly = true;
-            this.id_jug_col.Visible = false;
-            // 
-            // nombre_jug_col
-            // 
-            this.nombre_jug_col.HeaderText = "Jugador";
-            this.nombre_jug_col.Name = "nombre_jug_col";
-            this.nombre_jug_col.ReadOnly = true;
-            this.nombre_jug_col.Width = 175;
-            // 
             // FrmConsultarJugadoresAsignados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +168,7 @@
             this.Controls.Add(this.dgv_equipo_jugadores);
             this.Controls.Add(this.cbo_equipos);
             this.Controls.Add(this.lbl_equipo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FrmConsultarJugadoresAsignados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

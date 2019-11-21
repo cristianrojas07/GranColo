@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEstadisticoTwo" targetNamespace="http://tempuri.org/DSEstadisticoTwo.xsd" xmlns:mstns="http://tempuri.org/DSEstadisticoTwo.xsd" xmlns="http://tempuri.org/DSEstadisticoTwo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_gran_coloConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_gran_coloConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GranColo.Properties.Settings.GlobalReference.Default.db_gran_coloConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTEstadisticoTwoTableAdapter" GeneratorDataComponentClassName="DTEstadisticoTwoTableAdapter" Name="DTEstadisticoTwo" UserDataComponentName="DTEstadisticoTwoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_gran_coloConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TOP(5) (j.nombre + ' ' + j.apellido) as jugador,
+(COUNT(j.idJugador) * 100) / CantTotalEquipos as PorcentajeParticipacion
+FROM(SELECT COUNT(e.idEquipo) as CantTotalEquipos FROM Equipo e)
+CantTotalEquipos, EquipoXJugador exj JOIN Equipo e ON exj.idEquipo = e.idEquipo
+JOIN Jugador j on exj.idJugador = j.idJugador
+GROUP BY(j.nombre +' ' + j.apellido), CantTotalEquipos
+ORDER BY PorcentajeParticipacion DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="jugador" DataSetColumn="jugador" />
+              <Mapping SourceColumn="PorcentajeParticipacion" DataSetColumn="PorcentajeParticipacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEstadisticoTwo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEstadisticoTwo" msprop:Generator_UserDSName="DSEstadisticoTwo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTEstadisticoTwo" msprop:Generator_TableClassName="DTEstadisticoTwoDataTable" msprop:Generator_TableVarName="tableDTEstadisticoTwo" msprop:Generator_TablePropName="DTEstadisticoTwo" msprop:Generator_RowDeletingName="DTEstadisticoTwoRowDeleting" msprop:Generator_RowChangingName="DTEstadisticoTwoRowChanging" msprop:Generator_RowEvHandlerName="DTEstadisticoTwoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTEstadisticoTwoRowDeleted" msprop:Generator_UserTableName="DTEstadisticoTwo" msprop:Generator_RowChangedName="DTEstadisticoTwoRowChanged" msprop:Generator_RowEvArgName="DTEstadisticoTwoRowChangeEvent" msprop:Generator_RowClassName="DTEstadisticoTwoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jugador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnjugador" msprop:Generator_ColumnPropNameInRow="jugador" msprop:Generator_ColumnPropNameInTable="jugadorColumn" msprop:Generator_UserColumnName="jugador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PorcentajeParticipacion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPorcentajeParticipacion" msprop:Generator_ColumnPropNameInRow="PorcentajeParticipacion" msprop:Generator_ColumnPropNameInTable="PorcentajeParticipacionColumn" msprop:Generator_UserColumnName="PorcentajeParticipacion" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -175,8 +175,8 @@ namespace GranColo.GUILayer
 
         private void EstadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmEstadistico frmEstadistico = new FrmEstadistico();
-            frmEstadistico.ShowDialog();
+            FrmEstadisticoTwo estadisticoTwo = new FrmEstadisticoTwo();
+            estadisticoTwo.ShowDialog();
         }
 
         private void ConsultarJugadoresAsignadosAEquiposToolStripMenuItem_Click(object sender, EventArgs e)

@@ -43,7 +43,7 @@ namespace GranColo.GUILayer
 
         private void FrmModificarJugadoresAsingados_Load(object sender, EventArgs e)
         {
-            llenarCombo(cbo_jugadores, jugadorService.ObtenerTodosJugadoresSinEquipo2(idEquipo), "Apellido", "IdJugador");
+            llenarCombo(cbo_jugadores, jugadorService.ObtenerTodosJugadoresSinEquipo2(idEquipo), "Nombre_Apellido", "IdJugador");
             cbo_equipos.Text = nombreEquipo;
             cbo_jugadores.Text = nombreJugador;
             cbo_equipos.Enabled = false;
