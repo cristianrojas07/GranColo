@@ -37,10 +37,10 @@
             // rwReporte
             // 
             this.rwReporte.LocalReport.ReportEmbeddedResource = "GranColo.GUILayer.Reports.Diseño.rpt_puntajeXEquipoXTorneo.rdlc";
-            this.rwReporte.Location = new System.Drawing.Point(17, 33);
+            this.rwReporte.Location = new System.Drawing.Point(17, 34);
             this.rwReporte.Name = "rwReporte";
             this.rwReporte.ServerReport.BearerToken = null;
-            this.rwReporte.Size = new System.Drawing.Size(692, 747);
+            this.rwReporte.Size = new System.Drawing.Size(697, 500);
             this.rwReporte.TabIndex = 5;
             // 
             // btn_generar
@@ -75,7 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(721, 792);
+            this.ClientSize = new System.Drawing.Size(721, 548);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.cbo_torneos);
             this.Controls.Add(this.label1);

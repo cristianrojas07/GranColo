@@ -88,17 +88,17 @@
             // rpv_puntos
             // 
             this.rpv_puntos.LocalReport.ReportEmbeddedResource = "GranColo.GUILayer.Reports.Diseño.rpt_puntaje.rdlc";
-            this.rpv_puntos.Location = new System.Drawing.Point(12, 33);
+            this.rpv_puntos.Location = new System.Drawing.Point(12, 34);
             this.rpv_puntos.Name = "rpv_puntos";
             this.rpv_puntos.ServerReport.BearerToken = null;
-            this.rpv_puntos.Size = new System.Drawing.Size(697, 747);
+            this.rpv_puntos.Size = new System.Drawing.Size(697, 502);
             this.rpv_puntos.TabIndex = 4;
             // 
             // FrmReportePuntosJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 792);
+            this.ClientSize = new System.Drawing.Size(721, 548);
             this.Controls.Add(this.rpv_puntos);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.cbo_torneo);
