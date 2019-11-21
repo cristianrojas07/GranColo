@@ -158,25 +158,25 @@ namespace GranColo.GUILayer
         private void generarReportePuntosJugadorEnTorneoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmReportePuntosJugador frmReportePuntosJugador = new FrmReportePuntosJugador();
-            frmReportePuntosJugador.Show();
+            frmReportePuntosJugador.ShowDialog();
         }
 
         private void ReportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmReportePuntosJugadorXEquipo frmReportePuntosJugadorXEquipo = new FrmReportePuntosJugadorXEquipo();
-            frmReportePuntosJugadorXEquipo.Show();
+            frmReportePuntosJugadorXEquipo.ShowDialog();
         }
 
         private void ListadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListado frmListado = new FrmListado();
-            frmListado.Show();
+            frmListado.ShowDialog();
         }
 
         private void EstadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmEstadisticoTwo estadisticoTwo = new FrmEstadisticoTwo();
-            estadisticoTwo.Show();
+            estadisticoTwo.ShowDialog();
         }
 
         private void ConsultarJugadoresAsignadosAEquiposToolStripMenuItem_Click(object sender, EventArgs e)
