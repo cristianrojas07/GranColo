@@ -52,7 +52,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.01948cm</Width>
+                  <Width>2.15298cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -107,7 +107,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.86679cm</Height>
+                  <Height>0.60221cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -120,7 +120,7 @@
                                 <TextRun>
                                   <Value>=Fields!puntaje.Value</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontWeight>Medium</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -147,7 +147,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.68158cm</Height>
+                  <Height>0.57575cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -160,7 +160,7 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!puntaje.Value)</Value>
                                   <Style>
-                                    <FontWeight>SemiBold</FontWeight>
+                                    <FontWeight>Medium</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -187,7 +187,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.1cm</Height>
+                  <Height>0.57625cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -228,7 +228,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.1cm</Height>
+                  <Height>0.60271cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -279,7 +279,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.23115cm</Size>
+                    <Size>2.92026cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox21">
                         <CanGrow>true</CanGrow>
@@ -318,7 +318,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>3.94552cm</Size>
+                        <Size>3.63463cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox23">
                             <CanGrow>true</CanGrow>
@@ -357,7 +357,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.68094cm</Size>
+                            <Size>3.37005cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox25">
                                 <CanGrow>true</CanGrow>
@@ -414,7 +414,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>3.23115cm</Size>
+                    <Size>2.92026cm</Size>
                     <CellContents>
                       <Textbox Name="torneo">
                         <CanGrow>true</CanGrow>
@@ -425,7 +425,7 @@
                               <TextRun>
                                 <Value>=Fields!torneo.Value</Value>
                                 <Style>
-                                  <FontWeight>SemiBold</FontWeight>
+                                  <FontWeight>Medium</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -464,7 +464,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.94552cm</Size>
+                            <Size>3.63463cm</Size>
                             <CellContents>
                               <Textbox Name="equipo">
                                 <CanGrow>true</CanGrow>
@@ -475,7 +475,7 @@
                                       <TextRun>
                                         <Value>=Fields!equipo.Value</Value>
                                         <Style>
-                                          <FontWeight>SemiBold</FontWeight>
+                                          <FontWeight>Medium</FontWeight>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -512,7 +512,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>3.68094cm</Size>
+                                <Size>3.37005cm</Size>
                                 <CellContents>
                                   <Textbox Name="jugador">
                                     <CanGrow>true</CanGrow>
@@ -523,7 +523,7 @@
                                           <TextRun>
                                             <Value>=Fields!jugador.Value</Value>
                                             <Style>
-                                              <FontWeight>SemiBold</FontWeight>
+                                              <FontWeight>Medium</FontWeight>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -557,7 +557,7 @@
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.94552cm</Size>
+                            <Size>3.63463cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox11">
                                 <CanGrow>true</CanGrow>
@@ -568,7 +568,7 @@
                                       <TextRun>
                                         <Value>Total</Value>
                                         <Style>
-                                          <FontWeight>SemiBold</FontWeight>
+                                          <FontWeight>Medium</FontWeight>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -595,7 +595,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.68094cm</Size>
+                                <Size>3.37005cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox8">
                                     <CanGrow>true</CanGrow>
@@ -606,7 +606,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontWeight>SemiBold</FontWeight>
+                                              <FontWeight>Medium</FontWeight>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -635,7 +635,7 @@
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.94552cm</Size>
+                            <Size>3.63463cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox13">
                                 <CanGrow>true</CanGrow>
@@ -674,7 +674,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.68094cm</Size>
+                                <Size>3.37005cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox14">
                                     <CanGrow>true</CanGrow>
@@ -719,7 +719,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.23115cm</Size>
+                    <Size>2.92026cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox20">
                         <CanGrow>true</CanGrow>
@@ -758,7 +758,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>3.94552cm</Size>
+                        <Size>3.63463cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox22">
                             <CanGrow>true</CanGrow>
@@ -797,7 +797,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.68094cm</Size>
+                            <Size>3.37005cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox24">
                                 <CanGrow>true</CanGrow>
@@ -844,8 +844,8 @@
             <DataSetName>DSReporte2</DataSetName>
             <Top>1.86859cm</Top>
             <Left>1.44622cm</Left>
-            <Height>2.42995cm</Height>
-            <Width>13.87709cm</Width>
+            <Height>3.03849cm</Height>
+            <Width>12.07793cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

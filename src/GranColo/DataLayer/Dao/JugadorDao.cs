@@ -47,6 +47,59 @@ namespace GranColo.DataLayer.Dao
             return (DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1);
         }
 
+        internal IList<Jugador> GetAllJugadorSinEquipo(string idEquipo)
+        {
+            List<Jugador> list = new List<Jugador>();
+            string sql = "SELECT j.idJugador, j.nombre, j.apellido, c.idClub, c.nombre, " +
+                    " e.idEstadoActual, e.nombre, j.nroDoc, p.idPosicion, p.nombre, j.costo, t.idTipoDocumento, t.nombre" +
+                    " FROM Jugador j JOIN Posicion p ON j.idPosicion = p.idPosicion  " +
+                    " JOIN EstadoActual e ON j.idEstadoActual = e.idEstadoActual " +
+                    " JOIN Club c ON j.idClub = c.idClub  " +
+                    " JOIN TipoDocumento t ON j.tipoDoc = t.idTipoDocumento " +
+                    " WHERE j.estado='S' AND (j.idJugador NOT IN (SELECT exj.idJugador FROM EquipoXJugador exj WHERE exj.idEquipo = '"+idEquipo+"'))";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+        }
+
+        internal IList<Jugador> GetJugadorSinEquipo(Dictionary<string, object> parametros)
+        {
+            List<Jugador> listadoJugadores = new List<Jugador>();
+
+            var strSql = "SELECT j.idJugador, j.nombre, j.apellido, c.idClub, c.nombre, " +
+                    " e.idEstadoActual, e.nombre, j.nroDoc, p.idPosicion, p.nombre, j.costo, t.idTipoDocumento, t.nombre" +
+                    " FROM Jugador j JOIN Posicion p ON j.idPosicion = p.idPosicion  " +
+                    " JOIN EstadoActual e ON j.idEstadoActual = e.idEstadoActual " +
+                    " JOIN Club c ON j.idClub = c.idClub  " +
+                    " JOIN TipoDocumento t ON j.tipoDoc = t.idTipoDocumento " +
+                    " WHERE j.estado='S' AND 1=1";
+
+            if (parametros.ContainsKey("costoDesde") && parametros.ContainsKey("costoHasta"))
+                strSql += " AND (j.costo>=@costoDesde AND j.costo<=@costoHasta) ";
+            if (parametros.ContainsKey("nombre"))
+                strSql += " AND (j.nombre LIKE @nombre) ";
+            if (parametros.ContainsKey("apellido"))
+                strSql += " AND (j.apellido LIKE @apellido) ";
+            if (parametros.ContainsKey("idPosicion"))
+                strSql += " AND (p.idPosicion=@idPosicion) ";
+            if (parametros.ContainsKey("idClub"))
+                strSql += " AND (c.idClub=@idClub)  ";
+            if (parametros.ContainsKey("idEquipo"))
+                strSql += " AND (j.idJugador NOT IN (SELECT exj.idJugador FROM EquipoXJugador exj WHERE exj.idEquipo = @idEquipo))";
+
+            var resultadoConsulta = (DataRowCollection)DataManager.GetInstance().ConsultaSQLConParametros(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultadoConsulta)
+            {
+                listadoJugadores.Add(ObjectMapping(row));
+            }
+
+            return listadoJugadores;
+        }
+
         internal bool updatePuntaje(Jugador jugadorSeleccionado, int nroFechaSeleccionado, int idTorneoSeleccionado)
         {
             string sql = string.Concat("UPDATE JugadorXFechaXTorneo ",

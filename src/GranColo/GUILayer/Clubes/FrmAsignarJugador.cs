@@ -68,43 +68,54 @@ namespace GranColo.GUILayer.Clubes
 
         private void btn_consultar_Click(object sender, EventArgs e)
         {
-            if (!cb_todos.Checked)
-            {
-                Dictionary<string, object> parametros = new Dictionary<string, object>();
-                parametros.Add("costoDesde", nud_min.Value);
-                parametros.Add("costoHasta", nud_max.Value);
-                if(cb_posicion.SelectedIndex != -1)
-                    parametros.Add("idPosicion", cb_posicion.SelectedValue.ToString());
-                if (cb_club.SelectedIndex != -1)
-                    parametros.Add("idClub", cb_club.SelectedValue.ToString());
-                if (!String.IsNullOrWhiteSpace(txt_nombre.Text))
-                    parametros.Add("nombre", "%" + txt_nombre.Text.ToString() + "%");
-                if (!String.IsNullOrWhiteSpace(txt_apellido.Text))
-                    parametros.Add("apellido", "%" + txt_apellido.Text.ToString() + "%");
 
-                dgv_jugadores.Rows.Clear();
-                IList<Jugador> listadoJugadores = JugadorService.ConsultarJugadoresConFiltros(parametros);
-                if (listadoJugadores.Count==0)
+            if (cbo_equipo.SelectedItem != null)
+            {
+                if (!cb_todos.Checked)
                 {
-                    MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Dictionary<string, object> parametros = new Dictionary<string, object>();
+                    parametros.Add("costoDesde", nud_min.Value);
+                    parametros.Add("costoHasta", nud_max.Value);
+                    parametros.Add("idEquipo", cbo_equipo.SelectedValue.ToString());
+                    if (cb_posicion.SelectedIndex != -1)
+                        parametros.Add("idPosicion", cb_posicion.SelectedValue.ToString());
+                    if (cb_club.SelectedIndex != -1)
+                        parametros.Add("idClub", cb_club.SelectedValue.ToString());
+                    if (!String.IsNullOrWhiteSpace(txt_nombre.Text))
+                        parametros.Add("nombre", "%" + txt_nombre.Text.ToString() + "%");
+                    if (!String.IsNullOrWhiteSpace(txt_apellido.Text))
+                        parametros.Add("apellido", "%" + txt_apellido.Text.ToString() + "%");
+
+                    dgv_jugadores.Rows.Clear();
+                    IList<Jugador> listadoJugadores = JugadorService.ConsultarJugadoresSinEquipo(parametros);
+                    if (listadoJugadores.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    foreach (Jugador jug in listadoJugadores)
+                    {
+                        dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
+                    }
                 }
-                foreach (Jugador jug in listadoJugadores)
+                else
                 {
-                    dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
+                    string idEquipo = cbo_equipo.SelectedValue.ToString();
+                    dgv_jugadores.Rows.Clear();
+                    IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadoresSinEquipo(idEquipo);
+                    if (listTodosJugadores.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    foreach (Jugador jug in listTodosJugadores)
+                    {
+                        dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
+                    }
                 }
             }
             else
             {
-                dgv_jugadores.Rows.Clear();
-                IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadores();
-                if (listTodosJugadores.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron registros en la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                foreach (Jugador jug in listTodosJugadores)
-                {
-                    dgv_jugadores.Rows.Add(new Object[] { jug.IdJugador, jug.PosicionNombre.ToString(), jug.Nombre, jug.Apellido, jug.Costo.ToString() });
-                }
+                MessageBox.Show("Elija un equipo por favor!.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -163,24 +174,31 @@ namespace GranColo.GUILayer.Clubes
         {
             if(cbo_equipo.SelectedIndex != -1)
             {
-                Equipo equipo = new Equipo();
-                equipo.IdEquipo = (int)cbo_equipo.SelectedValue;
-
-                foreach (DataGridViewRow filaGrilla in dgv_jugadoresS.Rows)
+                if(dgv_jugadoresS.Rows.Count > 0)
                 {
-                    int jugador = (int)filaGrilla.Cells[0].Value;
-                    equipo.AgregarJugador(jugador);
-                }
+                    Equipo equipo = new Equipo();
+                    equipo.IdEquipo = (int)cbo_equipo.SelectedValue;
 
-                if (EquipoService.registrarJugadores(equipo))
-                {
-                    MessageBox.Show("Jugadores agregados al equipo: " + cbo_equipo.Text + " con exitó.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgv_jugadores.Rows.Clear();
-                    dgv_jugadoresS.Rows.Clear();
+                    foreach (DataGridViewRow filaGrilla in dgv_jugadoresS.Rows)
+                    {
+                        int jugador = (int)filaGrilla.Cells[0].Value;
+                        equipo.AgregarJugador(jugador);
+                    }
+
+                    if (EquipoService.registrarJugadores(equipo))
+                    {
+                        MessageBox.Show("Jugadores agregados al equipo: " + cbo_equipo.Text + " con exitó.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgv_jugadores.Rows.Clear();
+                        dgv_jugadoresS.Rows.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al registrar los jugadores! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al registrar los jugadores! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor agregue jugadores a la lista!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else

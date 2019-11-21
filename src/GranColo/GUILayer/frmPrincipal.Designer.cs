@@ -46,11 +46,6 @@
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntajeDeJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPuntajeJugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aCercaDeGranColoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.soporteTecnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +57,6 @@
             this.equiposToolStripMenuItem,
             this.reportesToolStripMenuItem,
             this.estadisticasToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
             this.salirToolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -203,41 +197,6 @@
             this.consultarPuntajeJugadoresToolStripMenuItem.Text = "Consultar Puntaje Jugadores";
             this.consultarPuntajeJugadoresToolStripMenuItem.Click += new System.EventHandler(this.consultarPuntajeJugadoresToolStripMenuItem_Click);
             // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aCercaDeGranColoToolStripMenuItem,
-            this.soporteTecnicoToolStripMenuItem,
-            this.registrarProductoToolStripMenuItem,
-            this.verAyudaToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // aCercaDeGranColoToolStripMenuItem
-            // 
-            this.aCercaDeGranColoToolStripMenuItem.Name = "aCercaDeGranColoToolStripMenuItem";
-            this.aCercaDeGranColoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.aCercaDeGranColoToolStripMenuItem.Text = "Acerca de Gran Colo";
-            // 
-            // soporteTecnicoToolStripMenuItem
-            // 
-            this.soporteTecnicoToolStripMenuItem.Name = "soporteTecnicoToolStripMenuItem";
-            this.soporteTecnicoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.soporteTecnicoToolStripMenuItem.Text = "Soporte Tecnico";
-            // 
-            // registrarProductoToolStripMenuItem
-            // 
-            this.registrarProductoToolStripMenuItem.Name = "registrarProductoToolStripMenuItem";
-            this.registrarProductoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.registrarProductoToolStripMenuItem.Text = "Registrar Producto";
-            // 
-            // verAyudaToolStripMenuItem
-            // 
-            this.verAyudaToolStripMenuItem.Name = "verAyudaToolStripMenuItem";
-            this.verAyudaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.verAyudaToolStripMenuItem.Text = "Ver Ayuda";
-            // 
             // salirToolStripMenuItem2
             // 
             this.salirToolStripMenuItem2.Name = "salirToolStripMenuItem2";
@@ -275,11 +234,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aCercaDeGranColoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem soporteTecnicoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarProductoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verAyudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jugadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fixtureToolStripMenuItem1;

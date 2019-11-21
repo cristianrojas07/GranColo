@@ -131,7 +131,7 @@ namespace GranColo.GUILayer.Clubes.Jugadores
                 MessageBox.Show("Seleccione un torneo..", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (cbo_torneo.SelectedItem == null)
+            if (cbo_fecha.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione una fecha..", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

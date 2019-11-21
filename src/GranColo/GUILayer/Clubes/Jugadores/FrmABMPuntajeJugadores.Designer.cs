@@ -32,6 +32,13 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_jugadores = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Posicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_puntaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_titulo = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nud_max = new System.Windows.Forms.NumericUpDown();
@@ -53,13 +60,6 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Posicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_puntaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_jugadores)).BeginInit();
             this.gb_titulo.SuspendLayout();
@@ -126,6 +126,50 @@
             this.dgv_jugadores.Size = new System.Drawing.Size(420, 281);
             this.dgv_jugadores.TabIndex = 9;
             // 
+            // col_id
+            // 
+            this.col_id.DataPropertyName = "IdJugador";
+            this.col_id.HeaderText = "Nro";
+            this.col_id.Name = "col_id";
+            this.col_id.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "JugadorNombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "JugadorApellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Club
+            // 
+            this.Club.DataPropertyName = "ClubNombre";
+            this.Club.HeaderText = "Club";
+            this.Club.Name = "Club";
+            // 
+            // Posicion
+            // 
+            this.Posicion.DataPropertyName = "PosicionNombre";
+            this.Posicion.HeaderText = "Posición";
+            this.Posicion.Name = "Posicion";
+            // 
+            // Costo
+            // 
+            this.Costo.DataPropertyName = "JugadorCosto";
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            // 
+            // col_puntaje
+            // 
+            this.col_puntaje.DataPropertyName = "JugadorPuntaje";
+            this.col_puntaje.HeaderText = "Puntaje";
+            this.col_puntaje.MaxInputLength = 4;
+            this.col_puntaje.Name = "col_puntaje";
+            // 
             // gb_titulo
             // 
             this.gb_titulo.Controls.Add(this.groupBox2);
@@ -170,7 +214,7 @@
             this.nud_max.Size = new System.Drawing.Size(131, 20);
             this.nud_max.TabIndex = 3;
             this.nud_max.Value = new decimal(new int[] {
-            1000,
+            50000,
             0,
             0,
             0});
@@ -346,50 +390,6 @@
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = true;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
-            // col_id
-            // 
-            this.col_id.DataPropertyName = "IdJugador";
-            this.col_id.HeaderText = "Nro";
-            this.col_id.Name = "col_id";
-            this.col_id.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "JugadorNombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "JugadorApellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Club
-            // 
-            this.Club.DataPropertyName = "ClubNombre";
-            this.Club.HeaderText = "Club";
-            this.Club.Name = "Club";
-            // 
-            // Posicion
-            // 
-            this.Posicion.DataPropertyName = "PosicionNombre";
-            this.Posicion.HeaderText = "Posición";
-            this.Posicion.Name = "Posicion";
-            // 
-            // Costo
-            // 
-            this.Costo.DataPropertyName = "JugadorCosto";
-            this.Costo.HeaderText = "Costo";
-            this.Costo.Name = "Costo";
-            // 
-            // col_puntaje
-            // 
-            this.col_puntaje.DataPropertyName = "JugadorPuntaje";
-            this.col_puntaje.HeaderText = "Puntaje";
-            this.col_puntaje.MaxInputLength = 4;
-            this.col_puntaje.Name = "col_puntaje";
             // 
             // FrmABMPuntajeJugadores
             // 

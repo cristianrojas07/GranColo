@@ -48,6 +48,16 @@ namespace GranColo.BusinessLayer.Services
             return JugadorDao.GetJugadorByFilters(parametros);
         }
 
+        internal IList<Jugador> ConsultarJugadoresSinEquipo(Dictionary<string, object> parametros)
+        {
+            return JugadorDao.GetJugadorSinEquipo(parametros);
+        }
+
+        internal IList<Jugador> ObtenerTodosJugadoresSinEquipo(string idEquipo)
+        {
+            return JugadorDao.GetAllJugadorSinEquipo(idEquipo);
+        }
+
         internal bool actualizarPuntaje(Jugador jugadorSeleccionado, int nroFechaSeleccionado, int idTorneoSeleccionado)
         {
             return JugadorDao.updatePuntaje(jugadorSeleccionado, nroFechaSeleccionado, idTorneoSeleccionado);
