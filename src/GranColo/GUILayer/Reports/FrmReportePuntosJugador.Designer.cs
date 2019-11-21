@@ -61,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 9);
+            this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -70,14 +70,14 @@
             // cbo_torneo
             // 
             this.cbo_torneo.FormattingEnabled = true;
-            this.cbo_torneo.Location = new System.Drawing.Point(64, 6);
+            this.cbo_torneo.Location = new System.Drawing.Point(59, 6);
             this.cbo_torneo.Name = "cbo_torneo";
             this.cbo_torneo.Size = new System.Drawing.Size(121, 21);
             this.cbo_torneo.TabIndex = 2;
             // 
             // btn_generar
             // 
-            this.btn_generar.Location = new System.Drawing.Point(191, 5);
+            this.btn_generar.Location = new System.Drawing.Point(186, 5);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Size = new System.Drawing.Size(75, 23);
             this.btn_generar.TabIndex = 3;
@@ -88,17 +88,17 @@
             // rpv_puntos
             // 
             this.rpv_puntos.LocalReport.ReportEmbeddedResource = "GranColo.GUILayer.Reports.Diseño.rpt_puntaje.rdlc";
-            this.rpv_puntos.Location = new System.Drawing.Point(17, 33);
+            this.rpv_puntos.Location = new System.Drawing.Point(12, 33);
             this.rpv_puntos.Name = "rpv_puntos";
             this.rpv_puntos.ServerReport.BearerToken = null;
-            this.rpv_puntos.Size = new System.Drawing.Size(599, 559);
+            this.rpv_puntos.Size = new System.Drawing.Size(697, 747);
             this.rpv_puntos.TabIndex = 4;
             // 
             // FrmReportePuntosJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 604);
+            this.ClientSize = new System.Drawing.Size(721, 792);
             this.Controls.Add(this.rpv_puntos);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.cbo_torneo);

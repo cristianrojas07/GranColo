@@ -58,7 +58,7 @@
             this.rpv_listado.Location = new System.Drawing.Point(0, 0);
             this.rpv_listado.Name = "rpv_listado";
             this.rpv_listado.ServerReport.BearerToken = null;
-            this.rpv_listado.Size = new System.Drawing.Size(628, 604);
+            this.rpv_listado.Size = new System.Drawing.Size(699, 792);
             this.rpv_listado.TabIndex = 0;
             // 
             // dTListadoTableAdapter
@@ -70,7 +70,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(628, 604);
+            this.ClientSize = new System.Drawing.Size(699, 792);
             this.Controls.Add(this.rpv_listado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

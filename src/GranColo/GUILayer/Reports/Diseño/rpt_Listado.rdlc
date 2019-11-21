@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.727cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -52,7 +52,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.727cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -90,7 +90,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.26771cm</Height>
+              <Height>0.57992cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -126,7 +126,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.67408cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -167,7 +167,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.20312cm</Height>
+              <Height>0.33012cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -832,9 +832,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSListado</DataSetName>
-        <Top>0.28787cm</Top>
+        <Top>0.60537cm</Top>
         <Left>3.11891cm</Left>
-        <Height>2.27083cm</Height>
+        <Height>3.03812cm</Height>
         <Width>10.82021cm</Width>
         <Style>
           <Border>
@@ -843,10 +843,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.28125in</Height>
+    <Height>2.12164in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.5015in</Width>
   <Page>
     <PageHeader>
       <Height>0.87312cm</Height>

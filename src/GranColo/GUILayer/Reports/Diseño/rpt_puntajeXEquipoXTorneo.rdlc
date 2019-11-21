@@ -52,12 +52,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.15298cm</Width>
+                  <Width>2.13621cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.68158cm</Height>
+                  <Height>0.67388cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -96,18 +96,20 @@
                               <Style>Solid</Style>
                             </Border>
                             <BackgroundColor>Orange</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.60221cm</Height>
+                  <Height>0.59451cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -142,12 +144,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.57575cm</Height>
+                  <Height>0.62097cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -182,12 +185,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.57625cm</Height>
+                  <Height>0.56855cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -215,7 +219,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>DarkGreen</BackgroundColor>
+                            <BackgroundColor>SeaGreen</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -223,12 +227,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.60271cm</Height>
+                  <Height>0.59501cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -239,7 +244,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!puntaje.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -264,6 +269,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -279,7 +285,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.92026cm</Size>
+                    <Size>2.90349cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox21">
                         <CanGrow>true</CanGrow>
@@ -307,18 +313,20 @@
                             <Style>Solid</Style>
                           </Border>
                           <BackgroundColor>Orange</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>3.63463cm</Size>
+                        <Size>3.61786cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox23">
                             <CanGrow>true</CanGrow>
@@ -346,18 +354,20 @@
                                 <Style>Solid</Style>
                               </Border>
                               <BackgroundColor>Orange</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.37005cm</Size>
+                            <Size>3.50542cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox25">
                                 <CanGrow>true</CanGrow>
@@ -385,12 +395,14 @@
                                     <Style>Solid</Style>
                                   </Border>
                                   <BackgroundColor>Orange</BackgroundColor>
+                                  <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
@@ -414,7 +426,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.92026cm</Size>
+                    <Size>2.90349cm</Size>
                     <CellContents>
                       <Textbox Name="torneo">
                         <CanGrow>true</CanGrow>
@@ -447,6 +459,7 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -464,7 +477,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.63463cm</Size>
+                            <Size>3.61786cm</Size>
                             <CellContents>
                               <Textbox Name="equipo">
                                 <CanGrow>true</CanGrow>
@@ -497,6 +510,7 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
@@ -512,7 +526,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>3.37005cm</Size>
+                                <Size>3.50542cm</Size>
                                 <CellContents>
                                   <Textbox Name="jugador">
                                     <CanGrow>true</CanGrow>
@@ -545,6 +559,7 @@
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixHeader>
                               <TablixMembers>
@@ -557,7 +572,7 @@
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.63463cm</Size>
+                            <Size>3.61786cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox11">
                                 <CanGrow>true</CanGrow>
@@ -590,12 +605,13 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.37005cm</Size>
+                                <Size>3.50542cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox8">
                                     <CanGrow>true</CanGrow>
@@ -628,6 +644,7 @@
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixHeader>
                             </TablixMember>
@@ -635,7 +652,7 @@
                         </TablixMember>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.63463cm</Size>
+                            <Size>3.61786cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox13">
                                 <CanGrow>true</CanGrow>
@@ -661,7 +678,7 @@
                                     <Color>LightGrey</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>DarkGreen</BackgroundColor>
+                                  <BackgroundColor>SeaGreen</BackgroundColor>
                                   <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
@@ -669,12 +686,13 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>3.37005cm</Size>
+                                <Size>3.50542cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox14">
                                     <CanGrow>true</CanGrow>
@@ -700,7 +718,7 @@
                                         <Color>LightGrey</Color>
                                         <Style>Solid</Style>
                                       </Border>
-                                      <BackgroundColor>DarkGreen</BackgroundColor>
+                                      <BackgroundColor>SeaGreen</BackgroundColor>
                                       <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
@@ -708,6 +726,7 @@
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixHeader>
                             </TablixMember>
@@ -719,7 +738,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.92026cm</Size>
+                    <Size>2.90349cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox20">
                         <CanGrow>true</CanGrow>
@@ -728,7 +747,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value />
+                                <Value>Total</Value>
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -753,12 +772,13 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>3.63463cm</Size>
+                        <Size>3.61786cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox22">
                             <CanGrow>true</CanGrow>
@@ -792,12 +812,13 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.37005cm</Size>
+                            <Size>3.50542cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox24">
                                 <CanGrow>true</CanGrow>
@@ -831,6 +852,7 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                         </TablixMember>
@@ -842,10 +864,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DSReporte2</DataSetName>
-            <Top>1.86859cm</Top>
-            <Left>1.44622cm</Left>
-            <Height>3.03849cm</Height>
-            <Width>12.07793cm</Width>
+            <Top>2.06058cm</Top>
+            <Left>1.92237cm</Left>
+            <Height>3.05292cm</Height>
+            <Width>12.16298cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -875,10 +897,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.62618cm</Top>
-            <Left>1.44623cm</Left>
-            <Height>0.78521cm</Height>
-            <Width>12.07792cm</Width>
+            <Top>0.38841cm</Top>
+            <Left>1.92237cm</Left>
+            <Height>1.36729cm</Height>
+            <Width>12.80459cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

@@ -261,6 +261,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(481, 458);
             this.Controls.Add(this.gb_equipo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

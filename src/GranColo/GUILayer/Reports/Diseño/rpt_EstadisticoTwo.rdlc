@@ -300,7 +300,7 @@
             <DataSetName>DSEstadisticoTwo</DataSetName>
             <Top>0.54681cm</Top>
             <Left>3.46287cm</Left>
-            <Height>2.91125cm</Height>
+            <Height>2.91124cm</Height>
             <Width>10.08cm</Width>
             <Style>
               <Border>
@@ -635,13 +635,11 @@
                 <Caption>TOP 5 JUGADORES</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>11pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
                 </Style>
-                <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
             <Palette>Pastel</Palette>
@@ -669,8 +667,7 @@
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Color>LightGrey</Color>
-                <Style>None</Style>
+                <Style>Double</Style>
               </Border>
               <BackgroundColor>White</BackgroundColor>
               <BackgroundGradientType>None</BackgroundGradientType>

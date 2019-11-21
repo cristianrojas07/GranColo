@@ -40,7 +40,7 @@
             this.rwReporte.Location = new System.Drawing.Point(17, 33);
             this.rwReporte.Name = "rwReporte";
             this.rwReporte.ServerReport.BearerToken = null;
-            this.rwReporte.Size = new System.Drawing.Size(599, 559);
+            this.rwReporte.Size = new System.Drawing.Size(692, 747);
             this.rwReporte.TabIndex = 5;
             // 
             // btn_generar
@@ -75,7 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(628, 604);
+            this.ClientSize = new System.Drawing.Size(721, 792);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.cbo_torneos);
             this.Controls.Add(this.label1);
@@ -84,7 +84,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmReportePuntosJugadorXEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gran Colo:";
+            this.Text = "Gran Colo";
             this.Load += new System.EventHandler(this.FrmReportePuntosJugadorXEquipo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
