@@ -43,6 +43,80 @@ namespace GranColo.DataLayer.Dao
             return rtados.Rows.Count > 0;
         }
 
+        public IList<Equipo> getAllEquiposXJugadores()
+        {
+            IList<Equipo> list = new List<Equipo>();
+            string sql = "SELECT e.idEquipo, e.nombre, j.idJugador, j.nombre, j.apellido " +
+                " FROM EquipoXJugador exj JOIN Equipo e ON exj.idEquipo = e.idEquipo " +
+                " JOIN Jugador j ON exj.idJugador = j.idJugador" +
+                " WHERE exj.estado='S' ";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+            foreach (DataRow row in rtados.Rows)
+            {
+                Equipo equipo = new Equipo();
+                Jugador jugador = new Jugador();
+                equipo.IdEquipo = Int32.Parse(row[0].ToString());
+                equipo.Nombre = row[1].ToString();
+                jugador.IdJugador = Int32.Parse(row[2].ToString());
+                jugador.Nombre = row[3].ToString();
+                jugador.Apellido = row[4].ToString();
+                equipo.AgregarJugador(jugador);
+                list.Add(equipo);
+            }
+            
+
+            return list;
+        }
+
+        public bool removeEquipoXJugador(int idEquipo, int idJugador)
+        {
+            string sql = "DELETE EquipoXJugador " +
+                " WHERE idEquipo=@idEquipo AND idJugador=@idJugador";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("idJugador", idJugador);
+            parametros.Add("idEquipo", idEquipo);
+            return DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1;
+        }
+
+        public bool modifyEquipoXJugador(int equipo, int jugadorNuevo, int jugadorViejo)
+        {
+            string sql = "UPDATE EquipoXJugador " +
+                " SET idJugador=@idJugadorNuevo " +
+                " WHERE idEquipo=@idEquipo AND idJugador=@idJugadorViejo";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("idJugadorNuevo", jugadorNuevo);
+            parametros.Add("idJugadorViejo", jugadorViejo);
+            parametros.Add("idEquipo", equipo);
+            return DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1;
+        }
+
+        public IList<Equipo> getEquiposXJugadores(int idEquipo)
+        {
+            IList<Equipo> list = new List<Equipo>();
+            string sql = "SELECT e.idEquipo, e.nombre, j.idJugador, j.nombre, j.apellido " +
+                " FROM EquipoXJugador exj JOIN Equipo e ON exj.idEquipo = e.idEquipo " +
+                " JOIN Jugador j ON exj.idJugador = j.idJugador " +
+                " WHERE exj.estado='S' AND e.idEquipo=@idEquipo ";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("idEquipo", idEquipo);
+            DataTable rtados = DataManager.GetInstance().ConsultaSQLConParametros(sql, parametros);
+            foreach (DataRow row in rtados.Rows)
+            {
+                Equipo equipo = new Equipo();
+                Jugador jugador = new Jugador();
+                equipo.IdEquipo = Int32.Parse(row[0].ToString());
+                equipo.Nombre = row[1].ToString();
+                jugador.IdJugador = Int32.Parse(row[2].ToString());
+                jugador.Nombre = row[3].ToString();
+                jugador.Apellido = row[4].ToString();
+                equipo.AgregarJugador(jugador);
+                list.Add(equipo);
+            }
+
+
+            return list;
+        }
+
         internal bool saveJugador(Equipo equipo)
         {
             DataManager dm = new DataManager();
@@ -60,7 +134,7 @@ namespace GranColo.DataLayer.Dao
 
                     var parametros = new Dictionary<string, object>();
                     parametros.Add("id_equipo", equipo.IdEquipo);
-                    parametros.Add("id_jugador", jugador);
+                    parametros.Add("id_jugador", jugador.IdJugador);
 
                     dm.EjecutarSQL(sql, parametros);
                 }

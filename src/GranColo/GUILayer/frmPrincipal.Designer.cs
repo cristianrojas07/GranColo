@@ -47,6 +47,7 @@
             this.puntajeDeJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPuntajeJugadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarJugadoresAsignadosAEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +109,8 @@
             this.equiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.jugadoresToolStripMenuItem,
             this.equipoToolStripMenuItem,
-            this.asignarJugadoresAEquiposToolStripMenuItem});
+            this.asignarJugadoresAEquiposToolStripMenuItem,
+            this.consultarJugadoresAsignadosAEquiposToolStripMenuItem});
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
             this.equiposToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.equiposToolStripMenuItem.Text = "Clubes";
@@ -116,21 +118,21 @@
             // jugadoresToolStripMenuItem
             // 
             this.jugadoresToolStripMenuItem.Name = "jugadoresToolStripMenuItem";
-            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(291, 22);
             this.jugadoresToolStripMenuItem.Text = "Jugador";
             this.jugadoresToolStripMenuItem.Click += new System.EventHandler(this.JugadoresToolStripMenuItem_Click);
             // 
             // equipoToolStripMenuItem
             // 
             this.equipoToolStripMenuItem.Name = "equipoToolStripMenuItem";
-            this.equipoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.equipoToolStripMenuItem.Size = new System.Drawing.Size(291, 22);
             this.equipoToolStripMenuItem.Text = "Equipo";
             this.equipoToolStripMenuItem.Click += new System.EventHandler(this.EquipoToolStripMenuItem_Click);
             // 
             // asignarJugadoresAEquiposToolStripMenuItem
             // 
             this.asignarJugadoresAEquiposToolStripMenuItem.Name = "asignarJugadoresAEquiposToolStripMenuItem";
-            this.asignarJugadoresAEquiposToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.asignarJugadoresAEquiposToolStripMenuItem.Size = new System.Drawing.Size(291, 22);
             this.asignarJugadoresAEquiposToolStripMenuItem.Text = "Asignar Jugadores a Equipos";
             this.asignarJugadoresAEquiposToolStripMenuItem.Click += new System.EventHandler(this.asignarJugadoresAEquiposToolStripMenuItem_Click);
             // 
@@ -204,6 +206,13 @@
             this.salirToolStripMenuItem2.Text = "Salir";
             this.salirToolStripMenuItem2.Click += new System.EventHandler(this.SalirToolStripMenuItem2_Click);
             // 
+            // consultarJugadoresAsignadosAEquiposToolStripMenuItem
+            // 
+            this.consultarJugadoresAsignadosAEquiposToolStripMenuItem.Name = "consultarJugadoresAsignadosAEquiposToolStripMenuItem";
+            this.consultarJugadoresAsignadosAEquiposToolStripMenuItem.Size = new System.Drawing.Size(291, 22);
+            this.consultarJugadoresAsignadosAEquiposToolStripMenuItem.Text = "Consultar Jugadores asignados a Equipos";
+            this.consultarJugadoresAsignadosAEquiposToolStripMenuItem.Click += new System.EventHandler(this.ConsultarJugadoresAsignadosAEquiposToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,5 +259,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportePuntosJugadorPorEquipoEnTorneoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDePuntosDeJugadoresPorFechaDeTorneoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadistictoDeTop4JugadoresConMayorParticipaciónEnEquiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarJugadoresAsignadosAEquiposToolStripMenuItem;
     }
 }

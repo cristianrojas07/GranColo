@@ -50,5 +50,26 @@ namespace GranColo.BusinessLayer.Services
         {
             return oEquipoDao.saveJugador(equipo);
         }
+
+        public IList<Equipo> obtenerTodosEquiposXJugadores()
+        {
+            return oEquipoDao.getAllEquiposXJugadores();
+        }
+
+
+        public IList<Equipo> obtenerEquiposXJugadores(int idEquipo)
+        {
+            return oEquipoDao.getEquiposXJugadores(idEquipo);
+        }
+
+        public bool modificarEquipoXJugador(int equipo, int jugadorNuevo, int jugadorViejo)
+        {
+            return oEquipoDao.modifyEquipoXJugador(equipo, jugadorNuevo, jugadorViejo);
+        }
+
+        public bool eliminarEquipoXJugador(int idEquipo, int idJugador)
+        {
+            return oEquipoDao.removeEquipoXJugador(idEquipo, idJugador);
+        }
     }
 }

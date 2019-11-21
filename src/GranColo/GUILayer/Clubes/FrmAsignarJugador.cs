@@ -100,7 +100,7 @@ namespace GranColo.GUILayer.Clubes
                 }
                 else
                 {
-                    string idEquipo = cbo_equipo.SelectedValue.ToString();
+                    int idEquipo = Int32.Parse(cbo_equipo.SelectedValue.ToString());
                     dgv_jugadores.Rows.Clear();
                     IList<Jugador> listTodosJugadores = JugadorService.ObtenerTodosJugadoresSinEquipo(idEquipo);
                     if (listTodosJugadores.Count == 0)
@@ -181,7 +181,8 @@ namespace GranColo.GUILayer.Clubes
 
                     foreach (DataGridViewRow filaGrilla in dgv_jugadoresS.Rows)
                     {
-                        int jugador = (int)filaGrilla.Cells[0].Value;
+                        Jugador jugador = new Jugador();
+                        jugador.IdJugador = (int)filaGrilla.Cells[0].Value;
                         equipo.AgregarJugador(jugador);
                     }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GranColo.BusinessLayer.Services
 {
-    class JugadorService
+    public class JugadorService
     {
         readonly JugadorDao JugadorDao = new JugadorDao();
         public int Selected { get; set; }
@@ -53,10 +53,15 @@ namespace GranColo.BusinessLayer.Services
             return JugadorDao.GetJugadorSinEquipo(parametros);
         }
 
-        internal IList<Jugador> ObtenerTodosJugadoresSinEquipo(string idEquipo)
+        internal IList<Jugador> ObtenerTodosJugadoresSinEquipo(int idEquipo)
         {
             return JugadorDao.GetAllJugadorSinEquipo(idEquipo);
         }
+        internal IList<Jugador> ObtenerTodosJugadoresSinEquipo2(int idEquipo)
+        {
+            return JugadorDao.GetAllJugadorSinEquipo2(idEquipo);
+        }
+
 
         internal bool actualizarPuntaje(Jugador jugadorSeleccionado, int nroFechaSeleccionado, int idTorneoSeleccionado)
         {

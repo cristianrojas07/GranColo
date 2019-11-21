@@ -114,6 +114,12 @@
     <Compile Include="GUILayer\Clubes\FrmAsignarJugador.Designer.cs">
       <DependentUpon>FrmAsignarJugador.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Clubes\FrmConsultarJugadoresAsignados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\FrmConsultarJugadoresAsignados.Designer.cs">
+      <DependentUpon>FrmConsultarJugadoresAsignados.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Clubes\Jugadores\FrmABMJugador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,12 @@
       <DependentUpon>FrmTorneo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Fixture\InterfazFixture.cs" />
+    <Compile Include="GUILayer\Clubes\FrmModificarJugadoresAsingados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Clubes\FrmModificarJugadoresAsingados.Designer.cs">
+      <DependentUpon>FrmModificarJugadoresAsingados.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,9 @@
     <EmbeddedResource Include="GUILayer\Clubes\FrmAsignarJugador.resx">
       <DependentUpon>FrmAsignarJugador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\FrmConsultarJugadoresAsignados.resx">
+      <DependentUpon>FrmConsultarJugadoresAsignados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Clubes\Jugadores\FrmABMJugador.resx">
       <DependentUpon>FrmABMJugador.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Fixture\FrmTorneo.resx">
       <DependentUpon>FrmTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Clubes\FrmModificarJugadoresAsingados.resx">
+      <DependentUpon>FrmModificarJugadoresAsingados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

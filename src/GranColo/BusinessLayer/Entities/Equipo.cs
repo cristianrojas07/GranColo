@@ -8,11 +8,11 @@ namespace GranColo.BusinessLayer.Entities
 {
     public class Equipo
     {
-        private List<int> _jugadores;
+        private List<Jugador> _jugadores;
 
         public Equipo()
         {
-            _jugadores = new List<int>();
+            _jugadores = new List<Jugador>();
         }
 
         public int IdEquipo { get; set; }
@@ -21,11 +21,11 @@ namespace GranColo.BusinessLayer.Entities
         public string Lema { get; set; }
         public Color Color { get; set; }
 
-        public List<int> GetJugadores() { return _jugadores; }
+        public List<Jugador> GetJugadores() { return _jugadores; }
 
-        public void AgregarJugador(int IdJugador)
+        public void AgregarJugador(Jugador jugador)
         {
-            _jugadores.Add(IdJugador);
+            _jugadores.Add(jugador);
         }
     }
 }

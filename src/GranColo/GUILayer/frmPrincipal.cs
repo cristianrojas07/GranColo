@@ -178,5 +178,11 @@ namespace GranColo.GUILayer
             FrmEstadistico frmEstadistico = new FrmEstadistico();
             frmEstadistico.ShowDialog();
         }
+
+        private void ConsultarJugadoresAsignadosAEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarJugadoresAsignados frmConsultarJugadoresAsignados = new FrmConsultarJugadoresAsignados();
+            frmConsultarJugadoresAsignados.ShowDialog();
+        }
     }
 }

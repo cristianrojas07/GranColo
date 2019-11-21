@@ -47,7 +47,7 @@ namespace GranColo.DataLayer.Dao
             return (DataManager.GetInstance().EjecutarSQL(sql, parametros) == 1);
         }
 
-        internal IList<Jugador> GetAllJugadorSinEquipo(string idEquipo)
+        internal IList<Jugador> GetAllJugadorSinEquipo(int idEquipo)
         {
             List<Jugador> list = new List<Jugador>();
             string sql = "SELECT j.idJugador, j.nombre, j.apellido, c.idClub, c.nombre, " +
@@ -57,6 +57,24 @@ namespace GranColo.DataLayer.Dao
                     " JOIN Club c ON j.idClub = c.idClub  " +
                     " JOIN TipoDocumento t ON j.tipoDoc = t.idTipoDocumento " +
                     " WHERE j.estado='S' AND (j.idJugador NOT IN (SELECT exj.idJugador FROM EquipoXJugador exj WHERE exj.idEquipo = '"+idEquipo+"'))";
+            DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
+            foreach (DataRow row in rtados.Rows)
+            {
+                list.Add(ObjectMapping(row));
+            }
+            return list;
+        }
+
+        public IList<Jugador> GetAllJugadorSinEquipo2(int idEquipo)
+        {
+            List<Jugador> list = new List<Jugador>();
+            string sql = "SELECT j.idJugador, j.nombre, j.apellido, c.idClub, c.nombre, " +
+                    " e.idEstadoActual, e.nombre, j.nroDoc, p.idPosicion, p.nombre, j.costo, t.idTipoDocumento, t.nombre" +
+                    " FROM Jugador j JOIN Posicion p ON j.idPosicion = p.idPosicion  " +
+                    " JOIN EstadoActual e ON j.idEstadoActual = e.idEstadoActual " +
+                    " JOIN Club c ON j.idClub = c.idClub  " +
+                    " JOIN TipoDocumento t ON j.tipoDoc = t.idTipoDocumento " +
+                    " WHERE j.estado='S' AND (j.idJugador NOT IN (SELECT exj.idJugador FROM EquipoXJugador exj WHERE exj.idEquipo = '" + idEquipo + "' AND exj.estado='S' ))";
             DataTable rtados = DataManager.GetInstance().ConsultaSQL(sql);
             foreach (DataRow row in rtados.Rows)
             {
