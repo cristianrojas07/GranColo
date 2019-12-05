@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJugador));
             this.gb_titulo = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nud_max = new System.Windows.Forms.NumericUpDown();
@@ -109,9 +110,9 @@
             this.nud_max.Enabled = false;
             this.nud_max.Location = new System.Drawing.Point(257, 20);
             this.nud_max.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            99999,
+            0,
+            0,
             0});
             this.nud_max.Name = "nud_max";
             this.nud_max.Size = new System.Drawing.Size(131, 20);
@@ -136,9 +137,9 @@
             this.nud_min.Enabled = false;
             this.nud_min.Location = new System.Drawing.Point(50, 20);
             this.nud_min.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            99999,
+            0,
+            0,
             0});
             this.nud_min.Name = "nud_min";
             this.nud_min.Size = new System.Drawing.Size(131, 20);
@@ -396,6 +397,7 @@
             this.ClientSize = new System.Drawing.Size(533, 517);
             this.Controls.Add(this.gb_titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmJugador";

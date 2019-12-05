@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarPuntaje));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nud_puntaje = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmEditarPuntaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmABMTorneo));
             this.gb_titulo = new System.Windows.Forms.GroupBox();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@
             this.ClientSize = new System.Drawing.Size(428, 132);
             this.Controls.Add(this.gb_titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmABMTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

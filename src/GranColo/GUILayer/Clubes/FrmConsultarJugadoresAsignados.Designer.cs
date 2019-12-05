@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarJugadoresAsignados));
             this.lbl_equipo = new System.Windows.Forms.Label();
             this.cbo_equipos = new System.Windows.Forms.ComboBox();
             this.dgv_equipo_jugadores = new System.Windows.Forms.DataGridView();
@@ -169,6 +170,7 @@
             this.Controls.Add(this.cbo_equipos);
             this.Controls.Add(this.lbl_equipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmConsultarJugadoresAsignados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

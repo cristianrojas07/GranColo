@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportePuntosJugadorXEquipo));
             this.rwReporte = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btn_generar = new System.Windows.Forms.Button();
             this.cbo_torneos = new System.Windows.Forms.ComboBox();
@@ -81,6 +82,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rwReporte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmReportePuntosJugadorXEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

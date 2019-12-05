@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadisticoTwo));
             this.dTEstadisticoTwoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSEstadisticoTwo = new GranColo.GUILayer.Reports.DataSets.DSEstadisticoTwo();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -73,6 +74,7 @@
             this.ClientSize = new System.Drawing.Size(682, 548);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmEstadisticoTwo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

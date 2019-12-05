@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListado));
             this.dTListadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSListado = new GranColo.GUILayer.Reports.DataSets.DSListado();
             this.rpv_listado = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -73,6 +74,7 @@
             this.ClientSize = new System.Drawing.Size(699, 438);
             this.Controls.Add(this.rpv_listado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmListado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

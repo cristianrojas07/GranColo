@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsignarJugador));
             this.lbl_equipo = new System.Windows.Forms.Label();
             this.cbo_equipo = new System.Windows.Forms.ComboBox();
             this.gb_titulo = new System.Windows.Forms.GroupBox();
@@ -419,6 +420,7 @@
             this.Controls.Add(this.cbo_equipo);
             this.Controls.Add(this.lbl_equipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAsignarJugador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gran Colo";

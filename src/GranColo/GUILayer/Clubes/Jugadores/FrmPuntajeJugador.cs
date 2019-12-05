@@ -236,7 +236,7 @@ namespace GranColo.GUILayer.Clubes.Jugadores
             if(puntaje != null)
             {
                 string StringPuntaje = dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value.ToString();
-                if (Regex.IsMatch(StringPuntaje, @"^\d+$")){
+                if (Regex.IsMatch(StringPuntaje, @"^-?\d+$")){
                     int EnteroPuntaje = Int32.Parse(dgv_jugadores.Rows[e.RowIndex].Cells["col_puntaje"].Value.ToString());
                     
                     if (EnteroPuntaje < 0 || EnteroPuntaje > 10)

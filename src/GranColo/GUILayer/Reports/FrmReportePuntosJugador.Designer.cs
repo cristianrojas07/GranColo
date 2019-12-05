@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportePuntosJugador));
             this.dsPuntaje1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPuntaje1 = new GranColo.GUILayer.Reports.DataSets.DSPuntaje();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -104,6 +105,7 @@
             this.Controls.Add(this.cbo_torneo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmReportePuntosJugador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

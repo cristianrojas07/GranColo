@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarAsignarFecha));
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
@@ -186,6 +187,7 @@
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.dgw_asignadas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmConsultarAsignarFecha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

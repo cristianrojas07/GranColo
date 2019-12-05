@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmABMEquipo));
             this.gb_equipo = new System.Windows.Forms.GroupBox();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
@@ -156,6 +157,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(397, 126);
             this.Controls.Add(this.gb_equipo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmABMEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

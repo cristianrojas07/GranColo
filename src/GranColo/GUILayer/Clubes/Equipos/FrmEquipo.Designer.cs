@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEquipo));
             this.gb_equipo = new System.Windows.Forms.GroupBox();
             this.txt_lema = new System.Windows.Forms.TextBox();
             this.lbl_lema = new System.Windows.Forms.Label();
@@ -262,6 +263,7 @@
             this.ClientSize = new System.Drawing.Size(481, 458);
             this.Controls.Add(this.gb_equipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
